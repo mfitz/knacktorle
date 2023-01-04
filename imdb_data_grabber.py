@@ -53,7 +53,8 @@ def filter_movies_file(movies_file_path):
 
     print("\tRead in {} movies - filtering out non-movies...".format(movies_data_frame.shape[0]))
     movies_data_frame = movies_data_frame[movies_data_frame.titleType == "movie"]
-    print("\tFiltered down to {} movie movies".format(movies_data_frame.shape[0]))
+    print("\tFiltered down to {} movie movies, writing new file to {}".format(movies_data_frame.shape[0],
+                                                                              movies_file_path))
 
     movies_data_frame.to_csv(movies_file_path, sep='\t', compression='gzip', index=False)
     print("\tWritten filtered file to {}".format(movies_file_path))
@@ -61,32 +62,54 @@ def filter_movies_file(movies_file_path):
 
 def filter_actors_file(actors_file_path):
     print("\tFiltering {}".format(actors_file_path))
-    pass
+    actors_data_frame = pd.read_csv(actors_file_path, sep='\t')
+
+    print("\tRead in {} people - filtering out non-actors...".format(actors_data_frame.shape[0]))
+    actors_data_frame = actors_data_frame[(actors_data_frame.primaryProfession.str.contains("actor")) |
+                                          (actors_data_frame.primaryProfession.str.contains("actress"))]
+    print("\tFiltered down to {} actors, writing new file to {}".format(actors_data_frame.shape[0],
+                                                                              actors_file_path))
+
+    actors_data_frame.to_csv(actors_file_path, sep='\t', compression='gzip', index=False)
+    print("\tWritten filtered file to {}".format(actors_file_path))
 
 
-def filter_performances_file(performances):
-    print("\tFiltering {}".format(performances_file))
-    pass
+def filter_performances_file(performances_file_path):
+    print("\tFiltering {}".format(performances_file_path))
+    performances_data_frame = pd.read_csv(performances_file_path, sep='\t')
+
+    print("\tRead in {} performances - filtering out non-acting categories...".format(performances_data_frame.shape[0]))
+    performances_data_frame = \
+        performances_data_frame[(performances_data_frame.category == "actor") |
+                                (performances_data_frame.category == "actress")]
+    print("\tFiltered down to {} movie performances - writing new file out to {}"
+          .format(performances_data_frame.shape[0], performances_file_path))
+
+    performances_data_frame.to_csv(performances_file_path, sep='\t', compression='gzip', index=False)
+    print("\tFinished writing filtered file to {}".format(performances_file_path))
 
 
 if __name__ == '__main__':
     args = parse_args()
     data_dir = args['output_dir']
-    print("Updating IMDd data files in {}".format(data_dir))
+    print("Updating IMDb data files in {}".format(data_dir))
 
     base_url = "https://datasets.imdbws.com"
 
     movies_file = 'title.basics.tsv.gz'
     local_movies_file = os.path.abspath(os.path.join(data_dir, movies_file))
+    print('-----------------------------------')
     if download_file(local_movies_file, "{}/{}".format(base_url, movies_file)):
         filter_movies_file(local_movies_file)
 
     actors_file = 'name.basics.tsv.gz'
     local_actors_file = os.path.abspath(os.path.join(data_dir, actors_file))
+    print('-----------------------------------')
     if download_file(local_actors_file, "{}/{}".format(base_url, actors_file)):
         filter_actors_file(local_actors_file)
 
     performances_file = 'title.principals.tsv.gz'
     local_performances_file = os.path.abspath(os.path.join(data_dir, performances_file))
+    print('-----------------------------------')
     if download_file(local_performances_file, "{}/{}".format(base_url, performances_file)):
         filter_performances_file(local_performances_file)
