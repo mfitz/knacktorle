@@ -11,12 +11,8 @@ if __name__ == '__main__':
 
     file_to_profile = sys.argv[1]
     file_short_name = os.path.basename(file_to_profile)
-    separator = sys.argv[2]
     report_file_path = "{}/{}-profile.html".format(tempfile.gettempdir(), file_short_name)
-    print("Profiling data file {} (separator = '{}'). Will write HTML report to {}."
-          .format(file_to_profile,
-                  separator,
-                  report_file_path))
+    print("Profiling TSV data file {}. Will write HTML report to {}.".format(file_to_profile, report_file_path))
 
     df = pd.read_csv(file_to_profile, sep='\t')
     print("Finished reading data file into a dataframe")
