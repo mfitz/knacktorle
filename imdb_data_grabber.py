@@ -1,13 +1,28 @@
 import argparse
-import os
 import hashlib
+import os
 import pathlib
-import requests
 import shutil
 
-from os.path import abspath
-
+import requests
 from rich.progress import Progress, BarColumn
+
+from actorle_solver import SmartFormatter
+
+
+def parse_args():
+    arg_parser = argparse.ArgumentParser(description="Download and/or filter data files from "
+                                                     "https://datasets.imdbws.com. The files to be grabbed are: "
+                                                     "title.basics.tsv.gz, "
+                                                     "title.principals.tsv.gz, "
+                                                     "name.basics.tsv.gz",
+                                         formatter_class=SmartFormatter)
+    arg_parser.add_argument('-o',
+                            '--output-dir',
+                            help="R|the full path to a local directory to write the downloaded files to.\n"
+                                 "Mandatory.",
+                            required=True)
+    return vars(arg_parser.parse_args())
 
 
 def file_md5(file_path):
@@ -15,38 +30,28 @@ def file_md5(file_path):
 
 
 def download_file(local_path, url, eTag=None):
-    #         with Progress("  Pulling {}{}{}".format(Fore.YELLOW, ecr_image, Style.RESET_ALL),
-    #                       BarColumn(),
-    #                       transient=True) as progress:
-    #             task = progress.add_task("Pulling", start=False)
-    #             repo_name = ecr_image.split(':')[0]
-    #             image_tag = ecr_image.split(':')[1]
-    #             docker_client.images.pull(repository=repo_name,
-    #                                       tag=image_tag,
-    #                                       auth_config={'username': user, 'password': pw})
-    #             progress.update(task)
-    with Progress("\tDownloading {}".format(url), BarColumn(), transient=True) as progress:
-        task = progress.add_task("Downloading", start=False)
-        with requests.get(url, stream=True) as r:
-            with open(local_path, 'wb') as f:
-                shutil.copyfileobj(r.raw, f)
-        progress.update(task)
+    print("\tLooking for {}".format(local_path))
+    if not pathlib.Path.exists(pathlib.Path(local_path)):
+        print("\t{} Not found".format(local_path))
+        with Progress("\tDownloading {}".format(url), BarColumn(), transient=True) as progress:
+            task = progress.add_task("Downloading", start=False)
+            with requests.get(url, stream=True) as r:
+                with open(local_path, 'wb') as f:
+                    shutil.copyfileobj(r.raw, f)
+            progress.update(task)
+    else:
+        etag = file_md5(local_path)
+        print("\t{} exists with eTag {} - will not download".format(file_path, etag))
 
 
 if __name__ == '__main__':
-    data_dir = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "data"))
-    print("Updating IMDB data files in {}".format(data_dir))
+    args = parse_args()
+    data_dir = args['output_dir']
+    print("Updating IMDd data files in {}".format(data_dir))
 
     required_files = ['title.basics.tsv.gz', 'title.principals.tsv.gz', 'name.basics.tsv.gz']
     for file in required_files:
         file_path = os.path.abspath(os.path.join(data_dir, file))
         etag = None
-        print("\tLooking for {}".format(file_path))
-        if not pathlib.Path.exists(pathlib.Path(file_path)):
-            print("\t{} does not exist - downloading it now...".format(file_path))
-        else:
-            etag = file_md5(file_path)
-            print("\t{} exists with eTag {}".format(file_path, etag))
         url = "https://datasets.imdbws.com/{}".format(file)
         download_file(file_path, url, eTag=etag)
-        # https://datasets.imdbws.com/title.ratings.tsv.gz
