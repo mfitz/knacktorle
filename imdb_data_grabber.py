@@ -4,6 +4,7 @@ import os
 import pathlib
 import shutil
 
+import pandas as pd
 import requests
 from rich.progress import Progress, BarColumn
 
@@ -29,7 +30,7 @@ def file_md5(file_path):
     return hashlib.md5(pathlib.Path(file_path).read_bytes()).hexdigest()
 
 
-def download_file(local_path, url, eTag=None):
+def download_file(local_path, url):
     print("\tLooking for {}".format(local_path))
     if not pathlib.Path.exists(pathlib.Path(local_path)):
         print("\t{} Not found".format(local_path))
@@ -39,9 +40,33 @@ def download_file(local_path, url, eTag=None):
                 with open(local_path, 'wb') as f:
                     shutil.copyfileobj(r.raw, f)
             progress.update(task)
+        return True
     else:
         etag = file_md5(local_path)
-        print("\t{} exists with eTag {} - will not download".format(file_path, etag))
+        print("\t{} exists with eTag {} - will not download".format(local_path, etag))
+        return False
+
+
+def filter_movies_file(movies_file_path):
+    print("\tFiltering {}".format(movies_file_path))
+    movies_data_frame = pd.read_csv(movies_file_path, sep='\t')
+
+    print("\tRead in {} movies - filtering out non-movies...".format(movies_data_frame.shape[0]))
+    movies_data_frame = movies_data_frame[movies_data_frame.titleType == "movie"]
+    print("\tFiltered down to {} movie movies".format(movies_data_frame.shape[0]))
+
+    movies_data_frame.to_csv(movies_file_path, sep='\t', compression='gzip', index=False)
+    print("\tWritten filtered file to {}".format(movies_file_path))
+
+
+def filter_actors_file(actors_file_path):
+    print("\tFiltering {}".format(actors_file_path))
+    pass
+
+
+def filter_performances_file(performances):
+    print("\tFiltering {}".format(performances_file))
+    pass
 
 
 if __name__ == '__main__':
@@ -49,9 +74,19 @@ if __name__ == '__main__':
     data_dir = args['output_dir']
     print("Updating IMDd data files in {}".format(data_dir))
 
-    required_files = ['title.basics.tsv.gz', 'title.principals.tsv.gz', 'name.basics.tsv.gz']
-    for file in required_files:
-        file_path = os.path.abspath(os.path.join(data_dir, file))
-        etag = None
-        url = "https://datasets.imdbws.com/{}".format(file)
-        download_file(file_path, url, eTag=etag)
+    base_url = "https://datasets.imdbws.com"
+
+    movies_file = 'title.basics.tsv.gz'
+    local_movies_file = os.path.abspath(os.path.join(data_dir, movies_file))
+    if download_file(local_movies_file, "{}/{}".format(base_url, movies_file)):
+        filter_movies_file(local_movies_file)
+
+    actors_file = 'name.basics.tsv.gz'
+    local_actors_file = os.path.abspath(os.path.join(data_dir, actors_file))
+    if download_file(local_actors_file, "{}/{}".format(base_url, actors_file)):
+        filter_actors_file(local_actors_file)
+
+    performances_file = 'title.principals.tsv.gz'
+    local_performances_file = os.path.abspath(os.path.join(data_dir, performances_file))
+    if download_file(local_performances_file, "{}/{}".format(base_url, performances_file)):
+        filter_performances_file(local_performances_file)
