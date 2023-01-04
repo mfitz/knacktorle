@@ -98,8 +98,8 @@ def get_todays_clues_from_website():
     return movies_to_find
 
 
-def get_actors_in_movies(actors_dataframe, movie_ids):
-    matching_actors = actors_dataframe[actors_dataframe.tconst.isin(movie_ids.tconst)]
+def get_actors_in_movies(performances_dataframe, movie_ids):
+    matching_actors = performances_dataframe[performances_dataframe.tconst.isin(movie_ids.tconst)]
     print("Found {} actors for these {} movie_ids".format(matching_actors.shape[0], len(movie_ids)))
     return matching_actors[['nconst', 'characters']]
 
@@ -141,8 +141,8 @@ def filter_movies(movies_file, movies_clues):
     return titles_data_frame
 
 
-def get_all_performances(actors_data_file):
-    actors_data_frame = pd.read_csv(actors_data_file, sep='\t')
+def get_all_performances(performances_data_file):
+    actors_data_frame = pd.read_csv(performances_data_file, sep='\t')
     print("Read in data on {} performances".format(actors_data_frame.shape[0]))
     return actors_data_frame
 
