@@ -237,11 +237,11 @@ if __name__ == '__main__':
         write_movie_clues(args['write_clues_file'], puzzle_clues)
 
     movies_file = args['movies_file']
-    print("Using IMDd movie data in {}".format(movies_file))
+    print("Using IMDb movie data in {}".format(movies_file))
     movies_df = filter_movies(movies_file, puzzle_clues)
 
     performances_file = args['performances_file']
-    print("Using IMDd performances data in {}".format(performances_file))
+    print("Using IMDb performances data in {}".format(performances_file))
     performances_df = get_all_performances(performances_file)
 
     most_likely_actors = get_most_likely_actors_for_clues(puzzle_clues, movies_df, performances_df)
