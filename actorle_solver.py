@@ -33,19 +33,23 @@ def parse_args():
                                                      "https://actorle.com/ and solved, unless a different puzzle is "
                                                      "specified using the --clues-file argument.",
                                          formatter_class=SmartFormatter)
-    arg_parser.add_argument('-d',
-                            '--imdb-data-dir',
-                            help="R|the full path to directory that contains exported IMDB data files, as found at "
-                                 "https://datasets.imdbws.com/\nand described at https://www.imdb.com/interfaces/. "
-                                 "Mandatory.\nThe directory should include the "
-                                 "following files:\n"
-                                 "  - name.basics.tsv.gz\n"
-                                 "  - title.basics.movies.tsv.gz\n"
-                                 "  - title.basics.tsv.gz\n"
-                                 "  - title.crew.tsv.gz\n"
-                                 "  - title.principals.actors.tsv.gz\n"
-                                 "  - title.principals.tsv.gz\n"
-                                 "  - title.ratings.tsv.gz",
+    arg_parser.add_argument('-mf',
+                            '--movies-file',
+                            help="R|the full path to an IMDb title.basics.tsv.gz file, as found at "
+                                 "https://datasets.imdbws.com.\n"
+                                 "Mandatory.",
+                            required=True)
+    arg_parser.add_argument('-af',
+                            '--actors-file',
+                            help="R|the full path to an IMDb name.basics.tsv.gz file, as found at "
+                                 "https://datasets.imdbws.com.\n"
+                                 "Mandatory.",
+                            required=True)
+    arg_parser.add_argument('-pf',
+                            '--performances-file',
+                            help="R|the full path to an IMDb title.principals.tsv.gz file, as found at "
+                                 "https://datasets.imdbws.com.\n"
+                                 "Mandatory.",
                             required=True)
     arg_parser.add_argument('-cf',
                             '--clues-file',
@@ -227,26 +231,26 @@ def get_matching_movies_for_actor(movie_clues, actor_id, performances_df, movies
 
 if __name__ == '__main__':
     args = parse_args()
-    imdb_data_dir = args['imdb_data_dir']
-    print("Using the IMDB movies data in {}".format(imdb_data_dir))
+
     puzzle_clues = read_clues(args['clues_file'])
     if args['write_clues_file']:
         write_movie_clues(args['write_clues_file'], puzzle_clues)
 
-    movies_file = '{}/title.basics.movies.tsv.gz'.format(imdb_data_dir)
+    movies_file = args['movies_file']
+    print("Using IMDd movie data in {}".format(movies_file))
     movies_df = filter_movies(movies_file, puzzle_clues)
 
-    actors_file = '{}/title.principals.actors.tsv.gz'.format(imdb_data_dir)
-    print("Using IMDB performances data in {}".format(actors_file))
-    performances_df = get_all_performances(actors_file)
+    performances_file = args['performances_file']
+    print("Using IMDd performances data in {}".format(performances_file))
+    performances_df = get_all_performances(performances_file)
 
     most_likely_actors = get_most_likely_actors_for_clues(puzzle_clues, movies_df, performances_df)
     print("Actor IDs occurring most often across all possible candidate movies:{}".format(most_likely_actors))
     total_count = sum(count for actor_id, count in most_likely_actors)
 
-    actors_names_file = '{}/name.basics.tsv.gz'.format(imdb_data_dir)
-    print("Converting actor IDs to names using {}".format(actors_names_file))
-    actor_names_df = pd.read_csv(actors_names_file, sep='\t')
+    actors_file = args['actors_file']
+    print("Converting actor IDs to names using {}".format(actors_file))
+    actor_names_df = pd.read_csv(actors_file, sep='\t')
 
     actor = most_likely_actors[0][0]
     actor_name = get_actor_name(actor, actor_names_df)
