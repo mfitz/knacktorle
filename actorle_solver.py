@@ -174,10 +174,12 @@ def get_most_likely_actors_for_clues(puzzle_clues, movies_data_frame, performanc
     print("\nWorking through the clues...")
     all_potential_performances = []
     for clue in puzzle_clues:
+        print('----------------------------')
         print("Looking for movie matches for {}".format(clue))
         matching_movies = get_matching_movie_ids(movies_data_frame, clue)
         actors_ids = get_actors_in_movies(performances_df, matching_movies)
         all_potential_performances.extend(actors_ids.nconst.tolist())
+    print('----------------------------')
     print("Made a list of {} individual movie performances from all the clues".format(len(all_potential_performances)))
     return collections.Counter(all_potential_performances).most_common(3)
 
