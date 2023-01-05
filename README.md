@@ -12,8 +12,7 @@ A command line application for solving [Actorle](https://actorle.com/), the dail
 - [Grabbing the IMDb data](#grabbing-the-imdb-data)
 - [Running the Solver](#running-the-solver)
 - [Offline Solving](#offline-solving)
-  - [Clues Files](#clues-files)
-    - [Creating Clues Files](#creating-clues-files)
+  - [Clues Files](#clues-file-format)
 
 
 ## What is Actorle?
@@ -289,20 +288,20 @@ contains, how powerful your machine is, etc.
 ## Offline Solving
 By default, Knacktorle will grab today's Actorle puzzle from over the web and solve it. However, the solver can also be
 used in an offline mode where the puzzle to solve is read in from a local "clues file", rather than from the web. A
-number of clues files can be found in the `clue-files` directory.
+number of clues files can be found in the `clues-files` directory.
 
-To solve an old puzzle from a local [clues file](#clues-files), use the `--clues-file` parameter, passing the path to
-the clues file you want to use:
+To solve an old puzzle from a local [clues file](#clues-file-format), use the `--clues-file` parameter, passing the
+path to the clues file you want to use:
 
 ```bash
 python actorle_solver.py \
 --movies-file data/title.basics.tsv.gz \
 --performances-file data/title.principals.tsv.gz \
 --actors-file data/name.basics.tsv.gz \
---clues-file clue-files/actorle-2022-jun-18.txt
+--clues-file clues-files/actorle-2022-jun-18.txt
 ```
 
-### Clues Files
+### Clues File Format
 Clues files use a simple proprietary, pipe-separated format:
 
 ```bash
@@ -310,10 +309,10 @@ Clues files use a simple proprietary, pipe-separated format:
 ```
 
 On reflection, a standard format like YAML or JSON would probably have been a better choice, but there you go. You
-can see examples of clues files for previous Actorle puzzles in the `clue-files` directory:
+can see examples of clues files for previous Actorle puzzles in the `clues-files` directory:
 
 ```bash
-$ cat clue-files/actorle-2022-jun-18.txt
+$ cat clues-files/actorle-2022-jun-18.txt
 
 xxx xxxxxxx xxx|2002|Adventure,Action,Thriller|6.1
 xxx xxxxxxxxx|2004|Drama,Romance|6.3
@@ -339,7 +338,7 @@ x xxxx xx xxxxxxx|2018|Thriller,Drama,Crime|5.8
 Formatted for clarity:
 
 ```bash
-$ cat clue-files/actorle-2022-jun-18.txt | column -ts '|'
+$ cat clues-files/actorle-2022-jun-18.txt | column -ts '|'
 
 xxx xxxxxxx xxx        2002  Adventure,Action,Thriller               6.1
 xxx xxxxxxxxx          2004  Drama,Romance                           6.3
