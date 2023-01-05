@@ -81,8 +81,8 @@ You should be able to replace them with the equivalent code for whatever non-Chr
 
 
 ## Geting the IMDb data
-For non-commercial hacking, IMDb provide a regularly updated [data dump](https://datasets.imdbws.com) of a subset of
-their database, in compressed TSV files. Knacktorle uses 3 of these files to solve puzzles. The script
+For non-commercial hacking, IMDb provide a regularly updated [data dump](https://www.imdb.com/interfaces/) of a subset
+of their database, in compressed TSV files. Knacktorle uses 3 of these files to solve puzzles. The script
 `imdb_data_grabber.py` is a tool for downloading these files to a local directory and then filtering out extraneous data
 (e.g. data about TV shows, rather than movies, or camera operators rather than actors) to minimise the file sizes. This
 filtering reduces the overall data size from c.800MB to c.280MB.
