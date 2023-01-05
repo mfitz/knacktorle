@@ -1,6 +1,6 @@
 # KNACKTORLE
 
-A CLI-based solver for [Actorle](https://actorle.com/), the daily actor guessing game.
+A command line application for solving [Actorle](https://actorle.com/), the daily actor guessing game.
 
 ## Contents
 
@@ -82,13 +82,15 @@ You should be able to replace them with the equivalent code for whatever non-Chr
 
 ## Geting the IMDb data
 For non-commercial hacking, IMDb provide a regularly updated [data dump](https://www.imdb.com/interfaces/) of a subset
-of their database, in compressed TSV files. Knacktorle uses 3 of these files to solve puzzles. The script
-`imdb_data_grabber.py` is a tool for downloading these files to a local directory and then filtering out extraneous data
-(e.g. data about TV shows, rather than movies, or camera operators rather than actors) to minimise the file sizes. This
-filtering reduces the overall data size from c.800MB to c.280MB.
+of their database, in compressed TSV files. Knacktorle uses 3 of these files to solve puzzles.
+
+The script `imdb_data_grabber.py` is a tool for downloading these files to a local directory and then filtering out
+extraneous data (e.g. data about TV shows, rather than movies, or camera operators rather than actors) to minimise the
+file sizes. This filtering reduces the overall data size from `c.800MB` to `c.280MB`.
 
 ```bash
 $ python imdb_data_grabber.py --output-dir data
+
 Updating IMDb data files in data
 -----------------------------------
 	Looking for /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz
@@ -111,7 +113,9 @@ Updating IMDb data files in data
 	Read in 53909190 performances - filtering out non-acting categories...
 	Filtered down to 21126939 movie performances - writing new file out to /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz
 	Finished writing filtered file to /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz
+```
 
+```bash
 $ ls -tlh data
 total 618600
 -rw-r--r--  1 mickyfitz  staff   180M  5 Jan 03:09 title.principals.tsv.gz
@@ -124,7 +128,7 @@ You can choose a different location if you want - just pass it as the `--output-
 already exist.
 
 ## Running the Solver
-The solver is a simple CLI application with a discoverable set of parameters:
+The solver is a simple command line application with a discoverable set of parameters:
 
 ```bash
 $ python actorle_solver.py --help
