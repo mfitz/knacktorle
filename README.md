@@ -8,7 +8,7 @@ A command line application for solving [Actorle](https://actorle.com/), the dail
 - [Prerequisites](#prerequisites)
 - [Installing](#installing)
   - [The Selenium WebDriver](#the-selenium-web-driver)
-- [Getting the IMDb data](#geting-the-imdb-data)
+- [Getting the IMDb data](#getting-the-imdb-data)
 - [Running the Solver](#running-the-solver)
   - [Offline Solving](#offline-solving)
 
@@ -80,7 +80,7 @@ today's puzzle. The relevant lines look like this for Chrome:
 You should be able to replace them with the equivalent code for whatever non-Chrome driver you are using.
 
 
-## Geting the IMDb data
+## Getting the IMDb data
 For non-commercial hacking, IMDb provide a regularly updated [data dump](https://www.imdb.com/interfaces/) of a subset
 of their database, in compressed TSV files. Knacktorle uses 3 of these files to solve puzzles.
 
