@@ -83,7 +83,7 @@ def get_todays_clues_from_website():
     driver_options.headless = True
     driver = webdriver.Chrome(service=service_object, options=driver_options)
     driver.get(url)
-    print("Retrieved page with title '{}'".format(driver.title))
+    print("Retrieved a web page with the title '{}'".format(driver.title))
 
     elem = driver.find_element(By.TAG_NAME, 'table')
     all_clue_parts = elem.text.split('\n')[2:]
@@ -189,10 +189,10 @@ def read_clues(puzzle):
         print("Solving the puzzle contained in {}".format(puzzle))
         clues = read_movie_clues(puzzle)
     else:
-        print("No puzzle file supplied - will solve today's puzzle on https://actorle.com/")
+        print("No puzzle file supplied - will solve today's puzzle from https://actorle.com/")
         puzzle = datetime.today().strftime('%Y-%m-%d')
         clues = get_todays_clues_from_website()
-    print("Found {} clues for the puzzle for {}".format(len(clues), puzzle))
+    print("Found {} clues for the puzzle from {}:".format(len(clues), puzzle))
     pprint.pprint(clues)
     return clues
 
@@ -239,11 +239,11 @@ if __name__ == '__main__':
         write_movie_clues(args['write_clues_file'], puzzle_clues)
 
     movies_file = args['movies_file']
-    print("Using IMDb movie data in {}".format(movies_file))
+    print("Reading IMDb movie data from {}".format(movies_file))
     movies_df = filter_movies(movies_file, puzzle_clues)
 
     performances_file = args['performances_file']
-    print("Using IMDb performances data in {}".format(performances_file))
+    print("Reading IMDb actor performances data from {}".format(performances_file))
     performances_df = get_all_performances(performances_file)
 
     most_likely_actors = get_most_likely_actors_for_clues(puzzle_clues, movies_df, performances_df)
