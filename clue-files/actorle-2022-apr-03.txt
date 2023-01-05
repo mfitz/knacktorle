@@ -1,0 +1,20 @@
+xxxxxxxxx|1986|Family,Adventure,Science Fiction|5.7
+xxxxxxxxxx|1989|Comedy|7.0
+xx xxx xxx|1995|Drama,Comedy,Crime|6.8
+xxx|1999|Thriller,Crime,Mystery|6.5
+xxxxxxxxx|2000|Action,Drama,Adventure|8.5
+xxxxx|2002|Drama,Thriller,Science Fiction,Mystery|6.8
+xxxxx xxxxxx|2004|Drama,History,War|8.1
+xxx xxxxxxx|2004|Drama,Mystery,Thriller|6.6
+xxxxxx xx|2004|Drama,Action,Thriller|6.5
+xxxx xxx xxxx|2005|Drama,Music,Romance|7.8
+xx xxx xxx xxxxx|2007|Drama,Crime,Thriller|6.8
+xxx xxxxxx|2008|Drama,Romance|7.0
+xxx xxxxxx|2012|Drama|7.1
+xxx|2013|Romance,Science Fiction,Drama|8.0
+xxxxxxxx xxxx|2014|Drama,Mystery,Comedy|6.6
+xxxxxxxxxx xxx|2015|Drama,Comedy,Crime|6.6
+xxx xxxx xxxxx xxxxxx xxxx|2017|Thriller,Drama,Crime|6.8
+xxxx xxxxxxxxx|2018|Drama,History|5.9
+xxx xxxxxxx xxxxxxxx|2018|Western,Drama,Adventure|6.9
+xxxxx|2019|Crime,Thriller,Drama|8.4

@@ -1,0 +1,20 @@
+xxx xxxxxxx xxx|2002|Adventure,Action,Thriller|6.1
+xxx xxxxxxxxx|2004|Drama,Romance|6.3
+xxxxx & xxxxxxxxx|2005|Drama,Romance|7.8
+xxxx|2005|Action,Horror,Science Fiction|5.2
+xxxxxxxx|2007|Thriller|7.2
+xxxxxxxxxx|2009|Science Fiction,Action,Thriller|6.3
+xx xxxxxxxxx|2009|Drama,Romance|7.3
+xxxx xx xxxxxxxx|2010|Comedy,Drama,History|7.1
+xxxxxx'x xxxxxxx|2010|Comedy,Drama|7.3
+xxxxxx xxxxxxx xxxxxx|2011|Crime,Adventure,Action,Comedy,Thriller|6.3
+xxx xxx xxxx|2011|Comedy|6.2
+xxxxx xx xxx xxxxxx|2012|Fantasy,Adventure|5.7
+xxxx xxxxxxx|2012|Crime,Drama,Thriller,Action|7.0
+xxx xxxxx'x xxx|2013|Comedy,Action,Science Fiction|6.9
+x xxxx xxx xxxx|2014|Comedy,Drama|6.3
+xxxx xxxx|2014|Mystery,Thriller,Drama|8.1
+x xxxxxx xxxxxxx|2016|Drama,History|6.8
+xxxxxxxx|2017|Western,Drama,History|7.2
+x xxxx xx xxxxxxx|2018|Thriller,Drama,Crime|5.8
+xxxxxx|2018|Action,Thriller,Drama|6.4

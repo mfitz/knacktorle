@@ -1,0 +1,20 @@
+xxx xxxxxxx xxxxx|1993|Mystery,Drama,Thriller,Crime|6.6
+xxxxxxxxxxxx|1993|Drama|7.7
+xxxxxxx xxxx|1995|War,Thriller,Action,Drama|7.3
+xxxxxxx xxxxx xxxx|1996|Drama,Thriller,Mystery,War|6.6
+xxx xxxxx|1998|Drama,Action,Thriller,Crime|6.3
+xxx xxxx xxxxxxxxx|1999|Drama,Mystery,Thriller,Crime|6.7
+xxxxxxxx xxx xxxxxx|2000|Drama|7.8
+xxxxxxxx xxx|2001|Action,Crime,Drama|7.7
+xxx xx xxxx|2004|Action,Drama,Thriller|7.7
+xxxxxx xxx|2006|Crime,Drama,Thriller|7.6
+xxxx xx|2006|Action,Thriller,Science Fiction|7.1
+xxxxxxxx xxxxxxxx|2007|Drama,Crime|7.8
+xxx xxxxxx xx xxxxxx x x x|2009|Thriller,Crime,Action|6.4
+xxx xxxx xx xxx|2010|Action,Thriller,Science Fiction|6.8
+xxxxxxxxxxx|2010|Action,Thriller|6.8
+xxxx xxxxx|2012|Action,Thriller|6.7
+xxxxxx|2012|Drama|7.3
+xxx xxxxxxxxx|2014|Thriller,Action,Crime|7.2
+xxx xxxxxxxxxxx xxxxx|2016|Adventure,Action,Western|6.8
+xxx xxxxxxxxx x|2018|Action,Thriller,Crime|6.7

@@ -1,0 +1,17 @@
+xxxx|2011|Adventure,Fantasy,Action|7.0
+xxxxxxxx xx xxxxx|2011|Fantasy,Comedy,Romance|7.7
+xxx xxxx xxxx xxx|2011|Drama,Romance|6.2
+xxx xxxxx|2011|War,Drama,Action|7.2
+xxx xxxxxxxx|2012|Science Fiction,Action,Adventure|8.0
+xxxx: xxx xxxx xxxxx|2013|Action,Adventure,Fantasy|6.8
+xxxx xxxxxx xxxx xxxxx|2013|Drama,Romance|7.2
+xxxxxx xxxx xxx xxx xxxxxx xxxxx|2014|Animation,Family|6.5
+xxxxxxx xxxx xxxxxx|2014|Comedy,Adventure,Crime,Family|6.4
+xxxxxxx xxxx|2015|Horror,Thriller,Romance,Fantasy,Mystery|6.5
+xxxx-xxxx|2015|Drama|5.5
+x xxx xxx xxxxx|2016|Music,Drama|5.7
+xxxx: xxxxx xxxxxx|2017|Action,Adventure,Fantasy|6.6
+xxxx: xxxxxxxx|2017|Action,Adventure,Fantasy,Science Fiction|7.9
+xxxxx xxx|2018|Family,Comedy,Animation,Adventure|6.1
+xxxxxxxx: xxxxxxxx xxx|2018|Adventure,Action,Science Fiction|8.4
+xxxxxxxx: xxxxxxx|2019|Adventure,Science Fiction,Action|8.4

@@ -1,0 +1,14 @@
+xxx xxxxxx xxxxxxx|2010|DRAMA|7.8
+xxxxxxx|2011|DRAMAFANTASYROMANCE|5.5
+xx xxxx xxxxxx|2012|ACTIONCOMEDYCRIME|7.2
+xxx xxxx-xxxx xxxxxxxxxx|2012|COMEDYROMANCE|6.2
+xxxx xxx xxxxx|2014|ACTIONCRIMEDRAMATHRILLER|6.4
+xxxxx xxxxxx xx xxxx|2015|DRAMAROMANCETHRILLER|4.1
+xxxxx xxxx|2015|DRAMACRIMEHISTORY|6.9
+x xxxxxx xxxxxx|2015|CRIMEDRAMAMYSTERYTHRILLER|6.4
+xxx xx xx xxxxxx|2016|COMEDYROMANCE|6.0
+xxxxx xxxxxx xxxxxx|2017|DRAMAROMANCE|4.5
+xxxxx xxxxxx xxxxx|2018|DRAMAROMANCE|4.5
+xxx xxxxx xx xxx xx xxxxxx|2018|THRILLERDRAMAMYSTERYCRIME|7.1
+xxxxxxxx|2018|HORRORTHRILLER|6.7
+xxx xxxx xxxxxxxx|2021|DRAMA|6.7

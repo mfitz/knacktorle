@@ -1,0 +1,20 @@
+xxxxxxxxx xxxx xxx xxxxxxx|1994|Horror,Drama,Fantasy|7.5
+xxxxxxx xx xxx xxxx|1994|Adventure,Drama,Romance,War,Western|7.5
+xxxxx|1995|Crime,Mystery,Thriller|8.6
+xxxxxx xxxxxxx|1995|Science Fiction,Thriller,Mystery|8.0
+xxxxxxxx|1996|Crime,Drama,Thriller|7.5
+xxx xxxxx'x xxx|1997|Crime,Thriller,Drama|6.2
+xxxxx xxxxx xx xxxxx|1997|Adventure,Drama,History|7.1
+xxxx xxx xxxxx|1998|Fantasy,Drama,Romance|7.2
+xxx xxxxxxx|2001|Action,Comedy,Crime,Romance|6.1
+xxxxx'x xxxxxx|2001|Thriller,Crime|7.7
+xxxx|2004|Adventure,History,War,Action|7.3
+xxxxx'x xxxxxx|2004|Thriller,Crime|6.4
+xx. & xxx. xxxxx|2005|Action,Comedy,Drama,Thriller|6.5
+xxxxx'x xxxxxxxx|2007|Crime,Thriller|6.9
+xxx xxxxxxx xxxx xx xxxxxxxx xxxxxx|2008|Drama,Fantasy,Romance|7.8
+xxxxxxxxxxx xxxxxxxx|2009|Drama,Action,Thriller,War|8.3
+xxxxx xxx x|2013|Action,Drama,Horror,Science Fiction,Thriller|7.0
+xxxx|2014|War,Drama,Action|7.5
+xxxxxxxx x|2018|Action,Comedy,Adventure|7.7
+xxxx xxxx x xxxx… xx xxxxxxxxx|2019|Comedy,Drama,Thriller|7.6

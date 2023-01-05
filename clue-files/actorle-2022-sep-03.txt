@@ -1,0 +1,15 @@
+x xxxxx xxxxxx|2012|DRAMAHISTORYROMANCE|7.5
+xxxx xxxxxxxx|2012|DRAMAROMANCE|6.6
+xxx xxxxx xxxxxx|2013|DRAMATHRILLER|6.2
+xxxxxxxxx xx xxxxx|2014|HISTORYDRAMAWAR|7.2
+xxxxxxx xxx|2014|ADVENTUREFANTASY|5.5
+xxx xxxxxx xxxx|2015|DRAMA|7.1
+xx xxxxxxx|2015|DRAMASCIENCE FICTION|7.7
+xxx xxx xxxx x.x.x.x.x.|2015|COMEDYACTIONADVENTURE|7.2
+xxxxx|2015|DRAMA|6.6
+xxxxx xxxxxx|2016|ACTIONTHRILLER|6.6
+xxx xxxxx xxxxxxx xxxxxx|2016|DRAMAROMANCE|7.2
+xxxxx xxxxx|2017|DRAMAROMANCE|6.2
+xxxx xxxxxx|2018|ACTIONADVENTUREFANTASY|6.3
+xxx xxxxx xxxxxx|2021|ADVENTUREDRAMAFANTASY|6.6
+xxxx xxxxx|2021|DRAMA|7.1

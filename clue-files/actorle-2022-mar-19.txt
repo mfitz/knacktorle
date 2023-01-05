@@ -1,0 +1,19 @@
+xxxx xxxx xxxxxxx|1997|Drama|8.3
+xxxxxx xxxxxxx xxxx|1998|Drama,History,War|8.6
+xxxxx'x xxxxxx|2001|Thriller,Crime|7.7
+xxx xxxxxx xxxxxxxx|2002|Action,Drama,Mystery,Thriller|7.9
+xxx xxxxxx xxxxxxxxx|2004|Action,Drama,Thriller|7.7
+xxxxx'x xxxxxx|2004|Thriller,Crime|6.4
+xxx xxxxxxxx|2006|Drama,Thriller,Crime|8.5
+xxxxx'x xxxxxxxx|2007|Crime,Thriller|6.9
+xxx xxxxxx xxxxxxxxx|2007|Action,Drama,Mystery,Thriller|8.0
+xxxx xxxx|2010|Drama,Adventure,Western|7.6
+xxx xxxxxx xxxxxx|2012|Action,Thriller|6.6
+xxxxxxx|2013|Science Fiction,Action,Drama,Thriller|6.6
+xxxxxxxxxxxx|2014|Adventure,Drama,Science Fiction|8.6
+xxx xxxxxxx|2015|Drama,Adventure,Science Fiction|8.0
+xxxxx xxxxxx|2016|Action,Thriller|6.6
+xxx xxxxx xxxx|2016|Action,Adventure,Fantasy|5.9
+xxxx: xxxxxxxx|2017|Action,Adventure,Fantasy,Science Fiction|7.9
+xxxxxxxx x|2018|Action,Comedy,Adventure|7.7
+xxxx x xxxxxxx|2019|Drama,Action,History|8.1

@@ -1,0 +1,20 @@
+xxxxx xxx xxxxxx|1973|Action|7.6
+xxx xxxxxxxxxx xxx|1981|Action,Comedy|6.2
+xxxxxxxxxx xxx xx|1984|Action,Comedy|5.0
+xxxxxxxx|1989|Crime,Action,Comedy,Drama|6.9
+xxxx xxxx|1998|Action,Comedy,Crime|7.0
+xxxxxxxx xxxx|2000|Adventure,Action,Comedy,Western|6.6
+xxxx xxxx x|2001|Action,Comedy,Crime|6.6
+xxx xxxxxx|2002|Thriller,Action,Comedy,Science Fiction|5.4
+xxxxxxxx xxxxxxx|2003|Action,Adventure,Comedy,Western|6.2
+xxxxxx xxx xxxxx xx xx xxxx|2004|Action,Adventure,Comedy|5.8
+xxxx xxxx x|2007|Action,Comedy,Crime|6.2
+xxx xxxxxxxxx xxxxxxx|2008|Action,Adventure,Fantasy|6.5
+xxx xxx xxxx xxxx|2010|Action,Comedy,Family|5.4
+xxx xxxxxx xxx|2010|Action,Adventure,Drama,Family|6.2
+xxxxxxx xxxxxx|2012|Action,Adventure|6.0
+xxxxxx xxxxx: xxxxxxxx|2013|Action,Crime,Drama|5.9
+xxxxxx xxxxx|2015|Adventure,History|5.9
+xxxxxxxx xxxxxx|2016|Action,Comedy,War|5.7
+xxxx xx xxxx|2017|Comedy,Mystery,Action,Adventure|5.1
+xxx xxxxxxxxx|2017|Action,Thriller|7.0

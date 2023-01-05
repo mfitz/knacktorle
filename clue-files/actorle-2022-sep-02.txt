@@ -1,0 +1,30 @@
+xxxxx|1991|COMEDY|6.5
+xx xxxxxx xxxxx|1992|COMEDYCRIME|7.6
+xxxxxxx|1992|DRAMA|7.5
+xxxxxxx xxxxx|1993|COMEDYDRAMAROMANCE|6.8
+xxx xxxxx|1994|COMEDYDRAMA|6.6
+xxxx xxx|1994|ROMANCECOMEDY|6.5
+xxxx xxxxx|1995|CRIMECOMEDY|6.7
+xxxxx xx xxxxxxx xxxxx|1998|COMEDYDRAMA|6.6
+xxxx xxxxx xxxx|2000|COMEDYROMANCE|6.4
+xxxxxxx xxxx xxx...|2001|COMEDYROMANCE|6.0
+xxxxx xxxxxxxxxx|2003|COMEDY|6.2
+xxxxx|2004|COMEDYDRAMAROMANCE|6.2
+xxxx xxxx|2007|ACTIONADVENTURECOMEDY|5.8
+xxxxxx xxx xxxxx xxxxx xxx'xx xxxx|2007|CRIMEDRAMATHRILLER|7.3
+xxx xxxxxxxx|2008|DRAMAROMANCE|7.9
+xxx xxxxxxx xxxxxx|2011|CRIMEDRAMATHRILLER|7.3
+xxxxx, xxxxxx, xxxx.|2011|COMEDYDRAMAROMANCE|7.4
+xxx xxxx xx xxxxx|2011|DRAMA|7.1
+xxxxxxxx xxxxxxxx|2012|COMEDY|6.0
+xxxx xx xxxxxxx|2014|DRAMA|6.7
+xxx xxxxxxx|2014|ROMANCECOMEDY|6.3
+xxxxxxxxxx|2015|COMEDYDRAMAROMANCE|6.2
+xxxx xxx xxxxxxx|2015|COMEDYFAMILYDRAMA|5.7
+xxx xxx xxxxx|2015|COMEDYDRAMA|7.8
+xxxxxxx xxxxxxx: xxxxx xxx|2016|ADVENTUREACTIONSCIENCE FICTION|7.8
+xxxxxx-xxx: xxxxxxxxxx|2017|ACTIONADVENTURESCIENCE FICTIONDRAMA|7.4
+xxx xxxxx xxxxx|2018|HORRORACTIONTHRILLER|5.2
+xxxxxxxx: xxxxxxx|2019|ADVENTURESCIENCE FICTIONACTION|8.4
+xxxxxx-xxx: xxx xxxx xxxx|2019|ACTIONADVENTURESCIENCE FICTION|7.4
+xxxxxx-xxx: xx xxx xxxx|2021|ACTIONADVENTURESCIENCE FICTION|8.3

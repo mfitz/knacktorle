@@ -1,0 +1,20 @@
+xxxx xx xxxxxxx|1990|Adventure,Action,Drama|6.0
+xxx xxx xxxx|1992|Adventure,Drama,Romance,Western|6.6
+xxxxxx|1993|Thriller|6.4
+xxxxxx xxxxxxx|1995|Action,Crime,Fantasy|5.4
+xxx xxxxxxxxxx|1997|Action,Thriller|6.0
+xxxx xxxx xxxx|1999|Drama,Thriller,Mystery|7.5
+xxxxxx xxxxx!|2001|Drama,Romance,Music|7.6
+xxx xxxxxx|2001|Horror,Mystery,Thriller|7.6
+xxxxx xxxx|2002|Crime,Drama,Thriller|6.8
+xxxx xxxxxxxx|2003|Adventure,Drama,History,Romance|7.2
+xxx xxxxxxxx xxxxx|2004|Comedy,Science Fiction,Horror,Thriller|5.3
+xxx xxxxxxxxxxx|2005|Crime,Thriller|6.4
+xxxxxxxxx|2005|Comedy,Fantasy,Romance|4.8
+xxx xxxxxx xxxxxxx|2007|Adventure,Fantasy|6.1
+xxxxxxxxx|2008|Adventure,Drama,Romance|6.6
+xxxx xx xxxx xx|2011|Comedy,Romance|6.4
+xxxxxxxxxx|2014|Comedy,Adventure,Family|7.2
+xxxx|2016|Drama|8.0
+xxxxxxx|2018|Action,Adventure,Fantasy|6.8
+xxx xxxxxx|2019|Comedy,Drama|7.0

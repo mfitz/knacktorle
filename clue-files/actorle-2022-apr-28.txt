@@ -1,0 +1,20 @@
+xxxxxxxxx|1978|Horror,Thriller|7.7
+xxx xxx|1980|Horror|6.8
+xxxx xxxxx|1980|Horror,Thriller|5.3
+xxxxxx xxxx xxx xxxx|1981|Science Fiction,Action|7.1
+xxxxxxxxx xx|1981|Horror,Thriller|6.5
+xxxxxxx xxxxxx|1983|Comedy|7.5
+x xxxx xxxxxx xxxxx|1988|Comedy,Crime|7.5
+xx xxxx|1991|Comedy,Drama|6.9
+xxxxxxx xxxxx|1992|Adventure,Fantasy,Drama,Science Fiction,Romance|6.3
+xx xxxx x|1994|Comedy,Family|5.2
+xxxx xxxx|1994|Action,Thriller|7.3
+xxxxxx xxxx x.x.|1996|Action,Adventure,Science Fiction,Thriller|5.7
+xxxxxxxxx xxx: xx xxxxx xxxxx|1998|Horror,Thriller|5.8
+xxxxxxxxx: xxxxxxxxxxxx|2002|Horror,Thriller|3.9
+xxxxxx xxxxxx|2003|Comedy,Family,Romance,Fantasy|6.3
+xxxxxxx xxxxx xxxxxxxxx|2008|Comedy,Family,Adventure,Romance|3.9
+xxxxxxxxx|2018|Horror,Thriller|6.5
+xxxxxx xxx|2019|Comedy,Crime,Mystery|7.9
+xxxxxxxxx xxxxx|2021|Horror,Thriller|5.5
+xxxxxxxxxx xxxxxxxxxx xxx xx xxxx|2022|Action,Adventure,Science Fiction|8.4

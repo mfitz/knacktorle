@@ -1,0 +1,9 @@
+xxx xxxxxxx|1986|Adventure,Drama,Action|0.0
+xxxx xxxxxxx|1988|Thriller,Horror|0.0
+xxxxxxxx xx xxxxxxx|1990|Drama|0.0
+xxx xxxx: xxxx x xxxxxxxxx|1995|Action,Thriller|0.0
+xxx xxx xx xxx xxxx xxxx|1998|Adventure,Action,Drama|0.0
+xxxxxxxx & xxxxxxx|2000|Drama,Adventure,Fantasy|0.0
+xxxxxxxx|2005|Adventure,Comedy,Drama|0.0
+xxxxxx|2006|Fantasy,Action,Adventure|0.0
+xxxxxxxxx|2008|Drama,Western,Crime|0.0
