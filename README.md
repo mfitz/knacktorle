@@ -11,7 +11,9 @@ A command line application for solving [Actorle](https://actorle.com/), the dail
   - [The Selenium WebDriver](#the-selenium-web-driver)
 - [Grabbing the IMDb data](#grabbing-the-imdb-data)
 - [Running the Solver](#running-the-solver)
-  - [Offline Solving](#offline-solving)
+- [Offline Solving](#offline-solving)
+  - [Clues Files](#clues-files)
+    - [Creating Clues Files](#creating-clues-files)
 
 
 ## What is Actorle?
@@ -284,6 +286,97 @@ Options
 It should take in the order of 30 seconds to 1 minute to solve a daily puzzle, depending on how many clues the puzzle
 contains, how powerful your machine is, etc.
 
-### Offline Solving
-By default, Knacktorle will go and grab today's Actorle puzzle from over the web and solve it. It can also be used
-in an offline mode where the puzzle to solve is read in from a local file, rather than from the web.
+## Offline Solving
+By default, Knacktorle will grab today's Actorle puzzle from over the web and solve it. However, the solver can also be
+used in an offline mode where the puzzle to solve is read in from a local "clues file", rather than from the web. A
+number of clues files can be found in the `clue-files` directory.
+
+To solve an old puzzle from a local [clues file](#clues-files), use the `--clues-file` parameter, passing the path to
+the clues file you want to use:
+
+```bash
+python actorle_solver.py \
+--movies-file data/title.basics.tsv.gz \
+--performances-file data/title.principals.tsv.gz \
+--actors-file data/name.basics.tsv.gz \
+--clues-file clue-files/actorle-2022-jun-18.txt
+```
+
+### Clues Files
+Clues files use a simple proprietary, pipe-separated format:
+
+```bash
+<movie title pattern>|<movie release year>|<movie genre list>|<IMDb review score>
+```
+
+On reflection, a standard format like YAML or JSON would probably have been a better choice, but there you go. You
+can see examples of clues files for previous Actorle puzzles in the `clue-files` directory:
+
+```bash
+$ cat clue-files/actorle-2022-jun-18.txt
+
+xxx xxxxxxx xxx|2002|Adventure,Action,Thriller|6.1
+xxx xxxxxxxxx|2004|Drama,Romance|6.3
+xxxxx & xxxxxxxxx|2005|Drama,Romance|7.8
+xxxx|2005|Action,Horror,Science Fiction|5.2
+xxxxxxxx|2007|Thriller|7.2
+xxxxxxxxxx|2009|Science Fiction,Action,Thriller|6.3
+xx xxxxxxxxx|2009|Drama,Romance|7.3
+xxxx xx xxxxxxxx|2010|Comedy,Drama,History|7.1
+xxxxxx'x xxxxxxx|2010|Comedy,Drama|7.3
+xxxxxx xxxxxxx xxxxxx|2011|Crime,Adventure,Action,Comedy,Thriller|6.3
+xxx xxx xxxx|2011|Comedy|6.2
+xxxxx xx xxx xxxxxx|2012|Fantasy,Adventure|5.7
+xxxx xxxxxxx|2012|Crime,Drama,Thriller,Action|7.0
+xxx xxxxx'x xxx|2013|Comedy,Action,Science Fiction|6.9
+x xxxx xxx xxxx|2014|Comedy,Drama|6.3
+xxxx xxxx|2014|Mystery,Thriller,Drama|8.1
+x xxxxxx xxxxxxx|2016|Drama,History|6.8
+xxxxxxxx|2017|Western,Drama,History|7.2
+x xxxx xx xxxxxxx|2018|Thriller,Drama,Crime|5.8
+```
+
+Formatted for clarity:
+
+```bash
+$ cat clue-files/actorle-2022-jun-18.txt | column -ts '|'
+
+xxx xxxxxxx xxx        2002  Adventure,Action,Thriller               6.1
+xxx xxxxxxxxx          2004  Drama,Romance                           6.3
+xxxxx & xxxxxxxxx      2005  Drama,Romance                           7.8
+xxxx                   2005  Action,Horror,Science Fiction           5.2
+xxxxxxxx               2007  Thriller                                7.2
+xxxxxxxxxx             2009  Science Fiction,Action,Thriller         6.3
+xx xxxxxxxxx           2009  Drama,Romance                           7.3
+xxxx xx xxxxxxxx       2010  Comedy,Drama,History                    7.1
+xxxxxx'x xxxxxxx       2010  Comedy,Drama                            7.3
+xxxxxx xxxxxxx xxxxxx  2011  Crime,Adventure,Action,Comedy,Thriller  6.3
+xxx xxx xxxx           2011  Comedy                                  6.2
+xxxxx xx xxx xxxxxx    2012  Fantasy,Adventure                       5.7
+xxxx xxxxxxx           2012  Crime,Drama,Thriller,Action             7.0
+xxx xxxxx'x xxx        2013  Comedy,Action,Science Fiction           6.9
+x xxxx xxx xxxx        2014  Comedy,Drama                            6.3
+xxxx xxxx              2014  Mystery,Thriller,Drama                  8.1
+x xxxxxx xxxxxxx       2016  Drama,History                           6.8
+xxxxxxxx               2017  Western,Drama,History                   7.2
+x xxxx xx xxxxxxx      2018  Thriller,Drama,Crime                    5.8
+```
+
+### Creating Clues Files
+There is nothing to stop you from manually creating clues files, but that is very tedious. There are a couple of ways
+to automate the process:
+
+#### 1 - Persisting today's clues
+Use the `--write-clues-file` parameter when solving today's puzzle to persist the clues to a local file for later use:
+```bash
+python actorle_solver.py \
+--movies-file data/title.basics.tsv.gz \
+--performances-file data/title.principals.tsv.gz \
+--actors-file data/name.basics.tsv.gz \
+--write-clues-file /some/path/actorle-YYYY-MM-DD.txt
+```
+
+#### 2 - Janky semi-automated process
+Describe the glorious hackiness here.
+
+
