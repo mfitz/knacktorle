@@ -23,7 +23,7 @@ films the target actor has appeared in alongside that actor. It's a fun game fo
 
 <kbd><img src="actorle-screenshot.png" width="650"/></kbd>
 
-Knacktorle is an awkwardly-named command line tool for solving Actorle puzzles in a single guess. It searches
+**Knacktorle** is an awkwardly-named command line tool for solving Actorle puzzles in a single guess. It searches
 [local IMDb data files](#geting-the-imdb-data) read in at runtime:
 
 [![asciicast](https://asciinema.org/a/549538.svg)](https://asciinema.org/a/549538)
