@@ -4,16 +4,17 @@ A command line application for solving [Actorle](https://actorle.com/), the dail
 
 ## Contents
 
-- [Introduction](#introduction)
+- [What is Actorle?](#what-is-actorle)
+- [What is Knacktorle?](#what-is-knacktorle)
 - [Prerequisites](#prerequisites)
 - [Installing](#installing)
   - [The Selenium WebDriver](#the-selenium-web-driver)
-- [Getting the IMDb data](#getting-the-imdb-data)
+- [Grabbing the IMDb data](#grabbing-the-imdb-data)
 - [Running the Solver](#running-the-solver)
   - [Offline Solving](#offline-solving)
 
 
-## Introduction
+## What is Actorle?
 [Actorle](https://actorle.com/) is a daily puzzle where you guess the name of an actor from clues about a selection of
 films they have appeared in. Inspired by the ubiquitous [Wordle](https://www.nytimes.com/games/wordle/index.html),
 incorrect guesses bring you closer to the correct answer by revealing new information. In the case of Wordle, that new
@@ -23,8 +24,12 @@ films the target actor has appeared in alongside that actor. It's a fun game fo
 
 <kbd><img src="actorle-screenshot.png" width="650"/></kbd>
 
-**Knacktorle** is an awkwardly-named command line tool for solving Actorle puzzles in a single guess. It searches
-[local IMDb data files](#geting-the-imdb-data) read in at runtime:
+
+## What is Knacktorle?
+**Knacktorle** is an awkwardly-named command line tool for solving Actorle puzzles in a single guess. It solves puzzles
+by searching against [local IMDb data files](#geting-the-imdb-data) read in at runtime.
+
+See it in action:
 
 [![asciicast](https://asciinema.org/a/549538.svg)](https://asciinema.org/a/549538)
 
@@ -36,10 +41,10 @@ films the target actor has appeared in alongside that actor. It's a fun game fo
 
 
 ## Installing
-Using a Python virtual environment is
+Installing into a Python virtual environment is
 [generally a good idea](https://towardsdatascience.com/why-you-should-use-a-virtual-environment-for-every-python-project-c17dab3b0fd0).
-I highly recommend [PyEnv](https://github.com/pyenv/pyenv) for managing Python virtual environments, or you could go
-low tech and do something like:
+I highly recommend [PyEnv](https://github.com/pyenv/pyenv) for managing different Python versions and virtual
+environments, or you could go low tech and do something like:
 
 ```bash
  $ python3 -m venv venv
@@ -80,12 +85,12 @@ today's puzzle. The relevant lines look like this for Chrome:
 You should be able to replace them with the equivalent code for whatever non-Chrome driver you are using.
 
 
-## Getting the IMDb data
+## Grabbing the IMDb data
 For non-commercial hacking, IMDb provide a regularly updated [data dump](https://www.imdb.com/interfaces/) of a subset
 of their database, in compressed TSV files. Knacktorle uses 3 of these files to solve puzzles.
 
 The script `imdb_data_grabber.py` is a tool for downloading these files to a local directory and then filtering out
-extraneous data (e.g. data about TV shows, rather than movies, or camera operators rather than actors) to minimise the
+extraneous data (e.g. data about TV shows rather than movies, or camera operators rather than actors) to minimise the
 file sizes. This filtering reduces the overall data size from `c.800MB` to `c.280MB`.
 
 ```bash
@@ -177,7 +182,11 @@ $ python actorle_solver.py \
 --movies-file data/title.basics.tsv.gz \
 --performances-file data/title.principals.tsv.gz \
 --actors-file data/name.basics.tsv.gz
+```
 
+The console output looks like this:
+
+```bash
 Requesting https://actorle.com/ via selenium
 Retrieved a web page with the title 'Actorle | the actor guessing game'
 Found 30 clues for the puzzle from 2023-01-05:
@@ -222,7 +231,9 @@ Read in data on 21126939 performances
 
 Working through the clues...
 ----------------------------
+
 ...
+
 Made a list of 5157 individual movie performances from all the clues
 Actor IDs occurring most often across all possible candidate movies:[('nm0000128', 24), ('nm1428724', 4), ('nm0033245', 4)]
 Converting actor IDs to names using data/name.basics.tsv.gz
@@ -274,3 +285,5 @@ It should take in the order of 30 seconds to 1 minute to solve a daily puzzle, d
 contains, how powerful your machine is, etc.
 
 ### Offline Solving
+By default, Knacktorle will go and grab today's Actorle puzzle from over the web and solve it. It can also be used
+in an offline mode where the puzzle to solve is read in from a local file, rather than from the web.
