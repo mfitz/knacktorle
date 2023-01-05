@@ -60,11 +60,11 @@ local web browser so that _it_ can grab the page, execute the JS that builds the
 access to the generated HTML so that I can parse the clues from it.
 
 Although this approach works nicely, it also makes the dependencies a bit non-deterministic. Ideally you should be able
-to `pip install  -r requirements.txt` into your env, and be able to run the app in exactly the same way I can on my
+to `pip install -r requirements.txt` into your env, and be able to run the app in exactly the same way I can on my
 machine. If by some coincidence you happen to be using Chrome and at the exact same version as me, this _will_ be the
 case, but that seems unlikely. If you are running Chrome, you will need to check your Chrome version (`Chrome` >
 `About Google Chrome`) and `pip install` the matching `chromedriver-py` version - look
-[here](https://pypi.org/project/chromedriver-py/) to find the version that matches your local Chrome. 
+[here](https://pypi.org/project/chromedriver-py/#history) to find the version that matches your local Chrome.
 
 If you're using a different browser, you will need to `pip install` the Python bindings for it, and possibly also the
 underlying driver; see the instructions on the [`selenium` package](https://pypi.org/project/selenium/) page at PyPI.
