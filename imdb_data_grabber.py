@@ -51,7 +51,7 @@ def filter_movies_file(movies_file_path):
     print("\tFiltering {}".format(movies_file_path))
     movies_data_frame = pd.read_csv(movies_file_path, sep='\t')
 
-    print("\tRead in {} movies - filtering out non-movies...".format(movies_data_frame.shape[0]))
+    print("\tRead in {} rows - filtering out non-movies...".format(movies_data_frame.shape[0]))
     movies_data_frame = movies_data_frame[movies_data_frame.titleType == "movie"]
     print("\tFiltered down to {} movie movies, writing new file to {}".format(movies_data_frame.shape[0],
                                                                               movies_file_path))
@@ -64,11 +64,10 @@ def filter_actors_file(actors_file_path):
     print("\tFiltering {}".format(actors_file_path))
     actors_data_frame = pd.read_csv(actors_file_path, sep='\t')
 
-    print("\tRead in {} people - filtering out non-actors...".format(actors_data_frame.shape[0]))
+    print("\tRead in {} rows - filtering out non-actors...".format(actors_data_frame.shape[0]))
     actors_data_frame = actors_data_frame[(actors_data_frame.primaryProfession.str.contains("actor")) |
                                           (actors_data_frame.primaryProfession.str.contains("actress"))]
-    print("\tFiltered down to {} actors, writing new file to {}".format(actors_data_frame.shape[0],
-                                                                              actors_file_path))
+    print("\tFiltered down to {} actors, writing new file to {}".format(actors_data_frame.shape[0], actors_file_path))
 
     actors_data_frame.to_csv(actors_file_path, sep='\t', compression='gzip', index=False)
     print("\tWritten filtered file to {}".format(actors_file_path))
@@ -78,7 +77,7 @@ def filter_performances_file(performances_file_path):
     print("\tFiltering {}".format(performances_file_path))
     performances_data_frame = pd.read_csv(performances_file_path, sep='\t')
 
-    print("\tRead in {} performances - filtering out non-acting categories...".format(performances_data_frame.shape[0]))
+    print("\tRead in {} rows - filtering out non-acting categories...".format(performances_data_frame.shape[0]))
     performances_data_frame = \
         performances_data_frame[(performances_data_frame.category == "actor") |
                                 (performances_data_frame.category == "actress")]
