@@ -290,7 +290,7 @@ By default, Knacktorle will grab today's Actorle puzzle from over the web and so
 used in an offline mode where the puzzle to solve is read in from a local "clues file", rather than from the web. A
 number of clues files can be found in the `clues-files` directory.
 
-To solve an old puzzle from a local [clues file](#clues-file-format), use the `--clues-file` parameter, passing the
+To solve a puzzle from a local [clues file](#clues-file-format), use the `--clues-file` parameter, passing the
 path to the clues file you want to use:
 
 ```bash
@@ -385,5 +385,45 @@ archive puzzle you want at https://actorle.com/archive/, inspecting the page, th
 and `Copy` > `Copy element` in the Chrome console) and pasting the `<table>` tag in the HTML into a text file. You
 can then transform that file into a clues file using the `actorle_file_transformer.py` script, which takes the path to
 the file as its single argument and modifies the file in place.
+
+```bash
+python actorle_file_transformer.py clues-files/actorle-2022-dec-15.txt
+
+Tranforming the raw actorle file at clues-files/actorle-2022-dec-15.txt
+
+The transformed content looks like:
+'xxx xx xxxx|1989|Crime,Drama,Romance,Mystery,Thriller|6.8
+xxxxxx|1989|Fantasy,Romance,Drama|6.4
+xxx xxxxxxxxxxx|1994|Fantasy,Comedy,Family|5.0
+xxx xxx xxxxxxxx|1998|Comedy,Crime|8.1
+xxxxxx xxxx|2000|Comedy,Drama,Music,Romance|5.7
+x xxxxxxx, xxxxx xxx xxxx?|2000|Adventure,Comedy,Crime|7.7
+xxx xxxxxxx'x xxx xxxxxx|2000|Adventure,Animation,Comedy,Family,Fantasy|7.4
+xxxxxxxx, xxx.|2001|Animation,Comedy,Family|8.1
+xxx xxxxxx xxxx x|2003|Family,Animation,Adventure|5.3
+xxxx|2006|Animation,Adventure,Comedy,Family|7.2
+xxxx xxxxxxxx|2007|Fantasy,Comedy,Family|5.4
+xxx xxxxx|2007|Family,Animation,Adventure,Comedy|6.1
+xxxxx xxxxx|2008|Family,Action,Adventure,Comedy|6.0
+xxxxxxxxxxx xx x xxxxxxxxxx|2009|Comedy,Romance|5.8
+xxx xxxxxxxx xxx xxx xxxx|2009|Romance,Family,Animation|7.1
+xxx xxxxxx|2011|Drama,Comedy,Romance|7.9
+xxxxxxxxx xxxx & xxxxxxxxxx xxxxx|2011|Drama|6.9
+xxxx|2012|Drama,Thriller|7.7
+xxxxxxxxxx|2012|Family,Animation,Adventure,Comedy|7.0
+xxx xxxxxxxx|2012|Comedy|6.1
+xxxxxx|2012|Drama|7.3
+xxx xxxxxxxx xxxx xxx|2013|Comedy|5.8
+xxxxxxxx xxxxxxxxxx|2013|Animation,Family|7.2
+xxx xxxxxxxxx xxx|2014|War,Drama,History,Action|6.1
+xxxxxxxxxxxx: xxx xx xxxxxxxxxx|2014|Science Fiction,Action,Adventure|5.6
+xx xxxxxxxxxxx xxxx|2016|Thriller,Science Fiction,Drama,Horror|7.2
+xxxx: xxxxx xxxxxx|2017|Action,Adventure,Fantasy|6.6
+xxxxxxxxxxxx: xxx xxxx xxxxxx|2017|Action,Adventure,Science Fiction|5.2
+xxxxxxxx xxx xxx xxxx xx x xxxxxxxx xxxxxxx|2017|Adventure,Science Fiction,Action|6.4
+xxxxxx xxxxxx|2017|Action,Thriller|6.7'
+
+Transformed the raw actorle file at clues-files/actorle-2022-dec-15.txt
+```
 
 
