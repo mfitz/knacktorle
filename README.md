@@ -134,6 +134,8 @@ For convenience, this repo contains a `.gitignored` `data` directory for the pur
 You can choose a different location if you want - just pass it as the `--output-dir` parameter. The directory must
 already exist.
 
+**Data licencing information**: Information courtesy of IMDb(https://www.imdb.com). Used with permission.
+
 ## Running the Solver
 The solver is a simple command line application with a discoverable set of parameters:
 
