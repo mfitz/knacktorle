@@ -56,9 +56,10 @@ environments, or you could go low tech and do something like:
 ### The Selenium Web Driver
 Unfortunately, we cannot just use a standard HTTP client like [`requests`](https://requests.readthedocs.io/en/latest/)
 to grab the puzzle of the day from https://actorle.com/ and then parse the clues out of the page using something like
-[Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/). When you request that Actorle URL, all you get back
-in the response entity body is a big ol' bunch o' JavaScript - see for yourself: `curl -vk "https://actorle.com/"`.
-Something has to interpret that JavaScript in order to generate the HTML we want to parse the clues out of.
+[Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/). When you request that Actorle URL, what you get back
+in the response entity body is a big ol' bunch o' JavaScript, some HTML, but no actual puzzle - see for yourself:
+`curl -vk "https://actorle.com/"`. Something has to interpret that JavaScript in order to generate the puzzle HTML we
+want to parse the clues out of.
 
 Rather than trying to run a JS engine in Python, I opted to use the Python client library for
 [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/) to programmatically control my
