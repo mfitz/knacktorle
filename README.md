@@ -28,7 +28,7 @@ films the target actor has appeared in alongside that actor. It's a fun game fo
 
 ## What is Knacktorle?
 **Knacktorle** is an awkwardly-named command line tool for solving Actorle puzzles in a single guess. It solves puzzles
-by searching against [local IMDb data files](#geting-the-imdb-data) read in at runtime.
+by searching against [local IMDb data files](#grabbing-the-imdb-data) read in at runtime.
 
 See it in action:
 
@@ -78,10 +78,10 @@ You will also need to slightly tweak the code in `actorle_solver.py` that is res
 today's puzzle. The relevant lines look like this for Chrome:
 
 ```python
-    service_object = Service(binary_path)
-    driver_options = Options()
-    driver_options.headless = True
-    driver = webdriver.Chrome(service=service_object, options=driver_options)
+service_object = Service(binary_path)
+driver_options = Options()
+driver_options.headless = True
+driver = webdriver.Chrome(service=service_object, options=driver_options)
 ```
 You should be able to replace them with the equivalent code for whatever non-Chrome driver you are using.
 
@@ -375,7 +375,15 @@ python actorle_solver.py \
 --write-clues-file /some/path/actorle-YYYY-MM-DD.txt
 ```
 
-#### 2 - Janky semi-automated process
-Describe the glorious hackiness here.
+#### 2 - Janky semi-automated process for achived puzzles
+Actorle provides an [archive](https://actorle.com/archive/) of previous puzzles, so you can play them at any time once
+they've been the daily puzzle at some point. It would be nice to have the solver take a date parameter and go and fetch
+puzzles to solve from this archive, but I've not built that yet.
+
+In the meantime, you can turn archived puzzles into clues files in a hacky semi-automated way by browsing to the
+archive puzzle you want at https://actorle.com/archive/, inspecting the page, then copying (right click on the element,
+and `Copy` > `Copy element` in the Chrome console) and pasting the `<table>` tag in the HTML into a text file. You
+can then transform that file into a clues file using the `actorle_file_transformer.py` script, which takes the path to
+the file as its single argument and modifies the file in place.
 
 
