@@ -12,7 +12,7 @@ from actorle_solver import SmartFormatter
 
 
 def parse_args():
-    arg_parser = argparse.ArgumentParser(description="Download and/or filter data files from "
+    arg_parser = argparse.ArgumentParser(description="Download and filter data files from "
                                                      "https://datasets.imdbws.com. The files to be grabbed are: "
                                                      "title.basics.tsv.gz, "
                                                      "title.principals.tsv.gz, "
