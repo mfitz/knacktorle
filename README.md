@@ -1,6 +1,8 @@
 # KNACKTORLE
 
-A command line application for solving [Actorle](https://actorle.com/), the daily actor guessing game.
+A command line application for solving [Actorle](https://actorle.com/), the daily actor guessing game. The origins and
+design of this tool and the data it uses are discussed at length on
+[Medium](https://medium.com/@michaeldfitzmaurice/solving-actorle-with-python-9f45d248e53f).
 
 ## Contents
 
