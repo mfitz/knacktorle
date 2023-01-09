@@ -395,8 +395,7 @@ and fetch the corresponding archived puzzle to solve, but I've not built that ye
 
 In the meantime, you can turn archived puzzles (or even the current daily puzzle) into clues files in a hacky
 semi-automated way by browsing to the archive puzzle you want at https://actorle.com/archive/, inspecting the page,
-then copying (right click on the element, and `Copy` > `Copy element` in the Chrome console) and pasting the `<table>`
-tag in the HTML into a text file.
+then copy/pasting the `<table>` tag in the HTML into a text file.
 
 <kbd><img src="copying-puzzle-html.png" width="650"/></kbd>
 
