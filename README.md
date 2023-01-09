@@ -142,7 +142,7 @@ downloader. The directory you want to download to must already exist.
 
 Please note the
 [non-commercial licensing terms](https://help.imdb.com/article/imdb/general-information/can-i-use-imdb-data-in-my-software/G5JTRESSHJBBHTGX?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=de9c4790-0da4-42eb-81f4-eae1a2add3f4&pf_rd_r=RFAVX0MDYK6SVCRJBVNY&pf_rd_s=center-1&pf_rd_t=60601&pf_rd_i=interfaces&ref_=fea_mn_lk1#)
-of the IMDB data.
+of the IMDb data.
 
 **Data licencing information**: Information courtesy of IMDb(https://www.imdb.com). Used with permission.
 
@@ -291,9 +291,9 @@ Here are some Russell Crowe film roles that match the movie titles in the clues:
 
     Options
     ----------------
-	Russell Crowe is 75.00% likely
-	Indrans is 12.50% likely
-	Mala Aravindan is 12.50% likely
+    Russell Crowe is 75.00% likely
+    Indrans is 12.50% likely
+    Mala Aravindan is 12.50% likely
 ```
 
 It should take around 20 seconds to solve a daily puzzle, depending on how many clues the puzzle
@@ -302,7 +302,7 @@ contains, how powerful your machine is, etc.
 ## Offline Solving
 By default, Knacktorle will grab today's Actorle puzzle from over the web and solve it. The solver can also be
 used in an offline mode where the puzzle to solve is read in from a local [`clues file`](#clues-file-format), rather
-than from the web. A number of clues files can be found in the `clues-files` directory.
+than from the web. A number of such files can be found in the `clues-files` directory.
 
 To solve a puzzle in offline mode, pass the path to the clues file you want to use via the `--clues-file` parameter:
 
