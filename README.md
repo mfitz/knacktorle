@@ -1,7 +1,7 @@
 # KNACKTORLE
 
 A command line application for solving [Actorle](https://actorle.com/), the daily actor guessing game. The origins and
-design of this tool and details about the data it uses are discussed on
+design of this tool, and some details about the data it uses are discussed on
 [Medium](https://medium.com/@michaeldfitzmaurice/solving-actorle-with-python-9f45d248e53f).
 
 ## Contents
@@ -22,7 +22,7 @@ actor who appeared in all of them.
 
 Inspired by the ubiquitous [Wordle](https://www.nytimes.com/games/wordle/index.html),
 incorrect guesses bring you closer to the correct answer by revealing new information. In the case of Wordle, that new
-information confirms or eliminates letters from the search space; in Actorle an incorrect guess reveals whether the
+information confirms or eliminates letters from the search space. In Actorle, an incorrect guess reveals whether the
 actor you're looking for is older or younger than the one you've just guessed, and will also uncover the names of any
 films amongst the clues where the target actor has appeared alongside that actor. It's a fun game for any movie buff.
 
@@ -137,8 +137,12 @@ total 274536
 ```
 
 For convenience, this repo contains a `.gitignored` `data` directory for the purpose of holding these IMDb data files.
-You can choose a different location if you want - just pass it as the `--output-dir` parameter. The directory must
-already exist.
+You can choose a different location if you want - just pass it as the `--output-dir` parameter when you run the
+downloader. The directory you want to download to must already exist.
+
+Please note the
+[non-commercial licensing terms](https://help.imdb.com/article/imdb/general-information/can-i-use-imdb-data-in-my-software/G5JTRESSHJBBHTGX?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=de9c4790-0da4-42eb-81f4-eae1a2add3f4&pf_rd_r=RFAVX0MDYK6SVCRJBVNY&pf_rd_s=center-1&pf_rd_t=60601&pf_rd_i=interfaces&ref_=fea_mn_lk1#)
+of the IMDB data.
 
 **Data licencing information**: Information courtesy of IMDb(https://www.imdb.com). Used with permission.
 
@@ -147,6 +151,7 @@ The solver is a simple command line application with a discoverable set of param
 
 ```bash
 $ python actorle_solver.py --help
+
 usage: actorle_solver.py [-h] -mf MOVIES_FILE -af ACTORS_FILE -pf PERFORMANCES_FILE [-cf CLUES_FILE] [-w WRITE_CLUES_FILE]
 
 Solve an Actorle puzzle. Today's puzzle will be retrieved from https://actorle.com/ and solved, unless a different puzzle is specified using
@@ -299,8 +304,7 @@ By default, Knacktorle will grab today's Actorle puzzle from over the web and so
 used in an offline mode where the puzzle to solve is read in from a local [`clues file`](#clues-file-format), rather
 than from the web. A number of clues files can be found in the `clues-files` directory.
 
-To solve a puzzle from a clues file, use the `--clues-file` parameter, passing the
-path to the clues file you want to use:
+To solve a puzzle in offline mode, pass the path to the clues file you want to use via the `--clues-file` parameter:
 
 ```bash
 python actorle_solver.py \
@@ -397,7 +401,7 @@ tag in the HTML into a text file.
 <kbd><img src="copying-puzzle-html.png" width="650"/></kbd>
 
 You can then transform the HTML fragments in that file into a clues file using the `actorle_file_transformer.py`
-script, which takes the path to the file as its single argument and modifies the file in place.
+script, which takes the path to the file as its single argument and modifies the file in place:
 
 ```bash
 python actorle_file_transformer.py clues-files/actorle-2022-dec-15.txt
