@@ -1,7 +1,7 @@
 # KNACKTORLE
 
 A command line application for solving [Actorle](https://actorle.com/), the daily actor guessing game. The origins and
-design of this tool and details abou the data it uses are discussed on
+design of this tool and details about the data it uses are discussed on
 [Medium](https://medium.com/@michaeldfitzmaurice/solving-actorle-with-python-9f45d248e53f).
 
 ## Contents
@@ -10,20 +10,21 @@ design of this tool and details abou the data it uses are discussed on
 - [What is Knacktorle?](#what-is-knacktorle)
 - [Prerequisites](#prerequisites)
 - [Installing](#installing)
-  - [The Selenium WebDriver](#the-selenium-web-driver)
 - [Grabbing the IMDb data](#grabbing-the-imdb-data)
 - [Running the Solver](#running-the-solver)
 - [Offline Solving](#offline-solving)
-  - [Clues Files](#clues-file-format)
 
 
 ## What is Actorle?
 [Actorle](https://actorle.com/) is a daily puzzle where you guess the name of an actor from clues about a selection of
-films they have appeared in. Inspired by the ubiquitous [Wordle](https://www.nytimes.com/games/wordle/index.html),
+films they have appeared in. You need to figure out enough of the movies that you can find the common element — an
+actor who appeared in all of them.
+
+Inspired by the ubiquitous [Wordle](https://www.nytimes.com/games/wordle/index.html),
 incorrect guesses bring you closer to the correct answer by revealing new information. In the case of Wordle, that new
 information confirms or eliminates letters from the search space; in Actorle an incorrect guess reveals whether the
 actor you're looking for is older or younger than the one you've just guessed, and will also uncover the names of any
-films the target actor has appeared in alongside that actor. It's a fun game for any movie buff.
+films amongst the clues where the target actor has appeared alongside that actor. It's a fun game for any movie buff.
 
 <kbd><img src="actorle-screenshot.png" width="650"/></kbd>
 
@@ -40,7 +41,8 @@ See it in action:
 ## Prerequisites
 - Python 3.8.1 or greater (_probably_ works with other Python 3 versions, but `3.8.1` is the only one I've used with it)
 - A local web browser (I use Chrome) that can be driven by [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)
-- At least 600 MBs of disk space for the IMDb data files
+- About 600MB of disk space to be used when downloading and pre-processing the IMDb dataset (once
+pre-processing is complete the data uses far less space, more like 135MB)
 
 
 ## Installing
@@ -95,7 +97,7 @@ of their database, in compressed TSV files. Knacktorle uses 3 of these files to 
 
 The script `imdb_data_grabber.py` is a tool for downloading these files to a local directory and then filtering out
 extraneous data (e.g. data about TV shows rather than movies, or camera operators rather than actors) to minimise the
-file sizes. This filtering reduces the overall data size from `c.800MB` to `c.120MB`.
+file sizes. This filtering reduces the overall data size from `c.800MB` to `c.135MB`.
 
 ```bash
 $ python imdb_data_grabber.py --output-dir data
@@ -127,11 +129,11 @@ Looking for /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
 ```
 
 ```bash
-$ ls -tlh data
-total 618600
--rw-r--r--  1 mickyfitz  staff   180M  5 Jan 03:09 title.principals.tsv.gz
--rw-r--r--  1 mickyfitz  staff    85M  5 Jan 03:05 name.basics.tsv.gz
--rw-r--r--  1 mickyfitz  staff    13M  5 Jan 03:03 title.basics.tsv.gz
+$ ls -lth data
+total 274536
+-rw-r--r--  1 mickyfitz  staff    85M  9 Jan 20:41 name.basics.tsv.gz
+-rw-r--r--  1 mickyfitz  staff    24M  9 Jan 20:39 title.principals.tsv.gz
+-rw-r--r--  1 mickyfitz  staff    13M  9 Jan 20:37 title.basics.tsv.gz
 ```
 
 For convenience, this repo contains a `.gitignored` `data` directory for the purpose of holding these IMDb data files.
@@ -282,22 +284,22 @@ Here are some Russell Crowe film roles that match the movie titles in the clues:
 28                                         Unhinged  2020                ["Man"]
 29                                       Poker Face  2022         ["Jake Foley"]
 
-Options
-----------------
+    Options
+    ----------------
 	Russell Crowe is 75.00% likely
 	Indrans is 12.50% likely
 	Mala Aravindan is 12.50% likely
 ```
 
-It should take in the order of 30 seconds to 1 minute to solve a daily puzzle, depending on how many clues the puzzle
+It should take around 20 seconds to solve a daily puzzle, depending on how many clues the puzzle
 contains, how powerful your machine is, etc.
 
 ## Offline Solving
-By default, Knacktorle will grab today's Actorle puzzle from over the web and solve it. However, the solver can also be
-used in an offline mode where the puzzle to solve is read in from a local "clues file", rather than from the web. A
-number of clues files can be found in the `clues-files` directory.
+By default, Knacktorle will grab today's Actorle puzzle from over the web and solve it. The solver can also be
+used in an offline mode where the puzzle to solve is read in from a local [`clues file`](#clues-file-format), rather
+than from the web. A number of clues files can be found in the `clues-files` directory.
 
-To solve a puzzle from a local [clues file](#clues-file-format), use the `--clues-file` parameter, passing the
+To solve a puzzle from a clues file, use the `--clues-file` parameter, passing the
 path to the clues file you want to use:
 
 ```bash
@@ -384,14 +386,18 @@ python actorle_solver.py \
 
 #### 2 - Janky semi-automated process for achived puzzles
 Actorle provides an [archive](https://actorle.com/archive/) of previous puzzles, so you can play them at any time once
-they've been the daily puzzle at some point. It would be nice to have the solver take a date parameter and go and fetch
-puzzles to solve from this archive, but I've not built that yet.
+they've been the daily puzzle at some point. It would be nice to have the solver take an optional date parameter and go
+and fetch the corresponding archived puzzle to solve, but I've not built that yet.
 
-In the meantime, you can turn archived puzzles into clues files in a hacky semi-automated way by browsing to the
-archive puzzle you want at https://actorle.com/archive/, inspecting the page, then copying (right click on the element,
-and `Copy` > `Copy element` in the Chrome console) and pasting the `<table>` tag in the HTML into a text file. You
-can then transform that file into a clues file using the `actorle_file_transformer.py` script, which takes the path to
-the file as its single argument and modifies the file in place.
+In the meantime, you can turn archived puzzles (or even the current daily puzzle) into clues files in a hacky
+semi-automated way by browsing to the archive puzzle you want at https://actorle.com/archive/, inspecting the page,
+then copying (right click on the element, and `Copy` > `Copy element` in the Chrome console) and pasting the `<table>`
+tag in the HTML into a text file.
+
+<kbd><img src="copying-puzzle-html.png" width="650"/></kbd>
+
+You can then transform the HTML fragments in that file into a clues file using the `actorle_file_transformer.py`
+script, which takes the path to the file as its single argument and modifies the file in place.
 
 ```bash
 python actorle_file_transformer.py clues-files/actorle-2022-dec-15.txt
