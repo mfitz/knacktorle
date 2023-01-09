@@ -1,7 +1,7 @@
 # KNACKTORLE
 
 A command line application for solving [Actorle](https://actorle.com/), the daily actor guessing game. The origins and
-design of this tool and the data it uses are discussed at length on
+design of this tool and details abou the data it uses are discussed on
 [Medium](https://medium.com/@michaeldfitzmaurice/solving-actorle-with-python-9f45d248e53f).
 
 ## Contents
@@ -100,28 +100,30 @@ file sizes. This filtering reduces the overall data size from `c.800MB` to `c.28
 ```bash
 $ python imdb_data_grabber.py --output-dir data
 
-Updating IMDb data files in data
+Updating IMDb data files in data directory
 -----------------------------------
-	Looking for /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz
+Looking for /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz
 	/Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz Not found
 	Filtering /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz
-	Read in 9498164 movies - filtering out non-movies...
-	Filtered down to 631295 movie movies, writing new file to /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz
+	Read in 9,507,323 rows - filtering out non-movies...
+	Filtered down to 631,577 movie titles, writing new file to /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz
 	Written filtered file to /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz
 -----------------------------------
-	Looking for /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
-	/Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz Not found
-	Filtering /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
-	Read in 12197006 people - filtering out non-actors...
-	Filtered down to 4464077 actors, writing new file to /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
-	Written filtered file to /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
------------------------------------
-	Looking for /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz
+Looking for /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz
 	/Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz Not found
 	Filtering /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz
-	Read in 53909190 performances - filtering out non-acting categories...
-	Filtered down to 21126939 movie performances - writing new file out to /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz
+	Read in 53,995,165 rows - filtering out non-acting categories...
+	Removed non-acting categories - we now have 21,161,350 rows
+	Filtering out performances in non-movies using movies dataframe containing 631,577 movies
+	Filtered down to 1,963,537 movie performances - writing new file out to /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz
 	Finished writing filtered file to /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz
+-----------------------------------
+Looking for /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
+	/Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz Not found
+	Filtering /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
+	Read in 12,210,101 rows - filtering out non-actors...
+	Filtered down to 4,468,107 actors, writing new file to /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
+	Written filtered file to /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
 ```
 
 ```bash
