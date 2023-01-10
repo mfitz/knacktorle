@@ -1,0 +1,30 @@
+xxxxxxx xxxxxxx|1988|DRAMAHISTORYROMANCE|7.2
+xxxxxx xx xxxxxxxx|1990|DRAMACOMEDYHISTORYROMANCE|7.5
+xxxxx xxxx|1990|COMEDYDRAMAROMANCE|6.3
+xxxx: xxxxxxxx xx xxxxxxxx|1992|ACTIONADVENTUREDRAMAHISTORY|6.4
+xxx xxxxxxxx xx xxx xxxx|1995|DRAMAROMANCE|7.0
+xxx xxx xx xxx xxxx xxxx|1998|ADVENTUREACTIONDRAMA|6.5
+xxxxxxx & xxxxxx xxxx xx xxxxxx|1999|FAMILYADVENTURECOMEDYFANTASY|5.9
+xxx xxxxxxxxxx|2000|FAMILYCOMEDY|4.8
+xxxxxx|2001|FANTASYACTIONTHRILLERCRIMESCIENCE FICTIONMYSTERY|6.4
+xxxxxxx & xxxxxx: xxxxxxx xxxxxxxxx|2002|FAMILYFANTASYCOMEDYADVENTURE|6.6
+xxx xxxx xx xxxxxxx|2003|MYSTERYTHRILLER|5.7
+xxx xxx xxxx|2003|COMEDY|5.3
+xxxxxxx!!!|2004|COMEDY|5.8
+xxxx xxxxxxx|2006|ADVENTURECOMEDYDRAMA|6.5
+xxxxx xx x'xxxx|2006|DRAMAROMANCE|7.2
+xx xxx xx xxxx|2007|MUSICDRAMA|7.6
+xxxxxxx xx xxx xxxxxxx xxxxx|2008|FANTASYADVENTURECOMEDYFAMILY|5.2
+xxxxx xxx xx xxxxxxxxxx|2008|COMEDYROMANCEADVENTURE|4.1
+xxxxxxx x.x.|2008|ACTIONADVENTURESCIENCE FICTIONTHRILLER|5.5
+xxxxxxx: xxxxxx xxxxxxxx|2008|DRAMAACTIONTHRILLERCRIME|7.5
+xxxxxxx xx|2009|ACTIONCRIMETHRILLER|5.1
+xxxxxxx|2010|COMEDY|6.1
+xxxxxx xxxx|2010|COMEDY|6.4
+xxxxxxx & xxxxxx: xxx xxxx xxxxxxxxx|2012|FAMILYADVENTURECOMEDY|5.3
+xxxx xx xx|2012|ADVENTUREDRAMA|7.9
+x xxxxxx xxxx|2016|COMEDY|5.5
+xxx xxx xxxxxxxx xx|2017|COMEDYDRAMAROMANCE|6.0
+xxx xxxxx xxx xxxxxxxxxx xx xxxxxx|2018|COMEDY|3.7
+xx xxx xx xxx xxxxx-xxxxxx|2021|COMEDY|4.9
+xxxx xxxxxxxxx|2021|DRAMAROMANCE|7.4
