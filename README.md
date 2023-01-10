@@ -40,7 +40,8 @@ See it in action:
 
 ## Prerequisites
 - Python 3.8.1 or greater (_probably_ works with other Python 3 versions, but `3.8.1` is the only one I've used with it)
-- A local web browser (I use Chrome) that can be driven by [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)
+- (Unless you want to use the solver only in [offline mode](#offline-solving)) A local web browser - I use Chrome - that
+can be driven by [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)
 - About 600MB of disk space to be used when downloading and pre-processing the IMDb dataset (once
 pre-processing is complete the data uses far less space, more like 135MB)
 
@@ -78,7 +79,7 @@ case, but that seems unlikely. If you are running Chrome, you will need to check
 [here](https://pypi.org/project/chromedriver-py/#history) to find the version that matches your local Chrome.
 
 If you're using a different browser, you will need to `pip install` the Python bindings for it, and possibly also the
-underlying driver; see the instructions on the [`selenium` package](https://pypi.org/project/selenium/) page at PyPI.
+underlying driver; see the instructions on the `selenium` package at [PyPI](https://pypi.org/project/selenium/).
 You will also need to slightly tweak the code in `actorle_solver.py` that is responsible for grabbing the clues for
 today's puzzle. The relevant lines look like this for Chrome:
 
@@ -97,35 +98,38 @@ of their database, in compressed TSV files. Knacktorle uses 3 of these files to 
 
 The script `imdb_data_grabber.py` is a tool for downloading these files to a local directory and then filtering out
 extraneous data (e.g. data about TV shows rather than movies, or camera operators rather than actors) to minimise the
-file sizes. This filtering reduces the overall data size from `c.800MB` to `c.135MB`.
+file sizes. This filtering reduces the overall data size from `c.800MB` to `c.125MB`.
 
 ```bash
 $ python imdb_data_grabber.py --output-dir data
 
 Updating IMDb data files in data directory
 -----------------------------------
-Looking for /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz
-	/Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz Not found
-	Filtering /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz
-	Read in 9,507,323 rows - filtering out non-movies...
-	Filtered down to 631,577 movie titles, writing new file to /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz
-	Written filtered file to /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz
+Looking for /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz...
+    /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz Not found
+    Downloaded https://datasets.imdbws.com/title.basics.tsv.gz
+    Filtering /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz
+    Read in 9,507,323 rows - filtering out non-movies...
+    Filtered down to 631,577 movie titles, writing new file to /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz
+    Written filtered file to /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz
 -----------------------------------
-Looking for /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz
-	/Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz Not found
-	Filtering /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz
-	Read in 53,995,165 rows - filtering out non-acting categories...
-	Removed non-acting categories - we now have 21,161,350 rows
-	Filtering out performances in non-movies using movies dataframe containing 631,577 movies
-	Filtered down to 1,963,537 movie performances - writing new file out to /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz
-	Finished writing filtered file to /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz
+Looking for /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz...
+    /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz Not found
+    Downloaded https://datasets.imdbws.com/title.principals.tsv.gz
+    Filtering /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz
+    Read in 53,995,165 rows - filtering out non-acting categories...
+    Removed non-acting categories - we now have 21,161,350 rows
+    Filtering out performances in non-movies using movies dataframe containing 631,577 movies
+    Filtered down to 1,963,537 movie performances - writing new file out to /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz
+    Finished writing filtered file to /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz
 -----------------------------------
-Looking for /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
-	/Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz Not found
-	Filtering /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
-	Read in 12,210,101 rows - filtering out non-actors...
-	Filtered down to 4,468,107 actors, writing new file to /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
-	Written filtered file to /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
+Looking for /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz...
+    /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz Not found
+    Downloaded https://datasets.imdbws.com/name.basics.tsv.gz
+    Filtering /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
+    Read in 12,210,101 rows - filtering out non-actors...
+    Filtered down to 4,468,107 actors, writing new file to /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
+    Written filtered file to /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
 ```
 
 ```bash
