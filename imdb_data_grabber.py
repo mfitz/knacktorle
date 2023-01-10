@@ -31,7 +31,7 @@ def file_md5(file_path):
 
 
 def download_file(local_path, url):
-    print("Looking for {}".format(local_path))
+    print("Looking for {}...".format(local_path))
     if not pathlib.Path.exists(pathlib.Path(local_path)):
         print("\t{} Not found".format(local_path))
         with Progress("\tDownloading {}".format(url), BarColumn(), transient=True) as progress:
@@ -40,10 +40,10 @@ def download_file(local_path, url):
                 with open(local_path, 'wb') as f:
                     shutil.copyfileobj(r.raw, f)
             progress.update(task)
+        print("\tDownloaded {}".format(url))
         return True
     else:
-        etag = file_md5(local_path)
-        print("\t{} exists with eTag {} - will not download".format(local_path, etag))
+        print("\t{} already exists with eTag {} - will not download".format(local_path, file_md5(local_path)))
         return False
 
 
