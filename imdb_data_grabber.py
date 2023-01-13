@@ -68,8 +68,15 @@ def filter_actors_file(actors_file_path):
     print("\tRead in {:,} rows - filtering out non-actors...".format(actors_data_frame.shape[0]))
     actors_data_frame = actors_data_frame[(actors_data_frame.primaryProfession.str.contains("actor")) |
                                           (actors_data_frame.primaryProfession.str.contains("actress"))]
-    print("\tFiltered down to {:,} actors, writing new file to {}".format(actors_data_frame.shape[0], actors_file_path))
+    print("\tFiltered down to {:,} actors".format(actors_data_frame.shape[0]))
 
+    print("\tRemoving unnecessary columns...")
+    actors_data_frame.drop(['birthYear', 'deathYear', 'primaryProfession', 'knownForTitles'],
+                           axis='columns',
+                           inplace=True)
+    print("\tFinished Removing unnecessary columns")
+
+    print("\tWriting filtered file to {}...".format(actors_file_path))
     actors_data_frame.to_csv(actors_file_path, sep='\t', compression='gzip', index=False)
     print("\tWritten filtered file to {}".format(actors_file_path))
 
@@ -98,7 +105,7 @@ def filter_performances_file(performances_file_path, movies_dataframe=None):
 if __name__ == '__main__':
     args = parse_args()
     data_dir = args['output_dir']
-    print("Updating IMDb data files in {} directory".format(data_dir))
+    print("Downloading IMDb data files to {} directory".format(data_dir))
 
     base_url = "https://datasets.imdbws.com"
 
