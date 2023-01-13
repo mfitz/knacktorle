@@ -129,19 +129,19 @@ def filter_movies_by_release_date(movies_file, movies_clues):
     print("Reading movies in from {}...".format(movies_file))
     titles_data_frame = pd.read_csv(movies_file, sep='\t')
     pd.set_option('display.max_columns', None)
-    print("Read in {} titles".format(titles_data_frame.shape[0]))
+    print("Read in {:,} titles".format(titles_data_frame.shape[0]))
 
     movie_years = set([mv.year for mv in movies_clues])
     print("Filtering out movies NOT from the years {}...".format(movie_years))
     titles_data_frame = titles_data_frame[titles_data_frame.startYear.isin(movie_years)]
-    print("Filtered down to {} movie titles".format(titles_data_frame.shape[0]))
+    print("Filtered down to {:,} movie titles".format(titles_data_frame.shape[0]))
 
     return titles_data_frame
 
 
 def get_all_performances(performances_data_file):
     actors_data_frame = pd.read_csv(performances_data_file, sep='\t')
-    print("Read in data on {} performances".format(actors_data_frame.shape[0]))
+    print("Read in data on {:,} performances".format(actors_data_frame.shape[0]))
     return actors_data_frame
 
 
@@ -178,7 +178,8 @@ def get_most_likely_actors_for_clues(puzzle_clues, movies_data_frame, performanc
         actors_ids = get_actors_in_movies(performances_df, matching_movies)
         all_potential_performances.extend(actors_ids.nconst.tolist())
     print('----------------------------')
-    print("Made a list of {} individual movie performances from all the clues".format(len(all_potential_performances)))
+    print("Made a list of {:,} individual movie performances from all the clues"
+          .format(len(all_potential_performances)))
     return collections.Counter(all_potential_performances).most_common(3)
 
 
