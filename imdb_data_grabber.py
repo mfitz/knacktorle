@@ -53,11 +53,17 @@ def filter_movies_file(movies_file_path):
 
     print("\tRead in {:,} rows - filtering out non-movies...".format(movies_data_frame.shape[0]))
     movies_data_frame = movies_data_frame[movies_data_frame.titleType == "movie"]
-    print("\tFiltered down to {:,} movie titles, writing new file to {}".format(movies_data_frame.shape[0],
-                                                                                movies_file_path))
+    print("\tFiltered down to {:,} movie titles".format(movies_data_frame.shape[0]))
 
+    print("\tRemoving unnecessary columns...")
+    movies_data_frame.drop(['titleType', 'originalTitle', 'isAdult', 'endYear', 'runtimeMinutes', 'genres'],
+                           axis='columns',
+                           inplace=True)
+    print("\tFinished Removing unnecessary columns")
+
+    print("\tWriting filtered file to {}...".format(movies_file_path))
     movies_data_frame.to_csv(movies_file_path, sep='\t', compression='gzip', index=False)
-    print("\tWritten filtered file to {}".format(movies_file_path))
+    print("\tFinished writing filtered file to {}".format(movies_file_path))
     return movies_data_frame
 
 
@@ -78,7 +84,7 @@ def filter_actors_file(actors_file_path):
 
     print("\tWriting filtered file to {}...".format(actors_file_path))
     actors_data_frame.to_csv(actors_file_path, sep='\t', compression='gzip', index=False)
-    print("\tWritten filtered file to {}".format(actors_file_path))
+    print("\tFinished writing filtered file to {}".format(actors_file_path))
 
 
 def filter_performances_file(performances_file_path, movies_dataframe=None):
@@ -95,9 +101,13 @@ def filter_performances_file(performances_file_path, movies_dataframe=None):
               .format(movies_dataframe.shape[0]))
         performances_data_frame = \
             performances_data_frame[performances_data_frame.tconst.isin(movies_dataframe.tconst)]
+    print("\tFiltered down to {:,} movie performances".format(performances_data_frame.shape[0]))
 
-    print("\tFiltered down to {:,} movie performances - writing new file out to {}"
-          .format(performances_data_frame.shape[0], performances_file_path))
+    print("\tRemoving unnecessary columns...")
+    performances_data_frame.drop(['ordering', 'category', 'job'], axis='columns', inplace=True)
+    print("\tFinished Removing unnecessary columns")
+
+    print("\tWriting filtered file to {}...".format(performances_file_path))
     performances_data_frame.to_csv(performances_file_path, sep='\t', compression='gzip', index=False)
     print("\tFinished writing filtered file to {}".format(performances_file_path))
 

@@ -118,23 +118,21 @@ def make_regex(movie_title_pattern):
 
 def get_matching_movie_ids(titles_data_frame, movie_clue):
     match_pattern = make_regex(movie_clue.title_pattern)
-    query = "originalTitle.str.match('{}') and startYear == \"{}\"".format(match_pattern, movie_clue.year)
+    query = "primaryTitle.str.match('{}') and startYear == \"{}\"".format(match_pattern, movie_clue.year)
     print("Querying movies data frame with {}".format(query))
     results = titles_data_frame.query(query)
     print("{} Matches for pattern '{}', year {}".format(results.shape[0], movie_clue.title_pattern, movie_clue.year))
-    return results[['tconst', 'primaryTitle', 'genres']]
+    return results[['tconst', 'primaryTitle']]
 
 
-def filter_movies(movies_file, movies_clues):
+def filter_movies_by_release_date(movies_file, movies_clues):
+    print("Reading movies in from {}...".format(movies_file))
     titles_data_frame = pd.read_csv(movies_file, sep='\t')
     pd.set_option('display.max_columns', None)
-
-    print("Read in {} titles - filtering out non-movies...".format(titles_data_frame.shape[0]))
-    titles_data_frame = titles_data_frame[titles_data_frame.titleType == "movie"]
-    print("Filtered down to {} movie titles".format(titles_data_frame.shape[0]))
+    print("Read in {} titles".format(titles_data_frame.shape[0]))
 
     movie_years = set([mv.year for mv in movies_clues])
-    print("Filtering out movies NOT from the years {}".format(movie_years))
+    print("Filtering out movies NOT from the years {}...".format(movie_years))
     titles_data_frame = titles_data_frame[titles_data_frame.startYear.isin(movie_years)]
     print("Filtered down to {} movie titles".format(titles_data_frame.shape[0]))
 
@@ -240,7 +238,7 @@ if __name__ == '__main__':
 
     movies_file = args['movies_file']
     print("Reading IMDb movie data from {}".format(movies_file))
-    movies_df = filter_movies(movies_file, puzzle_clues)
+    movies_df = filter_movies_by_release_date(movies_file, puzzle_clues)
 
     performances_file = args['performances_file']
     print("Reading IMDb actor performances data from {}".format(performances_file))
