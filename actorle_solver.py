@@ -5,11 +5,11 @@ from dataclasses import dataclass
 from datetime import datetime
 
 import pandas as pd
+from bs4 import BeautifulSoup
 from chromedriver_py import binary_path
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
 
 
 class SmartFormatter(argparse.HelpFormatter):
@@ -73,9 +73,6 @@ def parse_args():
 
 
 def get_todays_clues_from_website():
-    def movie_clues_grouper(seq, size):
-        return (seq[pos:pos + size] for pos in range(0, len(seq), size))
-
     url = 'https://actorle.com/'
     print("Requesting {} via selenium".format(url))
     service_object = Service(binary_path)
@@ -84,18 +81,26 @@ def get_todays_clues_from_website():
     driver = webdriver.Chrome(service=service_object, options=driver_options)
     driver.get(url)
     print("Retrieved a web page with the title '{}'".format(driver.title))
+    return parse_clues_from_html(driver.page_source)
 
-    elem = driver.find_element(By.TAG_NAME, 'table')
-    all_clue_parts = elem.text.split('\n')[2:]
-    movies_to_find = []
-    # TODO: fix the genre list parsing - genres are being concatenated into a single word
-    for movie_parts in movie_clues_grouper(all_clue_parts, 4):
-        movie_to_find = MovieClue(title_pattern=movie_parts[0].strip(),
-                                  year=movie_parts[1],
-                                  genre_list=movie_parts[2].strip(),
-                                  score=float(movie_parts[3].strip()))
-        movies_to_find.append(movie_to_find)
-    return movies_to_find
+
+def parse_clues_from_html(clues_html):
+    soup = BeautifulSoup(clues_html, 'html.parser')
+    clues_table = soup.find('table')
+    clues_rows = clues_table.find_all('tr')[1:]
+
+    clues_list = []
+    for row in clues_rows:
+        row_cells = row.find_all('td')
+        movie_title_pattern = row_cells[0].find_all('div')[0].text
+        movie_release_year = row_cells[0].find_all('div')[1].text
+        movie_genres = []
+        movie_genres_spans = row_cells[1].find_all('span')
+        for span in movie_genres_spans:
+            movie_genres.append(span.text)
+        movie_score = row_cells[2].text
+        clues_list.append(MovieClue(movie_title_pattern, movie_release_year, ','.join(movie_genres), movie_score))
+    return clues_list
 
 
 def get_actors_in_movies(performances_dataframe, movie_ids):
