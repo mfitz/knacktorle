@@ -190,10 +190,10 @@ def get_most_likely_actors_for_clues(puzzle_clues, movies_data_frame, performanc
 
 def read_clues(puzzle):
     if puzzle:
-        print("Solving the puzzle contained in {}".format(puzzle))
+        print("Solving the puzzle contained in the clues file at {}".format(puzzle))
         clues = read_movie_clues(puzzle)
     else:
-        print("No puzzle file supplied - will solve today's puzzle from https://actorle.com/")
+        print("No clues file supplied; solving today's puzzle from https://actorle.com/")
         puzzle = datetime.today().strftime('%Y-%m-%d')
         clues = get_todays_clues_from_website()
     print("Found {} clues for the puzzle from {}:".format(len(clues), puzzle))
