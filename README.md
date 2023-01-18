@@ -35,7 +35,7 @@ by searching against [local IMDb data files](#grabbing-the-imdb-data) read in at
 
 See it in action:
 
-[![asciicast](https://asciinema.org/a/549538.svg)](https://asciinema.org/a/549538)
+[![asciicast](https://asciinema.org/a/552689.svg)](https://asciinema.org/a/552689)
 
 
 ## Prerequisites
