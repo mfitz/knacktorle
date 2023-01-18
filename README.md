@@ -266,7 +266,7 @@ Here are some Russell Crowe film roles that match the movie titles in the clues:
     Mala Aravindan is 12.50% likely
 ```
 
-It should take around 20 seconds to solve a daily puzzle, depending on how many clues the puzzle
+It should take around 12 to 14 seconds to solve a daily puzzle, depending on how many clues the puzzle
 contains, how powerful your machine is, etc.
 
 The solver has a discoverable set of parameters:
