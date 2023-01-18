@@ -70,9 +70,11 @@ def make_regex(movie_title_pattern):
 
 
 def get_matching_movie_ids(titles_data_frame, movie_clue):
+    titles_data_frame = titles_data_frame[titles_data_frame.startYear == movie_clue.year]
+    print("Filtered down to {} movies from the year {}".format(titles_data_frame.shape[0], movie_clue.year))
     match_pattern = make_regex(movie_clue.title_pattern)
-    query = "primaryTitle.str.match('{}') and startYear == \"{}\"".format(match_pattern, movie_clue.year)
-    print("Querying movies data frame with {}".format(query))
+    query = "primaryTitle.str.match('{}')".format(match_pattern)
+    print("Filtering remaining movies with query '{}'".format(query))
     results = titles_data_frame.query(query)
     print("{} Matches for pattern '{}', year {}".format(results.shape[0], movie_clue.title_pattern, movie_clue.year))
     return results[['tconst', 'primaryTitle']]
