@@ -8,7 +8,7 @@ import pandas as pd
 import requests
 from rich.progress import Progress, BarColumn
 
-from actorle_solver import SmartFormatter
+from cli import SmartFormatter
 
 
 def parse_args():

@@ -1,31 +1,10 @@
 import argparse
 import collections
-import pprint
-from dataclasses import dataclass
-from datetime import datetime
 
 import pandas as pd
-from bs4 import BeautifulSoup
-from chromedriver_py import binary_path
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
 
-
-class SmartFormatter(argparse.HelpFormatter):
-    def _split_lines(self, text, width):
-        if text.startswith('R|'):
-            return text[2:].splitlines()
-        # this is the RawTextHelpFormatter._split_lines
-        return argparse.HelpFormatter._split_lines(self, text, width)
-
-
-@dataclass(eq=True, frozen=True)
-class MovieClue:
-    title_pattern: str
-    year: str
-    genre_list: str
-    score: float
+from cli import SmartFormatter
+from movie_clues import write_movie_clues_file, read_puzzle_clues
 
 
 def parse_args():
@@ -70,37 +49,6 @@ def parse_args():
                                  'For example:\n\n'
                                  'xxx xxxxxxxxxxx|2002|Action,Crime,Thriller|7.1')
     return vars(arg_parser.parse_args())
-
-
-def get_todays_clues_from_website():
-    url = 'https://actorle.com/'
-    print("Requesting {} via selenium".format(url))
-    service_object = Service(binary_path)
-    driver_options = Options()
-    driver_options.headless = True
-    driver = webdriver.Chrome(service=service_object, options=driver_options)
-    driver.get(url)
-    print("Retrieved a web page with the title '{}'".format(driver.title))
-    return parse_clues_from_html(driver.page_source)
-
-
-def parse_clues_from_html(clues_html):
-    soup = BeautifulSoup(clues_html, 'html.parser')
-    clues_table = soup.find('table')
-    clues_rows = clues_table.find_all('tr')[1:]
-
-    clues_list = []
-    for row in clues_rows:
-        row_cells = row.find_all('td')
-        movie_title_pattern = row_cells[0].find_all('div')[0].text
-        movie_release_year = row_cells[0].find_all('div')[1].text
-        movie_genres = []
-        movie_genres_spans = row_cells[1].find_all('span')
-        for span in movie_genres_spans:
-            movie_genres.append(span.text)
-        movie_score = row_cells[2].text
-        clues_list.append(MovieClue(movie_title_pattern, movie_release_year, ','.join(movie_genres), movie_score))
-    return clues_list
 
 
 def get_actors_in_movies(performances_dataframe, movie_ids):
@@ -150,29 +98,6 @@ def get_all_performances(performances_data_file):
     return actors_data_frame
 
 
-def write_movie_clues(clues_file_path, clues):
-    print("Writing movie clues out to {}".format(clues_file_path))
-    with open(clues_file_path, 'w') as clues_file:
-        for clue in clues:
-            genres = ''.join(clue.genre_list)
-            clues_file.write("{}|{}|{}|{}\n".format(clue.title_pattern, clue.year, genres, clue.score))
-
-
-def read_movie_clues(clues_file_path):
-    print("Reading movie clues in from {}".format(clues_file_path))
-    with open(clues_file_path) as clues_file:
-        movie_clues = clues_file.readlines()
-    movies_to_find = []
-    for movie in movie_clues:
-        movie_data = movie.split("|")
-        movie_to_find = MovieClue(title_pattern=movie_data[0].strip(),
-                                  year=movie_data[1],
-                                  genre_list=movie_data[2].strip(),
-                                  score=float(movie_data[3].strip()))
-        movies_to_find.append(movie_to_find)
-    return movies_to_find
-
-
 def get_most_likely_actors_for_clues(puzzle_clues, movies_data_frame, performances_df):
     print("\nWorking through the clues...")
     all_potential_performances = []
@@ -186,19 +111,6 @@ def get_most_likely_actors_for_clues(puzzle_clues, movies_data_frame, performanc
     print("Made a list of {:,} individual movie performances from all the clues"
           .format(len(all_potential_performances)))
     return collections.Counter(all_potential_performances).most_common(3)
-
-
-def read_clues(puzzle):
-    if puzzle:
-        print("Solving the puzzle contained in the clues file at {}".format(puzzle))
-        clues = read_movie_clues(puzzle)
-    else:
-        print("No clues file supplied; solving today's puzzle from https://actorle.com/")
-        puzzle = datetime.today().strftime('%Y-%m-%d')
-        clues = get_todays_clues_from_website()
-    print("Found {} clues for the puzzle from {}:".format(len(clues), puzzle))
-    pprint.pprint(clues)
-    return clues
 
 
 def get_actor_name(actor_id, actor_names_df):
@@ -238,9 +150,9 @@ def get_matching_movies_for_actor(movie_clues, actor_id, performances_df, movies
 if __name__ == '__main__':
     args = parse_args()
 
-    puzzle_clues = read_clues(args['clues_file'])
+    puzzle_clues = read_puzzle_clues(args['clues_file'])
     if args['write_clues_file']:
-        write_movie_clues(args['write_clues_file'], puzzle_clues)
+        write_movie_clues_file(args['write_clues_file'], puzzle_clues)
 
     movies_file = args['movies_file']
     print("Reading IMDb movie data from {}".format(movies_file))

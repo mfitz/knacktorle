@@ -134,3 +134,6 @@ dmypy.json
 # so that the user doesn't need to create it
 data/*
 !data/.gitkeep
+
+.DS_Store
+data2/
