@@ -92,9 +92,14 @@ def filter_movies_by_release_date(movies_file, movies_clues):
     return titles_data_frame
 
 
-def get_all_performances(performances_data_file):
+def get_candidate_performances(performances_data_file, movies_df):
     actors_data_frame = pd.read_csv(performances_data_file, sep='\t')
     print("Read in data on {:,} performances".format(actors_data_frame.shape[0]))
+
+    print("Filtering out performances NOT in one of the {:,} candidate movies...".format(movies_df.shape[0]))
+    actors_data_frame = actors_data_frame[actors_data_frame.tconst.isin(movies_df.tconst)]
+    print("Filtered down to {:,} performances".format(actors_data_frame.shape[0]))
+
     return actors_data_frame
 
 
@@ -160,7 +165,7 @@ if __name__ == '__main__':
 
     performances_file = args['performances_file']
     print("Reading IMDb actor performances data from {}".format(performances_file))
-    performances_df = get_all_performances(performances_file)
+    performances_df = get_candidate_performances(performances_file, movies_df)
 
     most_likely_actors = get_most_likely_actors_for_clues(puzzle_clues, movies_df, performances_df)
     print("Actor IDs occurring most often across all possible candidate movies:{}".format(most_likely_actors))
