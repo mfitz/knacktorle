@@ -1,0 +1,30 @@
+xxx xxxxx xx xxxxxxxxxxxx|1957|Horror,Science Fiction|7.0
+xxxxxxx|1958|Horror|7.2
+xxx xxxxx xxxxxxxxxx|1973|Adventure,Comedy,History|7.1
+xxx xxx xxxx xxx xxxxxx xxx|1974|Adventure,Action,Thriller|6.7
+xxxxxxx 'xx|1977|Action,Adventure,Drama,Thriller|5.7
+xxxxxx xxxx xxxxx xxxxxxxx|1978|Adventure,Fantasy,Science Fiction,Family|5.7
+xxxx|1979|Action,Comedy,War|5.8
+xx xxx xxx xx xxx|1981|Adventure,Action,Crime|5.5
+xxx xxxx xxxxxxx|1982|Fantasy,Animation,Family,Adventure|7.3
+xxxxxxxx x: xxx xxx xxxxx|1990|Comedy,Horror,Fantasy|6.4
+xxx xxxxxxx|1996|Comedy,Family|4.2
+xxxxxx xxxxxx|1999|Drama,Fantasy,Thriller,Mystery,Horror|7.3
+xxx xxxx xx xxx xxxxx: xxx xxxxxxxxxx xx xxx xxxx|2001|Adventure,Fantasy,Action|8.8
+xxxx xxxx: xxxxxxx xx - xxxxxx xx xxx xxxxxx|2002|Adventure,Action,Science Fiction|6.6
+xxx xxxx xx xxx xxxxx: xxx xxx xxxxxx|2002|Adventure,Fantasy,Action|8.8
+xxx xxxx xx xxx xxxxx: xxx xxxxxx xx xxx xxxx|2003|Adventure,Fantasy,Action|9.0
+xxxxxxx xxxxxx xx: xxxxxx xx xxx xxxxxxxxxx|2004|Action,Thriller,Crime|5.9
+xxxx xxxx: xxxxxxx xxx - xxxxxxx xx xxx xxxx|2005|Adventure,Action,Science Fiction|7.6
+xxxxxxx xxx xxx xxxxxxxxx xxxxxxx|2005|Adventure,Comedy,Family,Fantasy|6.7
+xxxxxx xxxxx|2005|Romance,Fantasy,Animation|7.3
+xxx xxxxxx xxxxxxx|2007|Adventure,Fantasy|6.1
+xxxx xxxx: xxx xxxxx xxxx|2008|Animation,Action,Science Fiction,Adventure|5.9
+xxxxx xx xxxxxxxxxx|2010|Family,Fantasy,Adventure|6.4
+xxxxx & xxxx|2010|Comedy,Thriller,History,Horror|6.1
+xxxxxx xx xxx xxxxx|2011|Adventure,Fantasy,Action|5.4
+xxxx|2011|Adventure,Drama,Family|7.5
+xxxx xxxxxxx|2012|Comedy,Fantasy|6.2
+xxxxxxxxxxxxx|2012|Animation,Comedy,Family|6.9
+xxx xxxxxx: xx xxxxxxxxxx xxxxxxx|2012|Adventure,Fantasy,Action|7.8
+xxx xxxxxx: xxx xxxxxx xx xxx xxxx xxxxxx|2014|Action,Adventure,Fantasy|7.4
