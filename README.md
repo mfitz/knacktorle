@@ -50,7 +50,7 @@ pre-processing is complete the data uses far less space, more like 75MB)
 Installing into a Python virtual environment is
 [generally a good idea](https://towardsdatascience.com/why-you-should-use-a-virtual-environment-for-every-python-project-c17dab3b0fd0).
 I highly recommend [PyEnv](https://github.com/pyenv/pyenv) for managing different Python versions and virtual
-environments, or you could go low tech and do something like:
+environments. Alternatively, you could go low tech and do something like:
 
 ```bash
  $ python3 -m venv venv
@@ -62,7 +62,7 @@ environments, or you could go low tech and do something like:
 Unfortunately, we cannot just use a standard HTTP client like [`requests`](https://requests.readthedocs.io/en/latest/)
 to grab the puzzle of the day from https://actorle.com/ and then parse the clues out of the page using something like
 [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/). When you request that Actorle URL, what you get back
-in the response entity body is a big ol' bunch o' JavaScript, some HTML, but no actual puzzle - see for yourself:
+in the response entity body is a big ol' bunch o' JavaScript, some HTML, but no actual puzzle. See for yourself:
 `curl -vk "https://actorle.com/"`. Something has to interpret that JavaScript in order to generate the puzzle HTML we
 want to parse the clues out of.
 
@@ -80,7 +80,7 @@ case, but that seems unlikely. If you are running Chrome, you will need to check
 
 If you're using a different browser, you will need to `pip install` the Python bindings for it, and possibly also the
 underlying driver; see the instructions on the `selenium` package at [PyPI](https://pypi.org/project/selenium/).
-You will also need to slightly tweak the code in `actorle_solver.py` that is responsible for grabbing the clues for
+You will also need to slightly tweak the code in `movie_clues.py` that is responsible for grabbing the clues for
 today's puzzle. The relevant lines look like this for Chrome:
 
 ```python
@@ -266,8 +266,8 @@ Here are some Russell Crowe film roles that match the movie titles in the clues:
     Mala Aravindan is 12.50% likely
 ```
 
-It should take around 12 to 14 seconds to solve a daily puzzle, depending on how many clues the puzzle
-contains, how powerful your machine is, etc.
+It should take around 12 to 18 seconds to solve a daily puzzle, depending on how many clues the puzzle
+contains, how the HTTP conversation with the Actorle web server goes, how powerful your machine is, etc.
 
 The solver has a discoverable set of parameters:
 
@@ -314,7 +314,7 @@ optional arguments:
 
 
 ## Offline Solving
-By default, Knacktorle will grab today's Actorle puzzle from over the web and solve it. The solver can also be
+By default, Knacktorle will grab today's Actorle puzzle from over the web and solve it. However, the solver can also be
 used in an offline mode where the puzzle to solve is read in from a local [`clues file`](#clues-file-format), rather
 than from the web. A number of such files can be found in the `clues-files` directory.
 
