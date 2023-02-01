@@ -1,0 +1,18 @@
+xxxxxxx|1982|Comedy,Romance|7.4
+xxxxxx|1985|Comedy,Crime,Mystery|6.9
+xxx xxx|1986|Horror,Science Fiction|7.6
+xxxxxxxxxxx|1988|Fantasy,Comedy|7.5
+xxxxx xxxxx xxx xxxx|1988|Comedy,Science Fiction|5.4
+xxx xxxxxxxxxx xxxxxxx|1988|Drama,Romance,Comedy|6.7
+xxxxx xxxxxx|1990|Comedy,Crime|6.8
+xxxxxx & xxxxxx|1991|Drama,Thriller,Crime,Adventure|7.5
+x xxxxxx xx xxxxx xxx|1992|Comedy,Drama|7.3
+xxxxx|1994|Comedy,Drama,Romance|5.4
+xxxxxxxxxx|1994|Romance,Comedy|5.8
+xxxxxxxxx xxxxxx|1995|Action,Adventure|5.7
+xxx xxxx xxxx xxxxxxxxx|1996|Crime,Action,Mystery,Thriller|6.8
+xxxxxx xxxxxx|1999|Family,Animation,Fantasy,Comedy|6.0
+xxxxxx xxxxxx x|2002|Family,Adventure,Animation,Comedy|5.5
+xxxxxxxxx xxxxxx|2009|Comedy,Drama|6.0
+xx x xxxxx...|2013|Comedy|6.7
+xxx|2020|Action,Crime,Drama,Adventure,Thriller|5.4
