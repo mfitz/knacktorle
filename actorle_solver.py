@@ -76,10 +76,12 @@ def get_matching_movie_ids(titles_data_frame, movie_clue):
     query = "primaryTitle.str.match('{}')".format(match_pattern)
     print("Filtering remaining movies with query '{}'".format(query))
     results = titles_data_frame.query(query)
-    print("{} Matches for pattern '{}', year {} (Sample: {})".format(results.shape[0],
-                                                                     movie_clue.title_pattern,
-                                                                     movie_clue.year,
-                                                                     results['primaryTitle'].tolist()[0:3]))
+    sample_size = min(results.shape[0], 3)
+    print("{} Matches for pattern '{}', year {} (Sample: {})"
+          .format(results.shape[0],
+                  movie_clue.title_pattern,
+                  movie_clue.year,
+                  results['primaryTitle'].sample(n=sample_size).to_list()))
     return results[['tconst', 'primaryTitle']]
 
 
