@@ -1,0 +1,26 @@
+xx xxxxxxxxx|1980|Comedy,Drama,Family|7.1
+xxx xxxxxxxxx|1983|Crime,Drama|7.0
+xxxxxx xxxx|1983|Action,Crime,Drama|7.1
+xxxxxx xxx|1986|Drama|6.0
+xxx xxx xxxx|1987|Drama,Romance|5.9
+xxxxxxxxx xxxxxx|1989|Drama,Crime|7.3
+xxxxxxxxxxx xx xxxxxxxx|1989|Drama,Comedy,Music,Romance|5.3
+x xxxx xxxxxx xxxxx|1991|Mystery,Thriller,Crime|5.7
+xxxxxxx|1992|Comedy,Drama,Romance|6.7
+xx. xxxxxxxxx|1993|Comedy,Romance|5.8
+xx xxx xxx|1995|Drama,Comedy,Crime|6.8
+xxxxx xx xx xxxxx|1996|Comedy,Drama,Music|6.7
+xxxx xxxxxx|1998|Mystery,Thriller,Drama|6.6
+xxxxx'x xxxxxxxxx xxxxx xxxx|1998|Romance,Comedy|7.1
+xxxxx|2005|Drama|7.8
+xxxxxx xxxxx xxxxxx|2005|Comedy,Family,Adventure,Fantasy,Romance|4.9
+xxx, xx xxx xxxxxx|2006|Comedy,Romance|5.6
+xxxxxxx xxx xxx xxxxx|2008|Drama,Thriller|7.2
+xxx xxxx|2009|Comedy,Family|5.3
+xxxxxxx|2009|Action,Crime,Drama,Thriller,Mystery|5.7
+xxxxxx|2010|Action,Crime,Drama,Thriller|6.2
+xxx xxx xx xxx xxxxx|2013|Comedy,Crime|6.3
+xxxx xxx|2016|Adventure,Animation,Comedy,Family,Music|5.9
+xxxxx xx xxxxx|2017|Crime,Comedy|6.6
+xxx xxxxx xxxx xxxx xxxxx|2018|Drama,Horror,Crime,Thriller|6.8
+xxxxxx|2020|Crime,Drama|4.7
