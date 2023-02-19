@@ -6,7 +6,7 @@ import shutil
 
 import pandas as pd
 import requests
-from rich.progress import Progress, BarColumn
+from rich.progress import Progress, BarColumn, SpinnerColumn
 
 from cli import SmartFormatter
 
@@ -48,7 +48,6 @@ def download_file(local_path, url):
 
 
 def filter_movies_file(movies_file_path):
-    print("\tFiltering {}".format(movies_file_path))
     movies_data_frame = pd.read_csv(movies_file_path, sep='\t')
 
     print("\tRead in {:,} rows - filtering out non-movies...".format(movies_data_frame.shape[0]))
@@ -67,13 +66,19 @@ def filter_movies_file(movies_file_path):
     return movies_data_frame
 
 
-def filter_actors_file(actors_file_path):
-    print("\tFiltering {}".format(actors_file_path))
+def filter_actors_file(actors_file_path, performances_dataframe=None):
     actors_data_frame = pd.read_csv(actors_file_path, sep='\t')
 
     print("\tRead in {:,} rows - filtering out non-actors...".format(actors_data_frame.shape[0]))
     actors_data_frame = actors_data_frame[(actors_data_frame.primaryProfession.str.contains("actor")) |
                                           (actors_data_frame.primaryProfession.str.contains("actress"))]
+    print("\tFiltered down to {:,} actors".format(actors_data_frame.shape[0]))
+
+    if performances_dataframe is not None:
+        print("\tFiltering out people we don't have performances for, using dataframe containing {:,} performances"
+              .format(performances_dataframe.shape[0]))
+        actors_data_frame = \
+            actors_data_frame[actors_data_frame.nconst.isin(performances_dataframe.nconst)]
     print("\tFiltered down to {:,} actors".format(actors_data_frame.shape[0]))
 
     print("\tRemoving unnecessary columns...")
@@ -88,7 +93,6 @@ def filter_actors_file(actors_file_path):
 
 
 def filter_performances_file(performances_file_path, movies_dataframe=None):
-    print("\tFiltering {}".format(performances_file_path))
     performances_data_frame = pd.read_csv(performances_file_path, sep='\t')
 
     print("\tRead in {:,} rows - filtering out non-acting categories...".format(performances_data_frame.shape[0]))
@@ -111,6 +115,8 @@ def filter_performances_file(performances_file_path, movies_dataframe=None):
     performances_data_frame.to_csv(performances_file_path, sep='\t', compression='gzip', index=False)
     print("\tFinished writing filtered file to {}".format(performances_file_path))
 
+    return performances_data_frame
+
 
 if __name__ == '__main__':
     args = parse_args()
@@ -124,16 +130,25 @@ if __name__ == '__main__':
     local_movies_file = os.path.abspath(os.path.join(data_dir, movies_file))
     print('-----------------------------------')
     if download_file(local_movies_file, "{}/{}".format(base_url, movies_file)):
-        movies_df = filter_movies_file(local_movies_file)
+        with Progress("\tFiltering {}".format(local_movies_file), SpinnerColumn(), transient=True) as progress:
+            task = progress.add_task("Filtering", start=False)
+            movies_df = filter_movies_file(local_movies_file)
+            progress.update(task)
 
     performances_file = 'title.principals.tsv.gz'
     local_performances_file = os.path.abspath(os.path.join(data_dir, performances_file))
     print('-----------------------------------')
     if download_file(local_performances_file, "{}/{}".format(base_url, performances_file)):
-        filter_performances_file(local_performances_file, movies_dataframe=movies_df)
+        with Progress("\tFiltering {}".format(local_performances_file), SpinnerColumn(), transient=True) as progress:
+            task = progress.add_task("Filtering", start=False)
+            performances_data_frame = filter_performances_file(local_performances_file, movies_dataframe=movies_df)
+            progress.update(task)
 
     actors_file = 'name.basics.tsv.gz'
     local_actors_file = os.path.abspath(os.path.join(data_dir, actors_file))
     print('-----------------------------------')
     if download_file(local_actors_file, "{}/{}".format(base_url, actors_file)):
-        filter_actors_file(local_actors_file)
+        with Progress("\tFiltering {}".format(local_actors_file), SpinnerColumn(), transient=True) as progress:
+            task = progress.add_task("Filtering", start=False)
+            filter_actors_file(local_actors_file, performances_dataframe=performances_data_frame)
+            progress.update(task)

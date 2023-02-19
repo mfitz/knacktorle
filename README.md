@@ -43,7 +43,7 @@ See it in action:
 - (Unless you want to use the solver only in [offline mode](#offline-solving)) A local web browser - I use Chrome - that
 can be driven by [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)
 - About 600MB of disk space to be used when downloading and pre-processing the IMDb dataset (once
-pre-processing is complete the data uses far less space, more like 75MB)
+pre-processing is complete the data uses far less space, more like 37MB)
 
 
 ## Installing
@@ -98,7 +98,7 @@ of their database, in compressed TSV files. Knacktorle uses 3 of these files to 
 
 The script `imdb_data_grabber.py` is a tool for downloading these files to a local directory and then filtering out
 extraneous data (e.g. data about TV shows rather than movies, or camera operators rather than actors) to minimise the
-file sizes. This filtering reduces the overall data size from `c.800MB` to `c.75MB`.
+file sizes. This filtering reduces the overall data size from `c.800MB` to `c.37MB`.
 
 ```bash
 $ python imdb_data_grabber.py --output-dir data
@@ -106,46 +106,46 @@ $ python imdb_data_grabber.py --output-dir data
 Downloading IMDb data files to data directory
 -----------------------------------
 Looking for /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz...
-	/Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz Not found
-	Downloaded https://datasets.imdbws.com/title.basics.tsv.gz
-	Filtering /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz
-	Read in 9,519,661 rows - filtering out non-movies...
-	Filtered down to 632,011 movie titles
-	Removing unnecessary columns...
-	Finished Removing unnecessary columns
-	Writing filtered file to /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz...
-	Finished writing filtered file to /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz
+  /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz Not found
+  Downloaded https://datasets.imdbws.com/title.basics.tsv.gz
+  Read in 9,621,894 rows - filtering out non-movies...
+  Filtered down to 635,933 movie titles
+  Removing unnecessary columns...
+  Finished Removing unnecessary columns
+  Writing filtered file to /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz...
+  Finished writing filtered file to /Users/mickyfitz/workspace/knacktorle/data/title.basics.tsv.gz
 -----------------------------------
 Looking for /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz...
-	/Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz Not found
-	Downloaded https://datasets.imdbws.com/title.principals.tsv.gz
-	Filtering /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz
-	Read in 54,041,769 rows - filtering out non-acting categories...
-	Removed non-acting categories - we now have 21,178,219 rows
-	Filtering out performances in non-movies using movies dataframe containing 632,011 movies
-	Filtered down to 1,964,341 movie performances
-	Removing unnecessary columns...
-	Finished Removing unnecessary columns
-	Writing filtered file to /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz...
-	Finished writing filtered file to /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz
+  /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz Not found
+  Downloaded https://datasets.imdbws.com/title.principals.tsv.gz
+  Read in 54,685,074 rows - filtering out non-acting categories...
+  Removed non-acting categories - we now have 21,415,544 rows
+  Filtering out performances in non-movies using movies dataframe containing 635,933 movies
+  Filtered down to 1,975,760 movie performances
+  Removing unnecessary columns...
+  Finished Removing unnecessary columns
+  Writing filtered file to /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz...
+  Finished writing filtered file to /Users/mickyfitz/workspace/knacktorle/data/title.principals.tsv.gz
 -----------------------------------
 Looking for /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz...
-	/Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz Not found
-	Downloaded https://datasets.imdbws.com/name.basics.tsv.gz
-	Filtering /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
-	Read in 12,221,140 rows - filtering out non-actors...
-	Filtered down to 4,471,708 actors
-	Removing unnecessary columns...
-	Finished Removing unnecessary columns
-	Writing filtered file to /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz...
-	Finished writing filtered file to /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
+  /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz Not found
+  Downloaded https://datasets.imdbws.com/name.basics.tsv.gz
+  Read in 12,310,517 rows - filtering out non-actors...
+  Filtered down to 4,500,248 actors
+  Filtering out people we don't have performances for, using dataframe containing 1,975,760 performances
+  Filtered down to 640,396 actors
+  Removing unnecessary columns...
+  Finished Removing unnecessary columns
+  Writing filtered file to /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz...
+  Finished writing filtered file to /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz
 ```
 
 ```bash
 $ ls -lth data
--rw-r--r--  1 mickyfitz  staff    44M 13 Jan 01:52 data/name.basics.tsv.gz
--rw-r--r--  1 mickyfitz  staff    21M 13 Jan 01:50 data/title.principals.tsv.gz
--rw-r--r--  1 mickyfitz  staff   8.7M 13 Jan 01:49 data/title.basics.tsv.gz
+total 75864
+-rw-r--r--  1 mickyfitz  staff   6.3M 19 Feb 03:46 name.basics.tsv.gz
+-rw-r--r--  1 mickyfitz  staff    21M 19 Feb 03:45 title.principals.tsv.gz
+-rw-r--r--  1 mickyfitz  staff   8.8M 19 Feb 03:43 title.basics.tsv.gz
 ```
 
 For convenience, this repo contains a `.gitignored` `data` directory for the purpose of holding these IMDb data files.
@@ -266,7 +266,7 @@ Here are some Russell Crowe film roles that match the movie titles in the clues:
     Mala Aravindan is 12.50% likely
 ```
 
-It should take around 12 to 18 seconds to solve a daily puzzle, depending on how many clues the puzzle
+It should take around 7 to 10 seconds to solve a daily puzzle, depending on how many clues the puzzle
 contains, how the HTTP conversation with the Actorle web server goes, how powerful your machine is, etc.
 
 The solver has a discoverable set of parameters:
