@@ -1,0 +1,16 @@
+xxxxxxxx xx xxxxxx|1962|Adventure,Drama,History,War|8.3
+xxx xxxxx xx xxx xxxxxxxx|1967|Action,Crime,Drama,Mystery,Thriller,War|7.2
+xxxxxx xxxxxx|1967|Adventure,Action,Comedy|5.0
+xxxxxxxx|1979|Drama,History,Romance|5.3
+xxxxxxxxx|1984|Adventure,Fantasy,Action,Science Fiction|4.4
+xxxx xxxxxxxx|1986|Comedy,Drama,Romance|5.1
+xxx xxxx xxxxxxx|1987|Drama,History|7.7
+xxxx xxxxxxx|1988|Fantasy,Comedy,Horror|5.7
+xxxx xxxxx|1991|Comedy|5.4
+xxxxxxxxx: x xxxx xxxxx|1997|Fantasy,Drama,Mystery,Family|6.5
+xxxxxxxx|1998|Horror,Science Fiction,Thriller|5.4
+xxxx|2004|Adventure,History,War,Action|7.3
+xxx xxxxx xxxx xxx xxxx|2006|Drama|6.0
+xxxxxxxxxxx|2007|Animation,Comedy,Family,Fantasy|8.1
+xxxxxxxx|2007|Adventure,Fantasy,Romance,Family|7.6
+xxx xxxxxxx xxxxx: xxx xxxx xxxxx xx xxxxxxxxx|2012|History,Drama|6.5

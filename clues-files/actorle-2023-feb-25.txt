@@ -1,0 +1,22 @@
+xxxxxxxxxx|1980|Comedy|7.2
+xxxxx xxxx xxx xxxxx|1980|Comedy,Romance|6.7
+xxxxx xxx xxxxxxx|1981|Comedy|5.3
+xxxxxx xxxxxxxx|1981|Comedy,Science Fiction,Romance|5.0
+xxxxxxxx xxxxxxx'x xxxxxxxx|1983|Comedy,Adventure|7.3
+xxxxxx|1985|Comedy,Crime,Mystery|6.9
+xxxxxxxx xxxxxxx'x xxxxxxxx xxxxxxxx|1985|Adventure,Comedy,Romance|6.2
+xxxxx xxxx xx|1985|Comedy,Adventure|6.4
+¡xxxxx xxxxxx!|1986|Comedy,Adventure,Western|6.5
+xxxxx xxxx|1988|Comedy|6.2
+xxxxxx xxxxx|1989|Comedy,Crime,Mystery|6.1
+xxxxxxxx xxxxxxx'x xxxxxxxxx xxxxxxxx|1989|Comedy|7.5
+xxxxxxx xxx xxxxxxx|1991|Comedy,Adventure|5.0
+xxxxxxx xx xx xxxxxxxxx xxx|1992|Science Fiction,Comedy,Fantasy|6.0
+xxxx xxxxxx xxxx|1993|Adventure,Fantasy,Action,Comedy,Family|6.4
+xxxxx xxxxxxxx|1997|Comedy|5.9
+xxxx xxx|2000|Comedy,Family,Adventure|5.1
+xxxxxx|2006|Comedy,Family,Animation,Fantasy,Adventure|2.8
+xxxx|2006|Family,Comedy,Adventure,Action,Science Fiction|4.3
+xxx xxx xxxx xxxxxxx|2010|Science Fiction,Comedy,Adventure|6.4
+xxx xxx xxxx xxxxxxx x|2015|Comedy|5.0
+xxxxxxxx|2015|Comedy|6.1
