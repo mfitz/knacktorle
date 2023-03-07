@@ -1,0 +1,9 @@
+xxxxxx|2013|Drama,Horror|5.8
+xxxxxxxxx|2014|Action,Adventure,Science Fiction|6.6
+xxx xxxxx xx xxx xxxxx|2014|Romance,Drama|7.7
+xxx, xxxxx & xxxxxxxx|2014|Drama,Comedy|6.6
+xxxxxxxxx|2015|Action,Adventure,Science Fiction,Thriller|6.2
+xxxxx xxxxx|2015|Mystery,Drama,Romance|6.2
+xxxxxxxxx|2016|Adventure,Science Fiction,Action,Mystery|5.7
+xxxx xxxxxx|2017|Action,Crime|7.6
+xxxx xxxx xxxxx|2021|Drama,Romance,Crime|7.2
