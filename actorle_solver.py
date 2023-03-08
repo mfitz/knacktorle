@@ -184,7 +184,7 @@ if __name__ == '__main__':
     most_likely_actors = get_most_likely_actors_for_clues(puzzle_clues,
                                                           movies_df,
                                                           performances_df,
-                                                          num_options=number_of_potential_matches)
+                                                          number_of_potential_matches)
     print("Actor IDs occurring most often across all possible candidate movies:{}".format(most_likely_actors))
     total_count = sum(count for actor_id, count in most_likely_actors)
 
