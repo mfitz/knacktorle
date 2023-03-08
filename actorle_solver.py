@@ -48,6 +48,10 @@ def parse_args():
                                  '<title pattern>|<year>|<genres>|<score>\n\n'
                                  'For example:\n\n'
                                  'xxx xxxxxxxxxxx|2002|Action,Crime,Thriller|7.1')
+    arg_parser.add_argument('-n',
+                            '--num-options',
+                            help='The number of potential answers to display. Optional, default is 3.',
+                            type=int)
     return vars(arg_parser.parse_args())
 
 
@@ -110,7 +114,7 @@ def get_candidate_performances(performances_data_file, movies_df):
     return actors_data_frame
 
 
-def get_most_likely_actors_for_clues(puzzle_clues, movies_data_frame, performances_df):
+def get_most_likely_actors_for_clues(puzzle_clues, movies_data_frame, performances_df, num_options):
     print("\nWorking through the clues...")
     all_potential_performances = []
     for clue in puzzle_clues:
@@ -122,7 +126,7 @@ def get_most_likely_actors_for_clues(puzzle_clues, movies_data_frame, performanc
     print('----------------------------')
     print("Made a list of {:,} individual movie performances from all the clues"
           .format(len(all_potential_performances)))
-    return collections.Counter(all_potential_performances).most_common(3)
+    return collections.Counter(all_potential_performances).most_common(num_options)
 
 
 def get_actor_name(actor_id, actor_names_df):
@@ -174,7 +178,13 @@ if __name__ == '__main__':
     print("Reading IMDb actor performances data from {}".format(performances_file))
     performances_df = get_candidate_performances(performances_file, movies_df)
 
-    most_likely_actors = get_most_likely_actors_for_clues(puzzle_clues, movies_df, performances_df)
+    number_of_potential_matches = args['num_options']
+    if not number_of_potential_matches:
+        number_of_potential_matches = 3
+    most_likely_actors = get_most_likely_actors_for_clues(puzzle_clues,
+                                                          movies_df,
+                                                          performances_df,
+                                                          num_options=number_of_potential_matches)
     print("Actor IDs occurring most often across all possible candidate movies:{}".format(most_likely_actors))
     total_count = sum(count for actor_id, count in most_likely_actors)
 
@@ -190,7 +200,9 @@ if __name__ == '__main__':
     pd.set_option('display.width', 1000)
     print(actor_roles)
     print("\n\tOptions\n\t----------------")
+    option_num = 1
     for actor_id, count in most_likely_actors:
         actor_name = get_actor_name(actor_id, actor_names_df)
         percent_likelihood = (count / total_count) * 100.0
-        print("\t{} is {:.2f}% likely".format(actor_name, percent_likelihood))
+        print("\t{}) {} is {:.2f}% likely".format(option_num, actor_name, percent_likelihood))
+        option_num += 1
