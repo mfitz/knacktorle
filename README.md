@@ -40,6 +40,7 @@ See it in action:
 
 ## Prerequisites
 - Python 3.8.1 or greater (_probably_ works with other Python 3 versions, but `3.8.1` is the only one I've used with it)
+  - On Apple silicon you will likely need Python 3.9 or greater; numpy probably won't `pip install` on earlier versions
 - (Unless you want to use the solver only in [offline mode](#offline-solving)) A local web browser - I use Chrome - that
 can be driven by [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)
 - About 600MB of disk space to be used when downloading and pre-processing the IMDb dataset (once
