@@ -1,5 +1,5 @@
 beautifulsoup4==4.11.1
-chromedriver-py==113.0.5672.63
+chromedriver-py==118.0.5993.70
 pandas==1.5.3
 requests==2.28.1
 rich==12.6.0
