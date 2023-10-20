@@ -194,8 +194,8 @@ if __name__ == '__main__':
 
     actor = most_likely_actors[0][0]
     actor_name = get_actor_name(actor, actor_names_df)
-    print("\nDude - I think it's... {}!\n".format(actor_name))
-    print("Here are some {} film roles that match movies in the clues:\n".format(actor_name))
+    print("\n\nDude - I think it's... {}!".format(actor_name))
+    print("Here are some {} film roles from movies that match clues:\n".format(actor_name))
     actor_roles = get_matching_movies_for_actor(puzzle_clues, actor, performances_df, movies_df)
     pd.set_option('display.width', 1000)
     print(actor_roles)
