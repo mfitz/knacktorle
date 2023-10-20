@@ -67,7 +67,10 @@ def parse_clues_from_html(clues_html):
         for span in movie_genres_spans:
             movie_genres.append(span.text)
         movie_score = row_cells[2].text
-        clues_list.append(MovieClue(movie_title_pattern, movie_release_year, ','.join(movie_genres), movie_score))
+        clues_list.append(MovieClue(movie_title_pattern.replace('\u2002', ' ').replace('×', 'x'),
+                                    movie_release_year,
+                                    ','.join(movie_genres),
+                                    movie_score))
     return clues_list
 
 
