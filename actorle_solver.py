@@ -185,7 +185,7 @@ if __name__ == '__main__':
                                                           movies_df,
                                                           performances_df,
                                                           number_of_potential_matches)
-    print("Actor IDs occurring most often across all possible candidate movies:{}".format(most_likely_actors))
+    print("\n\nActor IDs occurring most often across all possible candidate movies:{}".format(most_likely_actors))
     total_count = sum(count for actor_id, count in most_likely_actors)
 
     actors_file = args['actors_file']
@@ -194,15 +194,15 @@ if __name__ == '__main__':
 
     actor = most_likely_actors[0][0]
     actor_name = get_actor_name(actor, actor_names_df)
-    print("\n\nDude - I think it's... {}!".format(actor_name))
+    print("\nDude - I think it's... {}!".format(actor_name))
     print("Here are some {} film roles from movies that match clues:\n".format(actor_name))
     actor_roles = get_matching_movies_for_actor(puzzle_clues, actor, performances_df, movies_df)
     pd.set_option('display.width', 1000)
     print(actor_roles)
-    print("\n\tOptions\n\t----------------")
+    print("\nOptions\n----------------")
     option_num = 1
     for actor_id, count in most_likely_actors:
         actor_name = get_actor_name(actor_id, actor_names_df)
         percent_likelihood = (count / total_count) * 100.0
-        print("\t{}) {} is {:.2f}% likely".format(option_num, actor_name, percent_likelihood))
+        print("{}) {} is {:.2f}% likely".format(option_num, actor_name, percent_likelihood))
         option_num += 1
