@@ -17,8 +17,9 @@ design of this tool, and some details about the data it uses are discussed on
 
 ## What is Actorle?
 [Actorle](https://actorle.com/) is a daily puzzle where you guess the name of an actor from clues about a selection of
-films they have appeared in. You need to figure out enough of the movies that you can find the common element — an
-actor who appeared in all of them.
+films they have appeared in. Each movie’s clue comprises the release year, the IMDb review score, the genres, and a 
+pattern of X characters representing the title. You need to figure out enough of the movies to find the common element 
+— an actor who appeared in all of them.
 
 Inspired by the ubiquitous [Wordle](https://www.nytimes.com/games/wordle/index.html),
 incorrect guesses bring you closer to the correct answer by revealing new information. In the case of Wordle, that new
