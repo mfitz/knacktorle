@@ -95,7 +95,7 @@ You should be able to replace them with the equivalent code for whatever non-Chr
 
 
 ## Grabbing the IMDb data
-For non-commercial hacking, IMDb provide a regularly updated [data dump](https://www.imdb.com/interfaces/) of a subset
+For non-commercial hacking, IMDb provide a regularly updated [data dump](https://www.imdb.com/interfaces/) of a subset
 of their database, in compressed TSV files. Knacktorle uses 3 of these files to solve puzzles.
 
 The script `imdb_data_grabber.py` is a tool for downloading these files to a local directory and then filtering out
