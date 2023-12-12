@@ -1,0 +1,17 @@
+xxx xxxxxxxxxx|2012|Adventure,Drama,Thriller|7.5
+xxxxx|2014|Drama,Thriller|7.1
+xxxxx xxxxxx: xxx xxxxxxx xxxx|2014|Music,Drama,History|8.4
+xx xxx xxxxx xx xxx xxx|2015|Thriller,Drama,Adventure,Action,History|6.9
+xxxxxxx xxxxxxx: xxxxx xxx|2016|Adventure,Action,Science Fiction|7.8
+xxx xxxx xxxx xx x|2017|Adventure,Drama,History|6.6
+xxxxxx-xxx: xxxxxxxxxx|2017|Action,Adventure,Science Fiction,Drama|7.4
+xxx xxxxxxx xxx|2018|Drama,History|6.5
+xxxxxxxx: xxxxxxxx xxx|2018|Adventure,Action,Science Fiction|8.4
+xxxxxxxx: xxxxxxx|2019|Adventure,Science Fiction,Action|8.4
+xxxxxx-xxx: xxx xxxx xxxx|2019|Action,Adventure,Science Fiction|7.4
+xxxxx xx xxxxxxxx|2019|Animation,Action,Adventure,Comedy,Family|6.8
+xxxxxxxx|2020|Family,Comedy,Fantasy,Adventure|5.6
+xxxxxx|2020|Family,Animation,Adventure,Comedy,Fantasy|7.4
+xxxxx xxxxxxx|2021|Fantasy,Science Fiction,Adventure|5.7
+xxxxxx-xxx: xx xxx xxxx|2021|Action,Adventure,Science Fiction|8.2
+xxxxxxxxx|2022|Action,Adventure|6.3
