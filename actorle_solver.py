@@ -61,22 +61,37 @@ def get_actors_in_movies(performances_dataframe, movie_ids):
     return matching_actors[['nconst', 'characters']]
 
 
-def make_regex(movie_title_pattern):
+def make_movie_title_regex(movie_title_pattern):
     words = movie_title_pattern.split()
     regex_pattern = ""
-    character_pattern = "[a-zA-Z0-9:\\'&-\.]"
     for index, word in enumerate(words):
-        regex_pattern += "{}{{{}}}".format(character_pattern, len(word))
+        regex_pattern += make_movie_title_word_regex(word)
         if index != len(words) - 1:
             regex_pattern += " "
     regex_pattern += "$"
     return regex_pattern
 
 
+def make_movie_title_word_regex(movie_title_word):
+    count = 0
+    word_regex = ''
+    title_character_pattern = "[a-zA-Z0-9]"
+    for character in movie_title_word:
+        if character.isalnum():
+            count += 1
+        else:
+            word_regex += "{}{{{}}}".format(title_character_pattern, count)
+            word_regex += "\\{}".format(character)
+            count = 0
+    if count == len(movie_title_word):
+        word_regex += "{}{{{}}}".format(title_character_pattern, count)
+    return word_regex
+
+
 def get_matching_movie_ids(titles_data_frame, movie_clue):
     titles_data_frame = titles_data_frame[titles_data_frame.startYear == movie_clue.year]
     print("Filtered down to {} movies from the year {}".format(titles_data_frame.shape[0], movie_clue.year))
-    match_pattern = make_regex(movie_clue.title_pattern)
+    match_pattern = make_movie_title_regex(movie_clue.title_pattern)
     query = "primaryTitle.str.match('{}')".format(match_pattern)
     print("Filtering remaining movies with query '{}'".format(query))
     results = titles_data_frame.query(query)
