@@ -1,8 +1,8 @@
-××××××××|2009|Drama|7.3
-××××× ×××××|2011|Action,Comedy|6.2
-××××× ×××××××××××|2012|Comedy,Crime|7.1
-××××× ×××× ×× × ××××××××|2014|Thriller,Drama|6.4
-×××× ××××××××|2014|Romance,Comedy|6.2
-××× ××××|2014|Drama,Comedy|6.4
-×××××××|2016|Action,Comedy|6.2
-××××××××××|2020|Horror|5.8
+xxxxxxxx|2009|Drama|7.3
+xxxxx xxxxx|2011|Action,Comedy|6.2
+xxxxx xxxxxxxxxxx|2012|Comedy,Crime|7.1
+xxxxx xxxx xx x xxxxxxxx|2014|Thriller,Drama|6.4
+xxxx xxxxxxxx|2014|Romance,Comedy|6.2
+xxx xxxx|2014|Drama,Comedy|6.4
+xxxxxxx|2016|Action,Comedy|6.2
+xxxxxxxxxx|2020|Horror|5.8
