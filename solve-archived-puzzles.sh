@@ -10,4 +10,4 @@ done
 end=$(date +%s)
 runtime=$((end-start))
 
-printf "\nFinished in %s" $runtime
+printf "\nFinished in %s seconds" $runtime
