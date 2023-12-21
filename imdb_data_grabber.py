@@ -75,15 +75,23 @@ def filter_reviews_file(reviews_file_path, movies_dataframe):
     print("\tFiltered down to {:,} movie titles".format(reviews_data_frame.shape[0]))
 
     print("\tRemoving unnecessary columns...")
-    reviews_data_frame.drop(['numVotes'],
-                           axis='columns',
-                           inplace=True)
+    reviews_data_frame.drop(['numVotes'], axis='columns', inplace=True)
     print("\tFinished Removing unnecessary columns")
 
     print("\tWriting filtered file to {}...".format(reviews_file_path))
     reviews_data_frame.to_csv(reviews_file_path, sep='\t', compression='gzip', index=False)
     print("\tFinished writing filtered file to {}".format(reviews_file_path))
     return reviews_data_frame
+
+
+def augment_movies_file_with_review_scores(movies_file_path, movies_dataframe, reviews_dataframe):
+    print("\tAugmenting the movies file with data from review scores...")
+    full_df = pd.merge(movies_dataframe, reviews_dataframe, on='tconst', how='outer')
+    print(full_df.head())
+    print("\tWriting augmented file to {}...".format(movies_file_path))
+    full_df.to_csv(movies_file_path, sep='\t', compression='gzip', index=False)
+    print("\tFinished writing augmented file to {}".format(movies_file_path))
+    return full_df
 
 
 def filter_actors_file(actors_file_path, performances_dataframe=None):
@@ -162,9 +170,10 @@ if __name__ == '__main__':
     if download_file(local_reviews_file, "{}/{}".format(base_url, reviews_file)):
         with Progress("\tFiltering {}".format(local_reviews_file), SpinnerColumn(), transient=True) as progress:
             task = progress.add_task("Filtering", start=False)
-            # movies_df = filter_movies_file(local_movies_file)
             reviews_df = filter_reviews_file(local_reviews_file, movies_df)
             progress.update(task)
+    movies_df = augment_movies_file_with_review_scores(local_movies_file, movies_df, reviews_df)
+
 
     performances_file = 'title.principals.tsv.gz'
     local_performances_file = os.path.abspath(os.path.join(data_dir, performances_file))
