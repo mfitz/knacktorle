@@ -70,7 +70,7 @@ def parse_clues_from_html(clues_html):
         clues_list.append(MovieClue(movie_title_pattern.replace('\u2002', ' ').replace('×', 'x'),
                                     movie_release_year,
                                     ','.join(movie_genres),
-                                    movie_score))
+                                    float(movie_score)))
     return clues_list
 
 
