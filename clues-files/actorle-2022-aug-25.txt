@@ -1,12 +1,16 @@
-xxx xxxxxxxxxxx|2002|Action,Crime,Thriller|0.0
-xxx xxxxxxx xxx|2003|Action,Crime|0.0		
-xxxxxxxxxxx x|2005|Action,Thriler,Crime|0.0
-xxx xxxx xxxxxxx|2006|Comedy,Mystery,Crime,Adventure,Action|0.0
-xxx xxxx xxx|2008|Thriller,Crime,Drama|0.0	
-xxxxx xxxx|2008|Action,Thriller,Science Fiction|0.0	
-xxxxxxxxxxx x|2008|Action,Adventure,Thriller,Crime|0.0	
-xxx xxxxxxxxxxx|2010|Thriller,Adventure,Action|0.0	
-xxxxxx & xxxxxx|2011|Animation,Family|0.0	
-xxx xxxxxxxx|2011|Action,Thriler,Crime|0.0	
-xxxxxx xxxxx|2011|Action,Adventure,Thriller|0.0	
-xxx xxxxxxxxxxx x|2012|Action,Adventure,Thriller|0.0	
+xxx xxxxxxxxxxx|2002|Action,Crime,Thriller|6.8
+xxx xxxxxxx xxx|2003|Action,Crime|7.0
+xxxxxxxxxxx x|2005|Action,Thriler,Crime|6.3
+xxxxx|2006|Action,Thriller,Crime|6.9
+xxx xxxx xxx|2008|Thriller,Crime,Drama|7.2
+xxxxx xxxx|2008|Action,Thriller,Science Fiction|6.4
+xxxxxxxxxxx x|2008|Action,Adventure,Thriller,Crime|6.1
+xxx xxxxxxxxxxx|2010|Thriller,Adventure,Action|6.4
+xxxxxx & xxxxxx|2011|Animation,Family|5.9
+xxx xxxxxxxx|2011|Action,Thriler,Crime|6.5
+xxxxxx xxxxx|2011|Action,Adventure,Thriller|6.4
+xxx xxxxxxxxxxx x|2012|Action,Adventure,Thriller|6.6
+xxxxxxx x|2015|Action,Thriller,Crime|7.1
+xxx|2015|Action,Comedy,Crime|7.0
+xxx xxx|2018|Action,Science Fiction,Horror|5.6
+xxxx & xxxxxxx xxxxxxxx: xxxxx & xxxx|2019|Action,Adventure,Comedy|6.5
