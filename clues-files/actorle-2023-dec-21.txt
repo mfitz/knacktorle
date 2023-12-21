@@ -1,0 +1,30 @@
+xx xxx.|1982|Thriller,Action,Comedy,Crime,Drama|6.9
+xxxxxxx xxxxxx|1983|Comedy|7.5
+xxxxxxx xxxxx xxx|1984|Action,Comedy,Crime|7.4
+xxx xxxxxx xxxxx|1986|Action,Adventure,Comedy|5.9
+xxxxxxx xxxxx xxx xx|1987|Action,Comedy,Crime|6.5
+xxxxxx xx xxxxxxx|1988|Comedy,Romance|7.1
+xxxxxx xxxxxx|1989|Comedy,Crime,Drama|6.1
+xxxxxxx xx xxx.|1990|Thriller,Action,Comedy,Crime,Drama|5.9
+xxxxxxxxx|1992|Comedy,Romance|5.6
+xxx xxxxxxxxxxxxx xxxxxxxxx|1992|Comedy|5.9
+xxxxxxx xxxxx xxx xxx|1994|Action,Comedy,Crime|5.5
+xxx xxxxx xxxxxxxxx|1996|Fantasy,Comedy,Romance,Science Fiction|5.7
+xxxxx|1998|Animation,Family,Adventure|7.7
+xxxxxx xxxxxxxx|1998|Comedy,Family,Fantasy|5.4
+xxxx|1999|Comedy,Crime|6.8
+xxxxxxxxx|1999|Comedy|6.5
+xxxxx xxxxxxxxx xx: xxx xxxxxx|2000|Fantasy,Comedy,Romance,Science Fiction|4.5
+xxxxx|2001|Animation,Comedy,Fantasy,Adventure,Family|7.9
+xx. xxxxxxxx x|2001|Comedy,Family,Romance,Fantasy|4.7
+xxxxxxxx|2002|Action,Comedy|5.5
+x xxx|2002|Action,Adventure,Comedy,Thriller|5.4
+xxxxx xxx xxxx|2003|Comedy,Family|5.6
+xxx xxxxxxx xxxxxxx|2003|Thriller,Fantasy,Comedy,Family,Mystery|5.2
+xxxxx x|2004|Animation,Family,Comedy,Fantasy,Adventure|7.3
+xxxxxxxxxx|2006|Drama,Music|6.6
+xxxxxx|2007|Comedy|4.2
+xxxxx xxx xxxxx|2007|Fantasy,Adventure,Animation,Comedy,Family|6.1
+xxxx xxxx|2008|Comedy,Science Fiction,Adventure,Family|5.1
+xxxxx xxxxxxx xxxxx|2010|Comedy,Adventure,Fantasy,Animation,Family|6.3
+xxxxx xxxxx|2011|Action,Comedy|6.2
