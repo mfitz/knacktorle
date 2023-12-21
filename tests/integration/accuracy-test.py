@@ -21,7 +21,7 @@ def read_expected_answers(answers_file_path):
 def solve_puzzle(clues_file_path, solver_script_path):
     shell_cmd = (
         "bash {} --clues-file {} | "
-        "grep \"Dude - I think\" | "
+        "grep -i \"Dude - I think \" | "
         "awk -F \"Dude - I think it's... \" '{{print $NF}}' | "
         "awk -F '\\!' '{{print $1}}'".format(solver_script_path, clues_file_path))
     return subprocess.getoutput(shell_cmd)
@@ -58,6 +58,9 @@ def print_summary(start_datetime, puzzle_results_dict):
     for puzzle_name, result in puzzle_results_dict.items():
         short_name = puzzle_name.split('/')[-1]
         expected_answer, solver_answer, outcome, duration = result
+        if outcome == "PASS":
+            expected_answer = "********"
+            solver_answer = "********"
         colour = "green" if outcome == "PASS" else "red"
         results_table.add_row(short_name,
                               expected_answer,
