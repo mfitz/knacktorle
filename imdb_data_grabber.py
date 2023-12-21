@@ -16,7 +16,8 @@ def parse_args():
                                                      "https://datasets.imdbws.com. The files to be grabbed are: "
                                                      "title.basics.tsv.gz, "
                                                      "title.principals.tsv.gz, "
-                                                     "name.basics.tsv.gz",
+                                                     "name.basics.tsv.gz "
+                                                     "title.ratings.tsv.gz",
                                          formatter_class=SmartFormatter)
     arg_parser.add_argument('-o',
                             '--output-dir',
@@ -64,6 +65,25 @@ def filter_movies_file(movies_file_path):
     movies_data_frame.to_csv(movies_file_path, sep='\t', compression='gzip', index=False)
     print("\tFinished writing filtered file to {}".format(movies_file_path))
     return movies_data_frame
+
+
+def filter_reviews_file(reviews_file_path, movies_dataframe):
+    reviews_data_frame = pd.read_csv(reviews_file_path, sep='\t')
+    print("\tRead in {:,} rows - filtering out reviews for non-movies...".format(reviews_data_frame.shape[0]))
+    reviews_data_frame = \
+        reviews_data_frame[reviews_data_frame.tconst.isin(movies_dataframe.tconst)]
+    print("\tFiltered down to {:,} movie titles".format(reviews_data_frame.shape[0]))
+
+    print("\tRemoving unnecessary columns...")
+    reviews_data_frame.drop(['numVotes'],
+                           axis='columns',
+                           inplace=True)
+    print("\tFinished Removing unnecessary columns")
+
+    print("\tWriting filtered file to {}...".format(reviews_file_path))
+    reviews_data_frame.to_csv(reviews_file_path, sep='\t', compression='gzip', index=False)
+    print("\tFinished writing filtered file to {}".format(reviews_file_path))
+    return reviews_data_frame
 
 
 def filter_actors_file(actors_file_path, performances_dataframe=None):
@@ -133,6 +153,17 @@ if __name__ == '__main__':
         with Progress("\tFiltering {}".format(local_movies_file), SpinnerColumn(), transient=True) as progress:
             task = progress.add_task("Filtering", start=False)
             movies_df = filter_movies_file(local_movies_file)
+            progress.update(task)
+
+    reviews_file = 'title.ratings.tsv.gz'
+    reviews_df = None
+    local_reviews_file = os.path.abspath(os.path.join(data_dir, reviews_file))
+    print('-----------------------------------')
+    if download_file(local_reviews_file, "{}/{}".format(base_url, reviews_file)):
+        with Progress("\tFiltering {}".format(local_reviews_file), SpinnerColumn(), transient=True) as progress:
+            task = progress.add_task("Filtering", start=False)
+            # movies_df = filter_movies_file(local_movies_file)
+            reviews_df = filter_reviews_file(local_reviews_file, movies_df)
             progress.update(task)
 
     performances_file = 'title.principals.tsv.gz'
