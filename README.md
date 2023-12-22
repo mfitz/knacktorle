@@ -25,7 +25,7 @@ Inspired by the ubiquitous [Wordle](https://www.nytimes.com/games/wordle/index.h
 incorrect guesses bring you closer to the correct answer by revealing new information. In the case of Wordle, that new
 information confirms or eliminates letters from the search space. In Actorle, an incorrect guess reveals whether the
 actor you're looking for is older or younger than the one you've just guessed, and will also uncover the names of any
-films amongst the clues where the target actor has appeared alongside that actor. It's a fun game for any movie buff.
+films amongst the clues where the target actor has appeared alongside that actor. It's a fun game for any movie buff.
 
 <kbd><img src="images/actorle-screenshot.png" width="650"/></kbd>
 
@@ -96,11 +96,11 @@ You should be able to replace them with the equivalent code for whatever non-Chr
 
 ## Grabbing the IMDb data
 For non-commercial hacking, IMDb provide a regularly updated [data dump](https://www.imdb.com/interfaces/) of a subset
-of their database, in compressed TSV files. Knacktorle uses 3 of these files to solve puzzles.
+of their database, in compressed TSV files. Knacktorle uses 4 of these files to solve puzzles.
 
 The script `imdb_data_grabber.py` is a tool for downloading these files to a local directory and then filtering out
 extraneous data (e.g. data about TV shows rather than movies, or camera operators rather than actors) to minimise the
-file sizes. This filtering reduces the overall data size from `c.800MB` to `c.37MB`.
+file sizes. This filtering reduces the overall data size from `c.805MB` to `c.22MB`.
 
 ```bash
 $ python imdb_data_grabber.py --output-dir data
@@ -143,11 +143,13 @@ Looking for /Users/mickyfitz/workspace/knacktorle/data/name.basics.tsv.gz...
 ```
 
 ```bash
-$ ls -lth data
-total 75864
--rw-r--r--  1 mickyfitz  staff   6.3M 19 Feb 03:46 name.basics.tsv.gz
--rw-r--r--  1 mickyfitz  staff    21M 19 Feb 03:45 title.principals.tsv.gz
--rw-r--r--  1 mickyfitz  staff   8.8M 19 Feb 03:43 title.basics.tsv.gz
+$ ls -lh data
+
+total 51344
+-rw-r--r--@ 1 mickyfitz  staff   4.0M 22 Dec 21:29 name.basics.tsv.gz
+-rw-r--r--@ 1 mickyfitz  staff   4.5M 22 Dec 21:28 title.basics.tsv.gz
+-rw-r--r--@ 1 mickyfitz  staff    13M 22 Dec 21:29 title.principals.tsv.gz
+-rw-r--r--@ 1 mickyfitz  staff   1.1M 22 Dec 21:28 title.ratings.tsv.gz
 ```
 
 For convenience, this repo contains a `.gitignored` `data` directory for the purpose of holding these IMDb data files.
@@ -268,7 +270,7 @@ Here are some Russell Crowe film roles that match the movie titles in the clues:
     Mala Aravindan is 12.50% likely
 ```
 
-It should take around 7 to 10 seconds to solve a daily puzzle, depending on how many clues the puzzle
+It should take around 2 to 6 seconds to solve a daily puzzle, depending on how many clues the puzzle
 contains, how the HTTP conversation with the Actorle web server goes, how powerful your machine is, etc.
 
 The solver has a discoverable set of parameters:
