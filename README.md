@@ -100,7 +100,7 @@ of their database, in compressed TSV files. Knacktorle uses 4 of these files to 
 
 The script `imdb_data_grabber.py` is a tool for downloading these files to a local directory and then filtering out
 extraneous data (e.g. data about TV shows rather than movies, or camera operators rather than actors) to minimise the
-file sizes. This filtering reduces the overall data size from `c.805MB` to `c.22MB`.
+file sizes. This filtering reduces the overall data size from `c.895MB` to `c.22MB`.
 
 ```bash
 $ python imdb_data_grabber.py --output-dir data
