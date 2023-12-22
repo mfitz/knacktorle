@@ -1,0 +1,14 @@
+[run]
+branch = True
+omit =
+    .
+    venv/*
+    */tests/*
+    */scripts/*
+    webdriver-testing.py
+    data_file_profiler.py
+    actors_per_movie_stats.py
+    actorle_file_transformer.py
+
+[report]
+fail_under = 17
