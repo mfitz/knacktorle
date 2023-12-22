@@ -91,7 +91,9 @@ def make_movie_title_word_regex(movie_title_word):
 def get_matching_movie_ids(titles_data_frame, movie_clue):
     titles_data_frame = titles_data_frame[titles_data_frame.startYear == movie_clue.year]
     titles_data_frame = titles_data_frame[titles_data_frame.averageRating == movie_clue.score]
-    print("Filtered down to {} movies from the year {}".format(titles_data_frame.shape[0], movie_clue.year))
+    print("Found {} movies from the year {} with review score {}".format(titles_data_frame.shape[0],
+                                                                         movie_clue.year,
+                                                                         movie_clue.score))
     match_pattern = make_movie_title_regex(movie_clue.title_pattern)
     query = "primaryTitle.str.match('{}')".format(match_pattern)
     print("Filtering remaining movies with query '{}'".format(query))
