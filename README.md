@@ -27,7 +27,7 @@ information confirms or eliminates letters from the search space. In Actorle, an
 actor you're looking for is older or younger than the one you've just guessed, and will also uncover the names of any
 films amongst the clues where the target actor has appeared alongside that actor. It's a fun game for any movie buff.
 
-<kbd><img src="actorle-screenshot.png" width="650"/></kbd>
+<kbd><img src="images/actorle-screenshot.png" width="650"/></kbd>
 
 
 ## What is Knacktorle?
@@ -413,13 +413,13 @@ In the meantime, you can turn archived puzzles (or even the current daily puzzle
 semi-automated way by browsing to the archive puzzle you want at https://actorle.com/archive/, inspecting the page,
 then copy/pasting the `<table>` tag in the HTML into a text file.
 
-<kbd><img src="copying-puzzle-html.png" width="650"/></kbd>
+<kbd><img src="images/copying-puzzle-html.png" width="650"/></kbd>
 
-You can then transform the HTML fragments in that file into a clues file using the `actorle_file_transformer.py`
+You can then transform the HTML fragments in that file into a clues file using the `tools/actorle_file_transformer.py`
 script, which takes the path to the file as its single argument and modifies the file in place:
 
 ```bash
-python actorle_file_transformer.py clues-files/actorle-2022-dec-15.txt
+PYTHONPATH=$PYTHONPATH. python tools/actorle_file_transformer.py clues-files/actorle-2022-dec-15.txt
 
 Tranforming the raw actorle file at clues-files/actorle-2022-dec-15.txt
 
