@@ -39,6 +39,10 @@ def test_makes_movie_title_regex_for_title_without_special_characters(movie_titl
                              (
                                 "xxx & xx",
                                 "\\w{3} \\& \\w{2}$"
+                             ),
+                             (
+                                 "xxxxxxx xxxxxx x: xxxxxx xx xxx xxxxxxxxxx",
+                                 "\\w{7} \\w{6} \\w{1}\: \\w{6} \\w{2} \\w{3} \\w{10}$"
                              )
                          ])
 def test_makes_movie_title_regex_for_title_with_special_characters(movie_title_pattern, expected_regex):
