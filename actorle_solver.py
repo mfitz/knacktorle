@@ -83,7 +83,7 @@ def make_movie_title_word_regex(movie_title_word):
             word_regex += "{}{{{}}}".format(title_character_pattern, count)
             word_regex += "\\{}".format(character)
             count = 0
-    if count == len(movie_title_word):
+    if count != 0:
         word_regex += "{}{{{}}}".format(title_character_pattern, count)
     return word_regex
 
