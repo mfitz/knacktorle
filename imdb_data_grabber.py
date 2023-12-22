@@ -88,9 +88,15 @@ def augment_movies_file_with_review_scores(movies_file_path, movies_dataframe, r
     print("\tAugmenting the movies file with data from review scores...")
     full_df = pd.merge(movies_dataframe, reviews_dataframe, on='tconst', how='outer')
     print(full_df.head())
+
+    print("Filtering out movies with no review score...")
+    full_df = full_df[full_df['averageRating'].notna()]
+    print("Number of movies is now {:,}".format(full_df.shape[0]))
+
     print("\tWriting augmented file to {}...".format(movies_file_path))
     full_df.to_csv(movies_file_path, sep='\t', compression='gzip', index=False)
     print("\tFinished writing augmented file to {}".format(movies_file_path))
+
     return full_df
 
 
@@ -121,29 +127,29 @@ def filter_actors_file(actors_file_path, performances_dataframe=None):
 
 
 def filter_performances_file(performances_file_path, movies_dataframe=None):
-    performances_data_frame = pd.read_csv(performances_file_path, sep='\t')
+    performances_df = pd.read_csv(performances_file_path, sep='\t')
 
-    print("\tRead in {:,} rows - filtering out non-acting categories...".format(performances_data_frame.shape[0]))
-    performances_data_frame = \
-        performances_data_frame[(performances_data_frame.category == "actor") |
-                                (performances_data_frame.category == "actress")]
-    print("\tRemoved non-acting categories - we now have {:,} rows".format(performances_data_frame.shape[0]))
+    print("\tRead in {:,} rows - filtering out non-acting categories...".format(performances_df.shape[0]))
+    performances_df = \
+        performances_df[(performances_df.category == "actor") |
+                                (performances_df.category == "actress")]
+    print("\tRemoved non-acting categories - we now have {:,} rows".format(performances_df.shape[0]))
     if movies_dataframe is not None:
-        print("\tFiltering out performances in non-movies using movies dataframe containing {:,} movies"
+        print("\tFiltering out performances in unknown using movies dataframe containing {:,} movies"
               .format(movies_dataframe.shape[0]))
-        performances_data_frame = \
-            performances_data_frame[performances_data_frame.tconst.isin(movies_dataframe.tconst)]
-    print("\tFiltered down to {:,} movie performances".format(performances_data_frame.shape[0]))
+        performances_df = \
+            performances_df[performances_df.tconst.isin(movies_dataframe.tconst)]
+    print("\tFiltered down to {:,} movie performances".format(performances_df.shape[0]))
 
     print("\tRemoving unnecessary columns...")
-    performances_data_frame.drop(['ordering', 'category', 'job'], axis='columns', inplace=True)
+    performances_df.drop(['ordering', 'category', 'job'], axis='columns', inplace=True)
     print("\tFinished Removing unnecessary columns")
 
     print("\tWriting filtered file to {}...".format(performances_file_path))
-    performances_data_frame.to_csv(performances_file_path, sep='\t', compression='gzip', index=False)
+    performances_df.to_csv(performances_file_path, sep='\t', compression='gzip', index=False)
     print("\tFinished writing filtered file to {}".format(performances_file_path))
 
-    return performances_data_frame
+    return performances_df
 
 
 if __name__ == '__main__':
@@ -173,7 +179,6 @@ if __name__ == '__main__':
             reviews_df = filter_reviews_file(local_reviews_file, movies_df)
             progress.update(task)
     movies_df = augment_movies_file_with_review_scores(local_movies_file, movies_df, reviews_df)
-
 
     performances_file = 'title.principals.tsv.gz'
     local_performances_file = os.path.abspath(os.path.join(data_dir, performances_file))
