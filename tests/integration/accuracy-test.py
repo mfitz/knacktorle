@@ -31,6 +31,7 @@ def solve_puzzle(clues_file_path, solver_script_path):
 
 
 def print_summary(start_datetime, puzzle_results_dict, elide_correct_answers):
+    running_time = datetime.now() - start_datetime
     console = Console()
     console.print("")
     passes = [
@@ -46,9 +47,7 @@ def print_summary(start_datetime, puzzle_results_dict, elide_correct_answers):
         if result == "FAIL"
     ]
     table_caption = "{} failed, {} passed in [yellow bold]{}[/yellow bold]" \
-        .format(len(failures),
-                len(passes),
-                format_time_delta(datetime.now() - start_datetime))
+        .format(len(failures), len(passes), format_time_delta(running_time))
     results_table = Table(show_header=True,
                           header_style="bold magenta",
                           title="Summary",
@@ -75,11 +74,11 @@ def print_summary(start_datetime, puzzle_results_dict, elide_correct_answers):
 
 
 def format_time_delta(time_delta):
-    return (str(time_delta))[:-3]
+    return str(time_delta)[:-3]
 
 
 if __name__ == '__main__':
-    start_time = datetime.now()
+    app_start_time = datetime.now()
     arg_parser = argparse.ArgumentParser(
         description="Solve a set of puzzles from a directory of clues files,"
                     "compare the answers to a set of correct answers and"
@@ -133,4 +132,4 @@ if __name__ == '__main__':
             result = "FAIL"
         puzzle_results[puzzle] = (expected_answer, solver_answer, result, duration)
         print("-----------------------------------------------")
-    print_summary(start_time, puzzle_results, cli_args['elide_answers'])
+    print_summary(app_start_time, puzzle_results, cli_args['elide_answers'])
