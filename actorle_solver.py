@@ -73,18 +73,19 @@ def make_movie_title_regex(movie_title_pattern):
 
 
 def make_movie_title_word_regex(movie_title_word):
-    count = 0
+    alnum_character_count = 0
+    alnum_character_pattern = "\w"
     word_regex = ''
-    title_character_pattern = "[a-zA-Z0-9]"
     for character in movie_title_word:
         if character.isalnum():
-            count += 1
+            alnum_character_count += 1
         else:
-            word_regex += "{}{{{}}}".format(title_character_pattern, count)
+            if alnum_character_count != 0:
+                word_regex += "{}{{{}}}".format(alnum_character_pattern, alnum_character_count)
             word_regex += "\\{}".format(character)
-            count = 0
-    if count != 0:
-        word_regex += "{}{{{}}}".format(title_character_pattern, count)
+            alnum_character_count = 0
+    if alnum_character_count != 0:
+        word_regex += "{}{{{}}}".format(alnum_character_pattern, alnum_character_count)
     return word_regex
 
 
