@@ -55,7 +55,7 @@ def parse_args():
                             default=3)
     arg_parser.add_argument('-r',
                             '--rating-tolerance',
-                            help='The tolerance around movie review rating tolerance. Optional, default is 0.1.',
+                            help='The tolerance around movie review rating matching. Optional, default is 0.1.',
                             type=float,
                             default=0.1)
     return vars(arg_parser.parse_args())
