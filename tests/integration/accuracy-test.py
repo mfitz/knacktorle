@@ -46,8 +46,9 @@ def print_summary(start_datetime, puzzle_results_dict, elide_correct_answers):
         in puzzle_results_dict.values()
         if result == "FAIL"
     ]
-    table_caption = "{} failed, {} passed in [yellow bold]{}[/yellow bold]" \
-        .format(len(failures), len(passes), format_time_delta(running_time))
+    unknown_results = len(puzzle_results_dict) - (len(failures) + len(passes))
+    table_caption = "{} failed, {} passed, {} unknown in [yellow bold]{}[/yellow bold]" \
+        .format(len(failures), len(passes), unknown_results, format_time_delta(running_time))
     results_table = Table(show_header=True,
                           header_style="bold magenta",
                           title="Summary",
@@ -63,7 +64,7 @@ def print_summary(start_datetime, puzzle_results_dict, elide_correct_answers):
         if outcome == "PASS" and elide_correct_answers:
             expected_answer = ELIDED_STRING
             solver_answer = ELIDED_STRING
-        colour = "green" if outcome == "PASS" else "red"
+        colour = "green" if outcome == "PASS" else "red" if outcome == "FAIL" else "yellow"
         results_table.add_row(short_name,
                               expected_answer,
                               solver_answer,
