@@ -164,6 +164,51 @@ of the IMDb data.
 
 
 ## Running the Solver
+The solver's CLI is fairly discoverable:
+
+```shell
+python actorle_solver.py --help
+usage: actorle_solver.py [-h] -mf MOVIES_FILE -af ACTORS_FILE -pf PERFORMANCES_FILE [-cf CLUES_FILE] [-w WRITE_CLUES_FILE] [-n NUM_OPTIONS] [-r RATING_TOLERANCE]
+
+Solve an Actorle puzzle. Today's puzzle will be retrieved from https://actorle.com/ and solved, unless a different puzzle is specified using the --clues-file argument.
+
+options:
+  -h, --help            show this help message and exit
+  -mf MOVIES_FILE, --movies-file MOVIES_FILE
+                        the full path to an IMDb title.basics.tsv.gz file, as found at https://datasets.imdbws.com.
+                        Mandatory.
+  -af ACTORS_FILE, --actors-file ACTORS_FILE
+                        the full path to an IMDb name.basics.tsv.gz file, as found at https://datasets.imdbws.com.
+                        Mandatory.
+  -pf PERFORMANCES_FILE, --performances-file PERFORMANCES_FILE
+                        the full path to an IMDb title.principals.tsv.gz file, as found at https://datasets.imdbws.com.
+                        Mandatory.
+  -cf CLUES_FILE, --clues-file CLUES_FILE
+                        the full path to a puzzle file that contains the clues. Optional.
+                        When this parameter is not set, today's puzzle will be retrieved from https://actorle.com/.
+                        Each line in the file represents the clues for an individual movie and should look like:
+
+                        <title pattern>|<year>|<genres>|<score>
+
+                        For example:
+
+                        xxx xxxxxxxxxxx|2002|Action,Crime,Thriller|7.1
+  -w WRITE_CLUES_FILE, --write-clues-file WRITE_CLUES_FILE
+                        the full path to write out a puzzle file that contains the clues. Optional.
+                        This allows you to "save" puzzles to be used later/offline.
+                        Each line in the file represents the clues for an individual movie and will look like:
+
+                        <title pattern>|<year>|<genres>|<score>
+
+                        For example:
+
+                        xxx xxxxxxxxxxx|2002|Action,Crime,Thriller|7.1
+  -n NUM_OPTIONS, --num-options NUM_OPTIONS
+                        The number of potential answers to display. Optional, default is 3.
+  -r RATING_TOLERANCE, --rating-tolerance RATING_TOLERANCE
+                        The tolerance around movie review rating matching. Optional, default is 0.1.
+```
+
 To solve today's puzzle, assuming you downloaded the IMDb data to the `data` directory:
 
 ```bash
@@ -271,50 +316,8 @@ Here are some Russell Crowe film roles that match the movie titles in the clues:
 ```
 
 It should take around 2 to 6 seconds to solve a daily puzzle, depending on how many clues the puzzle
-contains, how the HTTP conversation with the Actorle web server goes, how powerful your machine is, etc.
-
-The solver has a discoverable set of parameters:
-
-```bash
-$ python actorle_solver.py --help
-
-usage: actorle_solver.py [-h] -mf MOVIES_FILE -af ACTORS_FILE -pf PERFORMANCES_FILE [-cf CLUES_FILE] [-w WRITE_CLUES_FILE]
-
-Solve an Actorle puzzle. Today's puzzle will be retrieved from https://actorle.com/ and solved, unless a different puzzle is specified using
-the --clues-file argument.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -mf MOVIES_FILE, --movies-file MOVIES_FILE
-                        the full path to an IMDb title.basics.tsv.gz file, as found at https://datasets.imdbws.com.
-                        Mandatory.
-  -af ACTORS_FILE, --actors-file ACTORS_FILE
-                        the full path to an IMDb name.basics.tsv.gz file, as found at https://datasets.imdbws.com.
-                        Mandatory.
-  -pf PERFORMANCES_FILE, --performances-file PERFORMANCES_FILE
-                        the full path to an IMDb title.principals.tsv.gz file, as found at https://datasets.imdbws.com.
-                        Mandatory.
-  -cf CLUES_FILE, --clues-file CLUES_FILE
-                        the full path to a puzzle file that contains the clues. Optional.
-                        When this parameter is not set, today's puzzle will be retrieved from https://actorle.com/.
-                        Each line in the file represents the clues for an individual movie and should look like:
-
-                        <title pattern>|<year>|<genres>|<score>
-
-                        For example:
-
-                        xxx xxxxxxxxxxx|2002|Action,Crime,Thriller|7.1
-  -w WRITE_CLUES_FILE, --write-clues-file WRITE_CLUES_FILE
-                        the full path to write out a puzzle file that contains the clues. Optional.
-                        This allows you to "save" puzzles to be used later/offline.
-                        Each line in the file represents the clues for an individual movie and will look like:
-
-                        <title pattern>|<year>|<genres>|<score>
-
-                        For example:
-
-                        xxx xxxxxxxxxxx|2002|Action,Crime,Thriller|7.1
-```
+contains, how the HTTP conversation with the Actorle web server goes, how powerful your machine is, etc. Solving from
+a local clues file is quicker - generally around 1.5 seconds on my local machine.
 
 
 ## Offline Solving
