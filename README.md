@@ -44,8 +44,8 @@ See it in action:
   - On Apple silicon you will likely need Python 3.9 or greater; numpy probably won't `pip install` on earlier versions
 - (Unless you want to use the solver only in [offline mode](#offline-solving)) A local web browser - I use Chrome - that
 can be driven by [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)
-- About 600MB of disk space to be used when downloading and pre-processing the IMDb dataset (once
-pre-processing is complete the data uses far less space, more like 37MB)
+- About 900MB of disk space to be used when downloading and pre-processing the IMDb dataset (once
+pre-processing is complete the data uses far less space, more like 22MB)
 
 
 ## Installing
