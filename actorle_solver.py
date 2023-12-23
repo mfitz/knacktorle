@@ -51,7 +51,13 @@ def parse_args():
     arg_parser.add_argument('-n',
                             '--num-options',
                             help='The number of potential answers to display. Optional, default is 3.',
-                            type=int)
+                            type=int,
+                            default=3)
+    arg_parser.add_argument('-r',
+                            '--rating-tolerance',
+                            help='The tolerance around movie review rating tolerance. Optional, default is 0.1.',
+                            type=float,
+                            default=0.1)
     return vars(arg_parser.parse_args())
 
 
@@ -74,7 +80,7 @@ def make_movie_title_regex(movie_title_pattern):
 
 def make_movie_title_word_regex(movie_title_word):
     alnum_character_count = 0
-    alnum_character_pattern = "\w"
+    alnum_character_pattern = "\\w"
     word_regex = ''
     for character in movie_title_word:
         if character.isalnum():
@@ -89,12 +95,14 @@ def make_movie_title_word_regex(movie_title_word):
     return word_regex
 
 
-def get_matching_movie_ids(titles_data_frame, movie_clue):
+def get_matching_movie_ids(titles_data_frame, movie_clue, rating_match_tolerance):
     matches_data_frame = titles_data_frame[titles_data_frame.startYear == movie_clue.year]
-    matches_data_frame = matches_data_frame[matches_data_frame.averageRating == movie_clue.score]
-    print("Found {} movies from the year {} with review score {}".format(matches_data_frame.shape[0],
-                                                                         movie_clue.year,
-                                                                         movie_clue.score))
+    matches_data_frame = matches_data_frame[matches_data_frame.averageRating.between(
+        movie_clue.score - rating_match_tolerance, movie_clue.score + rating_match_tolerance)]
+    print("Found {} movies from the year {} with review score close to {}"
+          .format(matches_data_frame.shape[0],
+                  movie_clue.year,
+                  movie_clue.score))
     match_pattern = make_movie_title_regex(movie_clue.title_pattern)
     query = "primaryTitle.str.match('{}')".format(match_pattern)
     print("Filtering remaining movies with query '{}'".format(query))
@@ -134,13 +142,13 @@ def get_candidate_performances(performances_data_file, movies_df):
     return actors_data_frame
 
 
-def get_most_likely_actors_for_clues(puzzle_clues, movies_data_frame, performances_df, num_options):
+def get_most_likely_actors_for_clues(puzzle_clues, movies_data_frame, performances_df, num_options, rating_tolerance):
     print("\nWorking through the clues...")
     all_potential_performances = []
     for clue in puzzle_clues:
         print('----------------------------')
         print("Looking for movie matches for {}".format(clue))
-        matching_movies = get_matching_movie_ids(movies_data_frame, clue)
+        matching_movies = get_matching_movie_ids(movies_data_frame, clue, rating_tolerance)
         actors_ids = get_actors_in_movies(performances_df, matching_movies)
         all_potential_performances.extend(actors_ids.nconst.tolist())
     print('----------------------------')
@@ -198,13 +206,11 @@ if __name__ == '__main__':
     print("Reading IMDb actor performances data from {}".format(performances_file))
     performances_df = get_candidate_performances(performances_file, movies_df)
 
-    number_of_potential_matches = args['num_options']
-    if not number_of_potential_matches:
-        number_of_potential_matches = 3
     most_likely_actors = get_most_likely_actors_for_clues(puzzle_clues,
                                                           movies_df,
                                                           performances_df,
-                                                          number_of_potential_matches)
+                                                          args['num_options'],
+                                                          args['rating_tolerance'])
     print("\n\nActor IDs occurring most often across all possible candidate movies:{}".format(most_likely_actors))
     total_count = sum(count for actor_id, count in most_likely_actors)
 
