@@ -63,7 +63,7 @@ def parse_args():
 
 def get_actors_in_movies(performances_dataframe, movie_ids):
     matching_actors = performances_dataframe[performances_dataframe.tconst.isin(movie_ids.tconst)]
-    print("Found {} actors for these {} movie_ids".format(matching_actors.shape[0], len(movie_ids)))
+    print("Found {} actors for these {} movies".format(matching_actors.shape[0], len(movie_ids)))
     return matching_actors[['nconst', 'characters']]
 
 
