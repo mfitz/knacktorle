@@ -1,0 +1,22 @@
+xxxxxxxx|1998|Comedy,Drama|7.6
+xxxxxxxx|2002|Comedy,Romance|5.3
+xxxxxx|2002|Science Fiction,Comedy,Drama|6.1
+xxxxxxxxx|2005|Comedy,Fantasy,Romance|4.8
+xxxxxxxx|2005|Comedy,Drama,Romance|6.3
+xxxxx xxxxxxxxxx|2006|Drama,History|6.5
+xxx xxxxxxxxxx xxxxxxx|2007|Adventure,Drama,Comedy|7.2
+xxxxx xxxxxx|2009|Comedy,Drama|6.3
+xxxxxxxxx xx. xxx|2009|Adventure,Animation,Comedy,Family|7.9
+xxxxx xxxxxxx xx. xxx xxxxx|2010|Action,Comedy,Romance|7.5
+xxxxxxxx xxxxxxx|2012|Comedy,Drama,Romance|7.8
+x xxxxxxx xxxxxx xxx xxxx xx xxxxxxx xxxx xxx|2013|Comedy|4.6
+xxxxxx xx. xxxxx|2013|Comedy,Drama,History|7.5
+xxx xxxxx xxxxxxxx xxxxx|2014|Comedy,Drama|8.1
+xxxxxx xx xxxxxx|2014|Comedy,Drama|6.3
+xxx xxxx|2014|Drama|7.0
+xxx xxxxxxxxx|2015|Mystery,Comedy|6.1
+xx xxxxxx xxxx xxxxxx xxxxxxx xxxx xxx xxx|2016|Animation,Comedy,Drama|6.1
+xxx xxxxxx xxxxxxxx|2021|Drama,Comedy|7.1
+xxxx x|2021|Animation,Family|7.4
+xxxxxx-xxx: xxxxxx xxx xxxxxx-xxxxx|2023|Animation,Action,Adventure|8.7
+xxxxxxxx xxxx|2023|Comedy,Drama|6.6
