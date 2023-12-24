@@ -1,0 +1,30 @@
+xxx xxxxxxxxxx|1999|Comedy,Drama,Romance|5.9
+xxxxxx xxxx|1999|Comedy,Drama|6.1
+xxxxx xxxx|2000|Comedy,Romance|5.9
+xxxxxx|2000|Mystery,Thriller|5.9
+xx. x & xxx xxxxx|2000|Comedy,Drama,Romance|4.7
+xxxxxx xxxxxx|2000|Drama,Music|7.9
+xxx xxxx xxxxxxxx|2002|Action,Adventure,Drama,Romance,War|6.5
+xxx xx xxxx x xxx xx xx xxxx|2003|Comedy,Romance|6.5
+xxxx & xxxx|2003|Comedy,Romance|5.5
+xx xxxxxxx|2003|Drama,Romance|4.9
+xxxxxxx xxxxx|2004|Drama,Comedy,Romance|6.0
+xxx xxxxxxxx xxx|2005|Drama,Horror,Mystery,Thriller|6.5
+xxx, xx xxx xxxxxx|2006|Comedy,Romance|5.6
+xxxx'x xxxx|2008|Adventure,Romance,Comedy|5.7
+xx xxxx xxxxxx'x xxxx|2008|Romance,Comedy|5.8
+xxxxx xxxx|2009|Comedy,Romance|5.5
+xxxx|2009|Drama,Music,Romance|5.8
+xxx xxxxxx xxxxxx xx|2010|Crime,Drama,Thriller|6.1
+x xxxxxx xxx xx xxxxxx|2011|Comedy,Drama,Romance|6.2
+xxxxxxxxx xxxxxxxx|2011|Comedy,Drama,Romance|5.8
+xxx xxxxxxxxx xxxxxxxxxxxxxx|2013|Thriller|6.8
+xxxx x xxx xxxx|2014|Drama,Comedy|6.6
+xxxx xxxxxx|2014|Thriller,Crime,Action|5.5
+xxxx xxx xxxxxx|2015|Comedy,Music,War|5.5
+xxxx xx xxxxx x|2016|Action,Adventure,Animation,Comedy,Family|7.1
+xxxxxx'x xxx|2016|Comedy,Drama,Romance|5.6
+xxxxxxxxx xxxxxxx|2016|Drama,Action|7.1
+xxxxxxxx|2017|Drama|7.3
+xxxxx|2021|Music,Drama|3.2
+xxxxx xxxxx: x xxxxxx xxx xxxxxxx|2022|Comedy,Crime,Mystery|7.1
