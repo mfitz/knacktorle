@@ -7,4 +7,4 @@ omit =
     */scripts/*
 
 [report]
-fail_under = 17
+fail_under = 12

@@ -1,6 +1,6 @@
-import actorle_solver
-
 import pytest
+
+import movie_clues
 
 
 @pytest.mark.parametrize("movie_title_pattern, expected_regex",
@@ -19,7 +19,7 @@ import pytest
                              ),
                          ])
 def test_makes_movie_title_regex_for_title_without_special_characters(movie_title_pattern, expected_regex):
-    assert actorle_solver.make_movie_title_regex(movie_title_pattern) == expected_regex
+    assert movie_clues.make_movie_title_regex(movie_title_pattern) == expected_regex
 
 
 @pytest.mark.parametrize("movie_title_pattern, expected_regex",
@@ -46,4 +46,4 @@ def test_makes_movie_title_regex_for_title_without_special_characters(movie_titl
                              )
                          ])
 def test_makes_movie_title_regex_for_title_with_special_characters(movie_title_pattern, expected_regex):
-    assert actorle_solver.make_movie_title_regex(movie_title_pattern) == expected_regex
+    assert movie_clues.make_movie_title_regex(movie_title_pattern) == expected_regex

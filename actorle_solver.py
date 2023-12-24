@@ -1,98 +1,15 @@
-import argparse
 import collections
 
 import pandas as pd
 
-from cli import SmartFormatter
-from movie_clues import write_movie_clues_file, read_puzzle_clues
-
-
-def parse_args():
-    arg_parser = argparse.ArgumentParser(description="Solve an Actorle puzzle. Today's puzzle will be retrieved from "
-                                                     "https://actorle.com/ and solved, unless a different puzzle is "
-                                                     "specified using the --clues-file argument.",
-                                         formatter_class=SmartFormatter)
-    arg_parser.add_argument('-mf',
-                            '--movies-file',
-                            help="R|the full path to an IMDb title.basics.tsv.gz file, as found at "
-                                 "https://datasets.imdbws.com.\n"
-                                 "Mandatory.",
-                            required=True)
-    arg_parser.add_argument('-af',
-                            '--actors-file',
-                            help="R|the full path to an IMDb name.basics.tsv.gz file, as found at "
-                                 "https://datasets.imdbws.com.\n"
-                                 "Mandatory.",
-                            required=True)
-    arg_parser.add_argument('-pf',
-                            '--performances-file',
-                            help="R|the full path to an IMDb title.principals.tsv.gz file, as found at "
-                                 "https://datasets.imdbws.com.\n"
-                                 "Mandatory.",
-                            required=True)
-    arg_parser.add_argument('-cf',
-                            '--clues-file',
-                            help="R|the full path to a puzzle file that contains the clues. Optional.\nWhen this "
-                                 "parameter is not set, today's puzzle will be retrieved from https://actorle.com/.\n"
-                                 "Each line in the file represents the clues for an individual movie and should look "
-                                 "like:\n\n"
-                                 "<title pattern>|<year>|<genres>|<score>\n\n"
-                                 "For example:\n\n"
-                                 "xxx xxxxxxxxxxx|2002|Action,Crime,Thriller|7.1")
-    arg_parser.add_argument('-w',
-                            '--write-clues-file',
-                            help='R|the full path to write out a puzzle file that contains the clues. Optional.\n'
-                                 'This allows you to "save" puzzles to be used later/offline.\n'
-                                 'Each line in the file represents the clues for '
-                                 'an individual movie and will look like:\n\n'
-                                 '<title pattern>|<year>|<genres>|<score>\n\n'
-                                 'For example:\n\n'
-                                 'xxx xxxxxxxxxxx|2002|Action,Crime,Thriller|7.1')
-    arg_parser.add_argument('-n',
-                            '--num-options',
-                            help='The number of potential answers to display. Optional, default is 3.',
-                            type=int,
-                            default=3)
-    arg_parser.add_argument('-r',
-                            '--rating-tolerance',
-                            help='The tolerance around movie review rating matching. Optional, default is 0.1.',
-                            type=float,
-                            default=0.1)
-    return vars(arg_parser.parse_args())
+from cli import parse_cli_args
+from movie_clues import write_movie_clues_file, read_puzzle_clues, make_movie_title_regex, movie_title_to_clues_pattern
 
 
 def get_actors_in_movies(performances_dataframe, movie_ids):
     matching_actors = performances_dataframe[performances_dataframe.tconst.isin(movie_ids.tconst)]
     print("Found {} actors for these {} movies".format(matching_actors.shape[0], len(movie_ids)))
     return matching_actors[['nconst', 'characters']]
-
-
-def make_movie_title_regex(movie_title_pattern):
-    words = movie_title_pattern.split()
-    regex_pattern = ""
-    for index, word in enumerate(words):
-        regex_pattern += make_movie_title_word_regex(word)
-        if index != len(words) - 1:
-            regex_pattern += " "
-    regex_pattern += "$"
-    return regex_pattern
-
-
-def make_movie_title_word_regex(movie_title_word):
-    alnum_character_count = 0
-    alnum_character_pattern = "\\w"
-    word_regex = ''
-    for character in movie_title_word:
-        if character.isalnum():
-            alnum_character_count += 1
-        else:
-            if alnum_character_count != 0:
-                word_regex += "{}{{{}}}".format(alnum_character_pattern, alnum_character_count)
-            word_regex += "\\{}".format(character)
-            alnum_character_count = 0
-    if alnum_character_count != 0:
-        word_regex += "{}{{{}}}".format(alnum_character_pattern, alnum_character_count)
-    return word_regex
 
 
 def get_matching_movie_ids(titles_data_frame, movie_clue, rating_match_tolerance):
@@ -161,16 +78,6 @@ def get_actor_name(actor_id, actor_names_df):
     return actor_names_df[actor_names_df.nconst == actor_id].iloc[0]['primaryName']
 
 
-def title_to_pattern(movie_title):
-    pattern = ''
-    for character in movie_title:
-        if character.isalnum():
-            pattern += 'x'
-        else:
-            pattern += character
-    return pattern
-
-
 def get_matching_movies_for_actor(movie_clues, actor_id, performances_df, movies_df):
     all_actor_performances = performances_df[performances_df.nconst == actor_id][['tconst', 'characters']]
     actor_movies = \
@@ -178,7 +85,7 @@ def get_matching_movies_for_actor(movie_clues, actor_id, performances_df, movies
     actor_movies = pd.merge(all_actor_performances, actor_movies, on=['tconst'])
     clue_title_patterns = set([clue.title_pattern for clue in movie_clues])
     filtered_movie_titles = [title for title in actor_movies['primaryTitle'].tolist()
-                             if title_to_pattern(title) in clue_title_patterns]
+                             if movie_title_to_clues_pattern(title) in clue_title_patterns]
     actor_movies = actor_movies[actor_movies['primaryTitle'].isin(filtered_movie_titles)][['primaryTitle',
                                                                                            'startYear',
                                                                                            'characters']]
@@ -192,7 +99,7 @@ def get_matching_movies_for_actor(movie_clues, actor_id, performances_df, movies
 
 
 if __name__ == '__main__':
-    args = parse_args()
+    args = parse_cli_args()
 
     puzzle_clues = read_puzzle_clues(args['clues_file'])
     if args['write_clues_file']:

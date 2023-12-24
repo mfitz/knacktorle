@@ -85,3 +85,41 @@ def read_puzzle_clues(puzzle):
     print("Found {} clues for the puzzle from {}:".format(len(clues), puzzle))
     pprint.pprint(clues)
     return clues
+
+
+def make_movie_title_regex(movie_title_pattern):
+    words = movie_title_pattern.split()
+    regex_pattern = ""
+    for index, word in enumerate(words):
+        regex_pattern += make_movie_title_word_regex(word)
+        if index != len(words) - 1:
+            regex_pattern += " "
+    regex_pattern += "$"
+    return regex_pattern
+
+
+def make_movie_title_word_regex(movie_title_word):
+    alnum_character_count = 0
+    alnum_character_pattern = "\\w"
+    word_regex = ''
+    for character in movie_title_word:
+        if character.isalnum():
+            alnum_character_count += 1
+        else:
+            if alnum_character_count != 0:
+                word_regex += "{}{{{}}}".format(alnum_character_pattern, alnum_character_count)
+            word_regex += "\\{}".format(character)
+            alnum_character_count = 0
+    if alnum_character_count != 0:
+        word_regex += "{}{{{}}}".format(alnum_character_pattern, alnum_character_count)
+    return word_regex
+
+
+def movie_title_to_clues_pattern(movie_title):
+    pattern = ''
+    for character in movie_title:
+        if character.isalnum():
+            pattern += 'x'
+        else:
+            pattern += character
+    return pattern
