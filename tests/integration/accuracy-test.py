@@ -9,7 +9,6 @@ from cli import SmartFormatter
 from rich.console import Console
 from rich.table import Table
 
-
 ELIDED_STRING = "********"
 
 
@@ -21,12 +20,15 @@ def read_expected_answers(answers_file_path):
     return all_answers
 
 
-def solve_puzzle(clues_file_path, solver_script_path):
+def solve_puzzle(clues_file_path, solver_script_path, script_param_list):
+    script_param_string = " ".join(script_param_list)
     shell_cmd = (
-        "bash {} --clues-file {} | "
+        "bash {} --clues-file {} {} | "
         "grep -i \"Dude - I think \" | "
         "awk -F \"Dude - I think it's... \" '{{print $NF}}' | "
-        "awk -F '\\!' '{{print $1}}'".format(solver_script_path, clues_file_path))
+        "awk -F '\\!' '{{print $1}}'".format(solver_script_path,
+                                             clues_file_path,
+                                             script_param_string))
     return subprocess.getoutput(shell_cmd)
 
 
@@ -78,8 +80,8 @@ def format_time_delta(time_delta):
     return str(time_delta)[:-3]
 
 
-if __name__ == '__main__':
-    app_start_time = datetime.now()
+def parse_cli_args():
+    global cli_args
     arg_parser = argparse.ArgumentParser(
         description="Solve a set of puzzles from a directory of clues files,"
                     "compare the answers to a set of correct answers and"
@@ -106,10 +108,24 @@ if __name__ == '__main__':
                             action='store_true',
                             help="R|flag to elide puzzle answers for passing tests in the summary table\n"
                                  "Optional.")
-    cli_args = vars(arg_parser.parse_args())
+    arg_parser.add_argument('-l',
+                            '--param-list',
+                            nargs='*',
+                            default=[],
+                            help='Optional list of parameters to pass to the solver script')
+    return vars(arg_parser.parse_args())
 
-    print("Solving puzzles from the {} directory, and validating answers using the {} file"
-          .format(cli_args['puzzle_directory'], cli_args['answers_file']))
+
+if __name__ == '__main__':
+    app_start_time = datetime.now()
+    cli_args = parse_cli_args()
+
+    print("Invoking the solver script at {}, with the param list '{}' "
+          "to solve puzzles from the {} directory, and validating answers using the {} file"
+          .format(cli_args['solver_script'],
+                  cli_args['param_list'],
+                  cli_args['puzzle_directory'],
+                  cli_args['answers_file']))
 
     print("Reading in expected answers from {} file...".format(cli_args['answers_file']))
     print("-----------------------------------------------")
@@ -122,7 +138,7 @@ if __name__ == '__main__':
         expected_answer_to_show = ELIDED_STRING if cli_args['elide_answers'] else expected_answer
         print("Solving puzzle {} and expecting the answer '{}'".format(puzzle_path, expected_answer_to_show))
         start_time = datetime.now()
-        solver_answer = solve_puzzle(puzzle_path, cli_args['solver_script'])
+        solver_answer = solve_puzzle(puzzle_path, cli_args['solver_script'], cli_args['param_list'])
         solver_answer_to_show = ELIDED_STRING if cli_args['elide_answers'] else solver_answer
         duration = datetime.now() - start_time
         print("Got answer '{}'".format(solver_answer_to_show))
