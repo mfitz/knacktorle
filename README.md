@@ -221,98 +221,359 @@ $ python actorle_solver.py \
 The console output looks like this:
 
 ```bash
-Requesting https://actorle.com/ via selenium
-Retrieved a web page with the title 'Actorle | the actor guessing game'
-Found 30 clues for the puzzle from 2023-01-05:
-[MovieClue(title_pattern='xxxxx', year='1991', genre_list='DRAMAROMANCE', score=7.2),
- MovieClue(title_pattern='xxx xxxxx xxx xxx xxxx', year='1995', genre_list='WESTERNACTIONTHRILLER', score=6.5),
- MovieClue(title_pattern='xxxxxxxxxx', year='1995', genre_list='ACTIONCRIMESCIENCE FICTIONTHRILLER', score=5.5),
- MovieClue(title_pattern='x.x. xxxxxxxxxxxx', year='1997', genre_list='CRIMEMYSTERYTHRILLER', score=8.2),
- MovieClue(title_pattern='xxxxxxx, xxxxxx', year='1999', genre_list='DRAMACOMEDY', score=6.7),
- MovieClue(title_pattern='xxx xxxxxxx', year='1999', genre_list='DRAMATHRILLER', score=7.8),
- MovieClue(title_pattern='xxxxxxxxx', year='2000', genre_list='ACTIONDRAMAADVENTURE', score=8.5),
- MovieClue(title_pattern='x xxxxxxxxx xxxx', year='2001', genre_list='DRAMAROMANCE', score=8.2),
- MovieClue(title_pattern='xxxxxx xxx xxxxxxxxx: xxx xxx xxxx xx xxx xxxxx', year='2003', genre_list='ADVENTUREDRAMAWAR', score=7.4),
- MovieClue(title_pattern='xxxxxxxxxx xxx', year='2005', genre_list='ROMANCEDRAMAHISTORY', score=8.0),
- MovieClue(title_pattern='x xxxx xxxx', year='2006', genre_list='COMEDYDRAMAROMANCE', score=6.9),
- MovieClue(title_pattern='x:xx xx xxxx', year='2007', genre_list='WESTERN', score=7.7),
- MovieClue(title_pattern='xxxxxxxx xxxxxxxx', year='2007', genre_list='DRAMACRIME', score=7.8),
- MovieClue(title_pattern='xxxx xx xxxx', year='2008', genre_list='ACTIONDRAMATHRILLER', score=7.0),
- MovieClue(title_pattern='xxxxx xx xxxx', year='2009', genre_list='THRILLERDRAMAMYSTERY', score=7.1),
- MovieClue(title_pattern='xxxxx xxxx', year='2010', genre_list='ACTIONADVENTUREDRAMA', score=6.6),
- MovieClue(title_pattern='xxx xxxx xxxxx xxxx', year='2010', genre_list='ROMANCEDRAMATHRILLERCRIME', score=7.3),
- MovieClue(title_pattern='xxx xxx xxxx xxx xxxx xxxxx', year='2012', genre_list='ACTION', score=5.4),
- MovieClue(title_pattern='xxx xxxxxxxxxx', year='2012', genre_list='HISTORYDRAMAMUSIC', score=7.5),
- MovieClue(title_pattern='xxxxxx xxxx', year='2013', genre_list='THRILLERCRIMEDRAMA', score=6.1),
- MovieClue(title_pattern='xxx xx xxxxx', year='2013', genre_list='ACTIONADVENTURESCIENCE FICTION', score=7.1),
- MovieClue(title_pattern="xxxxxx'x xxxx", year='2014', genre_list='DRAMAFANTASYMYSTERYROMANCE', score=6.1),
- MovieClue(title_pattern='xxxx', year='2014', genre_list='DRAMAADVENTURE', score=5.8),
- MovieClue(title_pattern='xxx xxxxx xxxxxxx', year='2014', genre_list='WARDRAMA', score=7.0),
- MovieClue(title_pattern='xxx xxxx xxxx', year='2016', genre_list='COMEDYCRIMEACTION', score=7.3),
- MovieClue(title_pattern='xxx xxxxx', year='2017', genre_list='FANTASYTHRILLERACTIONADVENTUREHORROR', score=5.4),
- MovieClue(title_pattern='xxx xxxxxx', year='2018', genre_list='DRAMA', score=6.9),
- MovieClue(title_pattern='xxxxxxxx', year='2020', genre_list='ACTIONTHRILLER', score=6.0),
- MovieClue(title_pattern="xxxx xxxxxx'x xxxxxxx xxxxxx", year='2021', genre_list='ACTIONADVENTUREFANTASYSCIENCE FICTION', score=8.0),
- MovieClue(title_pattern='xxxx: xxxx xxx xxxxxxx', year='2022', genre_list='FANTASYACTIONCOMEDY', score=6.3)]
-
+Solving the puzzle contained in the clues file at clues-files/actorle-2023-dec-22.txt
+Reading movie clues in from clues-files/actorle-2023-dec-22.txt
+Found 30 clues for the puzzle from clues-files/actorle-2023-dec-22.txt:
+[MovieClue(title_pattern='xxxx',
+           year='1979',
+           genre_list='Comedy,War',
+           score=5.8),
+ MovieClue(title_pattern="xxxxxx'x xxxx",
+           year='1980',
+           genre_list='Drama,Western,Romance',
+           score=6.7),
+ MovieClue(title_pattern='xxxx xxxx',
+           year='1981',
+           genre_list='Crime,Romance',
+           score=7.4),
+ MovieClue(title_pattern='xxxxx',
+           year='1982',
+           genre_list='Comedy,Drama',
+           score=7.1),
+ MovieClue(title_pattern='xxx xxxx xx xxxxxxxxx xxxxxxx',
+           year='1984',
+           genre_list='Action,Comedy,Crime',
+           score=6.6),
+ MovieClue(title_pattern='xxxx xx xxx xxxxxx',
+           year='1985',
+           genre_list='Action,Crime,Thriller',
+           score=6.8),
+ MovieClue(title_pattern='xxxx x/x xxxxx',
+           year='1986',
+           genre_list='Romance,Drama',
+           score=5.9),
+ MovieClue(title_pattern='xxxxx xxxxx',
+           year='1987',
+           genre_list='Horror,Mystery',
+           score=7.2),
+ MovieClue(title_pattern='xxxxxx',
+           year='1987',
+           genre_list='Comedy,Drama,Romance',
+           score=7.1),
+ MovieClue(title_pattern='xxxxxx xxxxxxxx',
+           year='1989',
+           genre_list='Crime,Drama',
+           score=6.1),
+ MovieClue(title_pattern='xxxx xxxxxx',
+           year='1989',
+           genre_list='Romance,Drama',
+           score=4.5),
+ MovieClue(title_pattern='xxxxxx xxxxxxxx xxx xxx xxxxxxxx xxx',
+           year='1991',
+           genre_list='Action,Thriller',
+           score=6.1),
+ MovieClue(title_pattern='xxxxx xxxxx',
+           year='1992',
+           genre_list='Crime,Thriller,Action,Adventure',
+           score=6.0),
+ MovieClue(title_pattern='xxxxxx xxxx',
+           year='1997',
+           genre_list='Action,Science Fiction',
+           score=4.8),
+ MovieClue(title_pattern='xxx xxxxxxxxx',
+           year='1997',
+           genre_list='Drama,Crime,Thriller',
+           score=7.2),
+ MovieClue(title_pattern='xxx xxxx xxx xxxx',
+           year='1998',
+           genre_list='Drama,History,War',
+           score=7.6),
+ MovieClue(title_pattern='xxx xxxxxx',
+           year='2000',
+           genre_list='Action,Drama,Thriller,Crime',
+           score=5.1),
+ MovieClue(title_pattern='xxx xxxxxx',
+           year='2001',
+           genre_list='Crime,Drama,Mystery,Thriller',
+           score=6.8),
+ MovieClue(title_pattern='xxxx xxxx x xxxx xx xxxxxx',
+           year='2003',
+           genre_list='Action,Drama,Mystery',
+           score=6.3),
+ MovieClue(title_pattern='xxx xx xxxx',
+           year='2004',
+           genre_list='Action,Drama,Thriller',
+           score=7.7),
+ MovieClue(title_pattern='xxx xxxx',
+           year='2005',
+           genre_list='Thriller,Action,Crime',
+           score=8.0),
+ MovieClue(title_pattern='xxxxxx',
+           year='2005',
+           genre_list='Action,Crime',
+           score=5.9),
+ MovieClue(title_pattern='xxxxxxxxxxxx',
+           year='2006',
+           genre_list='Adventure,Action,Family',
+           score=5.1),
+ MovieClue(title_pattern='xxx xxxxxxxx',
+           year='2008',
+           genre_list='Drama,Romance',
+           score=7.9),
+ MovieClue(title_pattern='xxxxxxxx',
+           year='2008',
+           genre_list='Crime,Drama,Thriller',
+           score=6.0),
+ MovieClue(title_pattern='xx',
+           year='2010',
+           genre_list='Drama,Thriller',
+           score=6.0),
+ MovieClue(title_pattern='xxxx xxx x',
+           year='2010',
+           genre_list='Adventure,Action,Science Fiction',
+           score=6.9),
+ MovieClue(title_pattern='xxx xxxxxxxxxxx',
+           year='2010',
+           genre_list='Thriller,Adventure,Action',
+           score=6.4),
+ MovieClue(title_pattern='xxxxxxxxx',
+           year='2011',
+           genre_list='Fantasy,Action,Drama',
+           score=6.0),
+ MovieClue(title_pattern='xxx xxxx: x xxxx xx xxxx xxx',
+           year='2014',
+           genre_list='Crime,Action,Thriller',
+           score=6.5)]
 Reading IMDb movie data from data/title.basics.tsv.gz
-Read in 631295 titles - filtering out non-movies...
-Filtered down to 631295 movie titles
-Filtering out movies NOT from the years {'2001', '1991', '2003', '2009', '2020', '2006', '1995', '2010', '1999', '2017', '1997', '2016', '2013', '2014', '2012', '2005', '2000', '2007', '2021', '2008', '2022', '2018'}
-Filtered down to 246501 movie titles
+Reading movies in from data/title.basics.tsv.gz...
+Read in 301,541 titles
+Filtering out movies NOT from the years {'1979', '1980', '1987', '2000', '2010', '2014', '1989', '1984', '2011', '1982', '1998', '1985', '1986', '1992', '1981', '2003', '1991', '2005', '2006', '1997', '2004', '2008', '2001'}...
+Filtered down to 88,388 movie titles
 Reading IMDb actor performances data from data/title.principals.tsv.gz
-Read in data on 21126939 performances
+Read in data on 1,136,243 performances
+Filtering out performances NOT in one of the 88,388 candidate movies...
+Filtered down to 332,091 performances
 
 Working through the clues...
 ----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxxx', year='1979', genre_list='Comedy,War', score=5.8)
+Found 131 movies from the year 1979 with review score close to 5.8
+Filtering remaining movies with query 'primaryTitle.str.match('\w{4}$')'
+1 Matches for pattern 'xxxx', year 1979, review score 5.8 (Sample: ['1941'])
+Found 4 actors for these 1 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern="xxxxxx'x xxxx", year='1980', genre_list='Drama,Western,Romance', score=6.7)
+Found 144 movies from the year 1980 with review score close to 6.7
+Filtering remaining movies with query 'primaryTitle.str.match('\w{6}\'\w{1} \w{4}$')'
+1 Matches for pattern 'xxxxxx'x xxxx', year 1980, review score 6.7 (Sample: ["Heaven's Gate"])
+Found 4 actors for these 1 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxxx xxxx', year='1981', genre_list='Crime,Romance', score=7.4)
+Found 96 movies from the year 1981 with review score close to 7.4
+Filtering remaining movies with query 'primaryTitle.str.match('\w{4} \w{4}$')'
+1 Matches for pattern 'xxxx xxxx', year 1981, review score 7.4 (Sample: ['Body Heat'])
+Found 4 actors for these 1 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxxxx', year='1982', genre_list='Comedy,Drama', score=7.1)
+Found 113 movies from the year 1982 with review score close to 7.1
+Filtering remaining movies with query 'primaryTitle.str.match('\w{5}$')'
+3 Matches for pattern 'xxxxx', year 1982, review score 7.1 (Sample: ['Metti', 'Diner', 'Lubna'])
+Found 10 actors for these 3 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxx xxxx xx xxxxxxxxx xxxxxxx', year='1984', genre_list='Action,Comedy,Crime', score=6.6)
+Found 150 movies from the year 1984 with review score close to 6.6
+Filtering remaining movies with query 'primaryTitle.str.match('\w{3} \w{4} \w{2} \w{9} \w{7}$')'
+1 Matches for pattern 'xxx xxxx xx xxxxxxxxx xxxxxxx', year 1984, review score 6.6 (Sample: ['The Pope of Greenwich Village'])
+Found 4 actors for these 1 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxxx xx xxx xxxxxx', year='1985', genre_list='Action,Crime,Thriller', score=6.8)
+Found 166 movies from the year 1985 with review score close to 6.8
+Filtering remaining movies with query 'primaryTitle.str.match('\w{4} \w{2} \w{3} \w{6}$')'
+1 Matches for pattern 'xxxx xx xxx xxxxxx', year 1985, review score 6.8 (Sample: ['Year of the Dragon'])
+Found 4 actors for these 1 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxxx x/x xxxxx', year='1986', genre_list='Romance,Drama', score=5.9)
+Found 153 movies from the year 1986 with review score close to 5.9
+Filtering remaining movies with query 'primaryTitle.str.match('\w{4} \w{1}\/\w{1} \w{5}$')'
+0 Matches for pattern 'xxxx x/x xxxxx', year 1986, review score 5.9 (Sample: [])
+Found 0 actors for these 0 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxxxx xxxxx', year='1987', genre_list='Horror,Mystery', score=7.2)
+Found 99 movies from the year 1987 with review score close to 7.2
+Filtering remaining movies with query 'primaryTitle.str.match('\w{5} \w{5}$')'
+1 Matches for pattern 'xxxxx xxxxx', year 1987, review score 7.2 (Sample: ['Angel Heart'])
+Found 4 actors for these 1 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxxxxx', year='1987', genre_list='Comedy,Drama,Romance', score=7.1)
+Found 148 movies from the year 1987 with review score close to 7.1
+Filtering remaining movies with query 'primaryTitle.str.match('\w{6}$')'
+6 Matches for pattern 'xxxxxx', year 1987, review score 7.1 (Sample: ['Davaci', 'Barfly', 'Tandem'])
+Found 23 actors for these 6 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxxxxx xxxxxxxx', year='1989', genre_list='Crime,Drama', score=6.1)
+Found 181 movies from the year 1989 with review score close to 6.1
+Filtering remaining movies with query 'primaryTitle.str.match('\w{6} \w{8}$')'
+2 Matches for pattern 'xxxxxx xxxxxxxx', year 1989, review score 6.1 (Sample: ['Johnny Handsome', 'Little Monsters'])
+Found 8 actors for these 2 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxxx xxxxxx', year='1989', genre_list='Romance,Drama', score=4.5)
+Found 114 movies from the year 1989 with review score close to 4.5
+Filtering remaining movies with query 'primaryTitle.str.match('\w{4} \w{6}$')'
+1 Matches for pattern 'xxxx xxxxxx', year 1989, review score 4.5 (Sample: ['Wild Orchid'])
+Found 4 actors for these 1 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxxxxx xxxxxxxx xxx xxx xxxxxxxx xxx', year='1991', genre_list='Action,Thriller', score=6.1)
+Found 144 movies from the year 1991 with review score close to 6.1
+Filtering remaining movies with query 'primaryTitle.str.match('\w{6} \w{8} \w{3} \w{3} \w{8} \w{3}$')'
+1 Matches for pattern 'xxxxxx xxxxxxxx xxx xxx xxxxxxxx xxx', year 1991, review score 6.1 (Sample: ['Harley Davidson and the Marlboro Man'])
+Found 4 actors for these 1 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxxxx xxxxx', year='1992', genre_list='Crime,Thriller,Action,Adventure', score=6.0)
+Found 200 movies from the year 1992 with review score close to 6.0
+Filtering remaining movies with query 'primaryTitle.str.match('\w{5} \w{5}$')'
+3 Matches for pattern 'xxxxx xxxxx', year 1992, review score 6.0 (Sample: ['Fatal Chase', 'White Sands', 'Bruno Busic'])
+Found 8 actors for these 3 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxxxxx xxxx', year='1997', genre_list='Action,Science Fiction', score=4.8)
+Found 116 movies from the year 1997 with review score close to 4.8
+Filtering remaining movies with query 'primaryTitle.str.match('\w{6} \w{4}$')'
+3 Matches for pattern 'xxxxxx xxxx', year 1997, review score 4.8 (Sample: ['Family Plan', 'Hüznün Yüzü', 'Double Team'])
+Found 12 actors for these 3 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxx xxxxxxxxx', year='1997', genre_list='Drama,Crime,Thriller', score=7.2)
+Found 149 movies from the year 1997 with review score close to 7.2
+Filtering remaining movies with query 'primaryTitle.str.match('\w{3} \w{9}$')'
+1 Matches for pattern 'xxx xxxxxxxxx', year 1997, review score 7.2 (Sample: ['The Rainmaker'])
+Found 4 actors for these 1 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxx xxxx xxx xxxx', year='1998', genre_list='Drama,History,War', score=7.6)
+Found 108 movies from the year 1998 with review score close to 7.6
+Filtering remaining movies with query 'primaryTitle.str.match('\w{3} \w{4} \w{3} \w{4}$')'
+1 Matches for pattern 'xxx xxxx xxx xxxx', year 1998, review score 7.6 (Sample: ['The Thin Red Line'])
+Found 4 actors for these 1 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxx xxxxxx', year='2000', genre_list='Action,Drama,Thriller,Crime', score=5.1)
+Found 110 movies from the year 2000 with review score close to 5.1
+Filtering remaining movies with query 'primaryTitle.str.match('\w{3} \w{6}$')'
+1 Matches for pattern 'xxx xxxxxx', year 2000, review score 5.1 (Sample: ['Get Carter'])
+Found 4 actors for these 1 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxx xxxxxx', year='2001', genre_list='Crime,Drama,Mystery,Thriller', score=6.8)
+Found 218 movies from the year 2001 with review score close to 6.8
+Filtering remaining movies with query 'primaryTitle.str.match('\w{3} \w{6}$')'
+3 Matches for pattern 'xxx xxxxxx', year 2001, review score 6.8 (Sample: ['The Secret', 'ABC Africa', 'The Pledge'])
+Found 8 actors for these 3 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxxx xxxx x xxxx xx xxxxxx', year='2003', genre_list='Action,Drama,Mystery', score=6.3)
+Found 259 movies from the year 2003 with review score close to 6.3
+Filtering remaining movies with query 'primaryTitle.str.match('\w{4} \w{4} \w{1} \w{4} \w{2} \w{6}$')'
+1 Matches for pattern 'xxxx xxxx x xxxx xx xxxxxx', year 2003, review score 6.3 (Sample: ['Once Upon a Time in Mexico'])
+Found 4 actors for these 1 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxx xx xxxx', year='2004', genre_list='Action,Drama,Thriller', score=7.7)
+Found 172 movies from the year 2004 with review score close to 7.7
+Filtering remaining movies with query 'primaryTitle.str.match('\w{3} \w{2} \w{4}$')'
+1 Matches for pattern 'xxx xx xxxx', year 2004, review score 7.7 (Sample: ['Man on Fire'])
+Found 4 actors for these 1 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxx xxxx', year='2005', genre_list='Thriller,Action,Crime', score=8.0)
+Found 157 movies from the year 2005 with review score close to 8.0
+Filtering remaining movies with query 'primaryTitle.str.match('\w{3} \w{4}$')'
+3 Matches for pattern 'xxx xxxx', year 2005, review score 8.0 (Sample: ['Big Time', 'Sin City', 'The Gits'])
+Found 8 actors for these 3 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxxxxx', year='2005', genre_list='Action,Crime', score=5.9)
+Found 222 movies from the year 2005 with review score close to 5.9
+Filtering remaining movies with query 'primaryTitle.str.match('\w{6}$')'
+8 Matches for pattern 'xxxxxx', year 2005, review score 5.9 (Sample: ['Bedlam', 'Domino', 'Límite'])
+Found 34 actors for these 8 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxxxxxxxxxxx', year='2006', genre_list='Adventure,Action,Family', score=5.1)
+Found 163 movies from the year 2006 with review score close to 5.1
+Filtering remaining movies with query 'primaryTitle.str.match('\w{12}$')'
+3 Matches for pattern 'xxxxxxxxxxxx', year 2006, review score 5.1 (Sample: ['Stormbreaker', 'Surveillance', 'Vacationland'])
+Found 12 actors for these 3 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxx xxxxxxxx', year='2008', genre_list='Drama,Romance', score=7.9)
+Found 193 movies from the year 2008 with review score close to 7.9
+Filtering remaining movies with query 'primaryTitle.str.match('\w{3} \w{8}$')'
+1 Matches for pattern 'xxx xxxxxxxx', year 2008, review score 7.9 (Sample: ['The Wrestler'])
+Found 4 actors for these 1 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxxxxxxx', year='2008', genre_list='Crime,Drama,Thriller', score=6.0)
+Found 464 movies from the year 2008 with review score close to 6.0
+Filtering remaining movies with query 'primaryTitle.str.match('\w{8}$')'
+19 Matches for pattern 'xxxxxxxx', year 2008, review score 6.0 (Sample: ['Inkheart', 'Sekretet', 'Killshot'])
+Found 74 actors for these 19 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xx', year='2010', genre_list='Drama,Thriller', score=6.0)
+Found 542 movies from the year 2010 with review score close to 6.0
+Filtering remaining movies with query 'primaryTitle.str.match('\w{2}$')'
+3 Matches for pattern 'xx', year 2010, review score 6.0 (Sample: ['Bo', '13', 'Ev'])
+Found 12 actors for these 3 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxxx xxx x', year='2010', genre_list='Adventure,Action,Science Fiction', score=6.9)
+Found 412 movies from the year 2010 with review score close to 6.9
+Filtering remaining movies with query 'primaryTitle.str.match('\w{4} \w{3} \w{1}$')'
+1 Matches for pattern 'xxxx xxx x', year 2010, review score 6.9 (Sample: ['Iron Man 2'])
+Found 4 actors for these 1 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxx xxxxxxxxxxx', year='2010', genre_list='Thriller,Adventure,Action', score=6.4)
+Found 441 movies from the year 2010 with review score close to 6.4
+Filtering remaining movies with query 'primaryTitle.str.match('\w{3} \w{11}$')'
+2 Matches for pattern 'xxx xxxxxxxxxxx', year 2010, review score 6.4 (Sample: ['The Expendables', 'The Hairdresser'])
+Found 8 actors for these 2 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxxxxxxxx', year='2011', genre_list='Fantasy,Action,Drama', score=6.0)
+Found 583 movies from the year 2011 with review score close to 6.0
+Filtering remaining movies with query 'primaryTitle.str.match('\w{9}$')'
+8 Matches for pattern 'xxxxxxxxx', year 2011, review score 6.0 (Sample: ['Hideaways', 'Safehouse', 'Yogawoman'])
+Found 27 actors for these 8 movies
+----------------------------
+Looking for movie matches for MovieClue(title_pattern='xxx xxxx: x xxxx xx xxxx xxx', year='2014', genre_list='Crime,Action,Thriller', score=6.5)
+Found 824 movies from the year 2014 with review score close to 6.5
+Filtering remaining movies with query 'primaryTitle.str.match('\w{3} \w{4}\: \w{1} \w{4} \w{2} \w{4} \w{3}$')'
+1 Matches for pattern 'xxx xxxx: x xxxx xx xxxx xxx', year 2014, review score 6.5 (Sample: ['Sin City: A Dame to Kill For'])
+Found 4 actors for these 1 movies
+----------------------------
+Made a list of 308 individual movie performances from all the clues
 
-...
 
-Made a list of 5157 individual movie performances from all the clues
-Actor IDs occurring most often across all possible candidate movies:[('nm0000128', 24), ('nm1428724', 4), ('nm0033245', 4)]
+Actor IDs occurring most often across all possible candidate movies:[('nm0000620', 18), ('nm0000686', 2), ('nm0000457', 2)]
 Converting actor IDs to names using data/name.basics.tsv.gz
 
-Dude - I think it's... Russell Crowe!
+Dude - I think it's... Mickey Rourke!
+Here are some Mickey Rourke film roles from movies that match clues:
 
-Here are some Russell Crowe film roles that match the movie titles in the clues:
+                                   Movie  Year                                          Character
+0                                  Diner  1982                                         ["Boogie"]
+1          The Pope of Greenwich Village  1984                                        ["Charlie"]
+2                     Year of the Dragon  1985                                  ["Stanley White"]
+3                            Angel Heart  1987                                    ["Harry Angel"]
+4                                 Barfly  1987                                          ["Henry"]
+5                              Francesco  1989                                      ["Francesco"]
+6                        Johnny Handsome  1989  ["John 'Johnny Handsome' Sedley","Johnny Mitch...
+7                            Wild Orchid  1989                                  ["James Wheeler"]
+8   Harley Davidson and the Marlboro Man  1991                                ["Harley Davidson"]
+9                            White Sands  1992                                  ["Gorman Lennox"]
+10                           Double Team  1997                                        ["Stavros"]
+11                           Point Blank  1998                                       ["Rudy Ray"]
+12                              Sin City  2005                                           ["Marv"]
+13                                Domino  2005                                      ["Ed Moseby"]
+14                          Stormbreaker  2006                                  ["Darrius Sayle"]
+15                              Killshot  2008                                      ["Blackbird"]
+16                         The Informers  2008                                          ["Peter"]
+17                          The Wrestler  2008                       ["Randy 'The Ram' Robinson"]
+18                            Iron Man 2  2010                                     ["Ivan Vanko"]
+19                             Immortals  2011                                  ["King Hyperion"]
+20          Sin City: A Dame to Kill For  2014                                           ["Marv"]
 
-                                              Movie  Year              Character
-0                                             Proof  1991               ["Andy"]
-1                            The Quick and the Dead  1995               ["Cort"]
-2                                        Virtuosity  1995            ["SID 6.7"]
-3                                 L.A. Confidential  1997          ["Bud White"]
-4                                   Mystery, Alaska  1999         ["John Biebe"]
-5                                       The Insider  1999     ["Jeffrey Wigand"]
-6                                         Gladiator  2000            ["Maximus"]
-7                                     Proof of Life  2000       ["Terry Thorne"]
-8                                  A Beautiful Mind  2001          ["John Nash"]
-9   Master and Commander: The Far Side of the World  2003  ["Capt. Jack Aubrey"]
-10                                   Cinderella Man  2005       ["Jim Braddock"]
-11                                      A Good Year  2006        ["Max Skinner"]
-12                                     3:10 to Yuma  2007           ["Ben Wade"]
-13                                American Gangster  2007     ["Richie Roberts"]
-14                                     Body of Lies  2008         ["Ed Hoffman"]
-15                                       Tenderness  2009    ["Lt. Cristofuoro"]
-16                                    State of Play  2009       ["Cal McAffrey"]
-17                                       Robin Hood  2010   ["Robin Longstride"]
-18                              The Next Three Days  2010       ["John Brennan"]
-19                      The Man with the Iron Fists  2012         ["Jack Knife"]
-20                                   Les Misérables  2012             ["Javert"]
-21                                      Broken City  2013    ["Mayor Hostetler"]
-22                                    Winter's Tale  2014      ["Pearly Soames"]
-23                                             Noah  2014               ["Noah"]
-24                                The Water Diviner  2014             ["Connor"]
-25                                    The Nice Guys  2016      ["Jackson Healy"]
-26                                        The Mummy  2017       ["Henry Jekyll"]
-27                                       Boy Erased  2018    ["Marshall Eamons"]
-28                                         Unhinged  2020                ["Man"]
-29                                       Poker Face  2022         ["Jake Foley"]
+Options
+----------------
+1) Mickey Rourke is 81.82% likely
+2) Christopher Walken is 9.09% likely
+3) John Hurt is 9.09% likely
 
-    Options
-    ----------------
-    Russell Crowe is 75.00% likely
-    Indrans is 12.50% likely
-    Mala Aravindan is 12.50% likely
 ```
 
 It should take around 2 to 6 seconds to solve a daily puzzle, depending on how many clues the puzzle

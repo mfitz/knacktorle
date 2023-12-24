@@ -81,7 +81,6 @@ def format_time_delta(time_delta):
 
 
 def parse_cli_args():
-    global cli_args
     arg_parser = argparse.ArgumentParser(
         description="Solve a set of puzzles from a directory of clues files,"
                     "compare the answers to a set of correct answers and"
