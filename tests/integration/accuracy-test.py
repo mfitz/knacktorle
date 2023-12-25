@@ -131,7 +131,7 @@ if __name__ == '__main__':
     answers = read_expected_answers(cli_args['answers_file'])
 
     puzzle_results = {}
-    for puzzle in os.listdir(cli_args['puzzle_directory']):
+    for puzzle in sorted(os.listdir(cli_args['puzzle_directory'])):
         puzzle_path = os.path.join(cli_args['puzzle_directory'], puzzle)
         expected_answer = answers.get(puzzle, "Unknown")
         expected_answer_to_show = ELIDED_STRING if cli_args['elide_answers'] else expected_answer
