@@ -1,0 +1,30 @@
+xxxx|1999|Comedy|6.2
+xxxxxxxx xxxxxxx'x xxx xxxxxx|2002|Comedy,Romance|6.4
+xxx xx-xxxx|2003|Action,Comedy|5.7
+xxxxxx & xxxxx xx xx xxxxx xxxxxx|2004|Comedy,Adventure|7.0
+xxxxx: xxxxxxx|2004|Action,Horror,Fantasy|5.8
+xxx xxxxxxxxxx xxxxxx|2005|Horror|5.9
+xxxx xxxxxxx|2005|Comedy,Romance|6.2
+xxxxxx' xxxx|2006|Action,Comedy,Crime,Thriller|6.6
+xxxxxxxxxx, xxxxx|2008|Comedy,Romance|7.1
+x-xxx xxxxxxx: xxxxxxxxx|2009|Adventure,Action,Thriller,Science Fiction|6.5
+xxx xxxxxxxx|2009|Comedy,Romance,Drama|6.7
+xxxxxx|2010|Drama,Thriller,Mystery|7.0
+xxxxx xxxxxxx|2011|Adventure,Action,Thriller,Science Fiction|5.5
+xxx xxxxxx-xx|2011|Comedy|6.3
+xxxx xxxxx|2012|Action,Thriller|6.7
+xxx xxxxxx|2013|Animation,Adventure,Family,Fantasy,Comedy,Action|7.2
+xxxxx|2013|Animation,Family|6.4
+x.x.x.x.|2013|Fantasy,Action,Comedy|5.6
+x xxxxxxx xxxx xx xxx xx xxx xxxx|2014|Comedy,Western|6.1
+xxxxx xx xxxx|2015|Drama|7.3
+xxxx/xxxx|2015|Science Fiction,Mystery,Thriller,Action|6.5
+xxxxxxxx|2016|Action,Adventure,Comedy|8.0
+xxxx|2017|Horror,Science Fiction,Mystery,Thriller|6.6
+xxx xxxxxx'x xxxxxxxxx|2017|Action,Comedy|6.9
+xxxxxxxx x|2018|Action,Comedy,Adventure|7.6
+xxxxxxx xxxxxxxxx xxxxxxx|2019|Action,Adventure,Fantasy|6.5
+xxxx & xxxxxxx xxxxxxxx: xxxxx & xxxx|2019|Action,Adventure,Comedy|6.5
+xxx xxxxxx: x xxx xxx|2020|Animation,Family,Adventure,Fantasy,Comedy|6.9
+xxxxxx'x xxxx'x xxxxxxxxx|2021|Action,Comedy,Crime,Thriller|6.1
+xxxx xxx|2021|Comedy,Adventure,Science Fiction|7.1
