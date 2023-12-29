@@ -1,5 +1,7 @@
 import os
 
+import sys
+
 
 months = {
     'jan': '01',
@@ -18,7 +20,7 @@ months = {
 
 
 if __name__ == '__main__':
-    clues_file_dir = '/Users/mickyfitz/workspace/knacktorle/clues-files'
+    clues_file_dir = sys.argv[1]
     for clues_file in os.listdir(clues_file_dir):
         old_name = '{}/{}'.format(clues_file_dir, clues_file)
         new_name = old_name
