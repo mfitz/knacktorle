@@ -1,0 +1,46 @@
+xxx xxx|1979|Adventure,Action,Thriller,Science Fiction|6.8
+xxx|1979|Romance,Drama|6.4
+xxxxxxxxx|1981|War,History,Drama|7.4
+xxx xxx x|1981|Adventure,Action,Thriller,Science Fiction|7.6
+xxxxxx xxxxx x|1982|War,Action|5.4
+xxx xxxx xx xxxxxx xxxxxxxxxxx|1982|Romance,Drama|7.1
+xxx xxxxxx|1984|Action,Drama,History|7.0
+xxx xxxxx|1984|Drama|6.3
+xxx. xxxxxx|1984|Drama,Romance|6.0
+xxx xxx xxxxxx xxxxxxxxxxx|1985|Action,Adventure,Science Fiction|6.2
+xxxxxx xxxxxx|1987|Adventure,Action,Comedy,Thriller,Crime|7.6
+xxxxxxx xxxxxxx|1988|Thriller,Crime,Romance|6.0
+xxxxxx xxxxxx x|1989|Action,Adventure,Comedy,Crime,Thriller|7.3
+xxxx xx x xxxx|1990|Action,Adventure,Comedy,Romance|6.0
+xxx xxxxxxx|1990|Action,Adventure,Comedy,Drama|5.8
+xxxxxx|1990|Drama,History|6.7
+xxxxxx xxxxxx x|1992|Adventure,Action,Comedy,Thriller,Crime|6.7
+xxxxxxx xxxxx|1992|Adventure,Fantasy,Drama,Science Fiction,Romance|6.3
+xxx xxx xxxxxxx x xxxx|1993|Drama|6.7
+xxxxxxxx|1994|Action,Adventure,Comedy,Drama,Western|7.0
+xxxxxxxxxx|1995|Action,Drama,History,War|8.3
+xxxxxxxxxx|1995|Adventure,Animation,Family,Romance|6.7
+xxxxxx|1996|Action,Thriller|6.7
+xxxxxxxxxx xxxxxx|1997|Action,Drama,Mystery,Thriller|6.7
+xxxxxx xxxxxx x|1998|Action,Adventure,Comedy,Crime,Thriller|6.6
+xxxxxxx|1999|Crime,Action,Drama|7.1
+xxx xxxxxxx xxxxxx xxxxx|2000|Drama,Thriller|5.7
+xxxxxxx xxx|2000|Animation,Comedy,Family|7.1
+xxx xxxxxxx|2000|Drama,History,War,Action|7.2
+xxxx xxxxx xxxx|2000|Comedy,Romance|6.4
+xx xxxx xxxxxxxx|2002|Action,History,War|7.2
+xxxxx|2002|Drama,Thriller,Science Fiction,Mystery|6.8
+xxx xxxxxxx xxxxxxxxx|2003|Comedy,Music,Mystery,Crime|5.4
+xxxx xx xxxxxxxx|2010|Crime,Drama,Mystery,Thriller|6.6
+xxx xxxxxx|2011|Drama|6.6
+xxxxxxx xxxxx|2013|Action,Crime,Thriller|5.6
+xxx xxxxxxxxxxx x|2014|Action,Adventure,Thriller|6.1
+xxxxx xxxxxx|2016|Action,Thriller,Drama|6.4
+xxxxx'x xxxx x|2017|Comedy|6.0
+xxxxxxx xxxxxx xxxxxxxx|2018|Crime,Action,Thriller|6.9
+xxx xxxxxxxxx xxx xxx xxxxxx|2019|History,Drama,Mystery,Thriller|7.2
+xxxxx xx xxxxxx|2020|Action,Adventure,Crime,Thriller|4.6
+xxxxxx|2020|Action,Comedy,Fantasy|5.9
+xxxx xxxxx|2021|Action,Science Fiction,Thriller|6.8
+xxxx xxxxx|2022|Action,Crime,Thriller|5.8
+xxxxxx xxx|2022|Drama|6.5
