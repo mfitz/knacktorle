@@ -12,14 +12,17 @@ def get_actors_in_movies(performances_dataframe, movie_ids):
     return matching_actors[['nconst', 'characters']]
 
 
-def get_matching_movie_ids(titles_data_frame, movie_clue, rating_match_tolerance):
+def get_matching_movies_dataframe(titles_data_frame, movie_clue, rating_match_tolerance):
     matches_data_frame = titles_data_frame[titles_data_frame.startYear == movie_clue.year]
+    rating_floor = round(movie_clue.score - rating_match_tolerance, 2)
+    rating_ceiling = round(movie_clue.score + rating_match_tolerance, 2)
     matches_data_frame = matches_data_frame[matches_data_frame.averageRating.between(
-        movie_clue.score - rating_match_tolerance, movie_clue.score + rating_match_tolerance)]
-    print("Found {} movies from the year {} with review score close to {}"
+        rating_floor, rating_ceiling, inclusive="both")]
+    print("Found {} movies from the year {} with review score between {} and {}"
           .format(matches_data_frame.shape[0],
                   movie_clue.year,
-                  movie_clue.score))
+                  rating_floor,
+                  rating_ceiling))
     match_pattern = make_movie_title_regex(movie_clue.title_pattern)
     query = "primaryTitle.str.match('{}')".format(match_pattern)
     print("Filtering remaining movies with query '{}'".format(query))
@@ -65,7 +68,7 @@ def get_most_likely_actors_for_clues(puzzle_clues, movies_data_frame, performanc
     for clue in puzzle_clues:
         print('----------------------------')
         print("Looking for movie matches for {}".format(clue))
-        matching_movies = get_matching_movie_ids(movies_data_frame, clue, rating_tolerance)
+        matching_movies = get_matching_movies_dataframe(movies_data_frame, clue, rating_tolerance)
         actors_ids = get_actors_in_movies(performances_df, matching_movies)
         all_potential_performances.extend(actors_ids.nconst.tolist())
     print('----------------------------')
