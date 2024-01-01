@@ -5,6 +5,7 @@ import subprocess
 
 from datetime import datetime
 from cli import SmartFormatter
+from movie_clues import read_movie_clues_file
 
 from rich.console import Console
 from rich.table import Table
@@ -37,14 +38,14 @@ def print_summary(start_datetime, puzzle_results_dict, elide_correct_answers):
     console = Console()
     console.print("")
     passes = [
-        result
-        for expected_answer, solver_answer, result, duration
+        puzzle_details['result']
+        for puzzle_details
         in puzzle_results_dict.values()
         if result == "PASS"
     ]
     failures = [
-        result
-        for expected_answer, solver_answer, result, duration
+        puzzle_details['result']
+        for puzzle_details
         in puzzle_results_dict.values()
         if result == "FAIL"
     ]
@@ -56,22 +57,26 @@ def print_summary(start_datetime, puzzle_results_dict, elide_correct_answers):
                           title="Summary",
                           caption=table_caption)
     results_table.add_column("Puzzle", justify="left")
+    results_table.add_column("No. Clues", justify="center")
     results_table.add_column("Expected Answer", justify="left")
     results_table.add_column("Actual Answer", justify="left")
     results_table.add_column("Result", justify="left")
     results_table.add_column("Time", style="dim")
-    for puzzle_name, puzzle_result in puzzle_results_dict.items():
+    for puzzle_name, puzzle_detail in puzzle_results_dict.items():
         short_name = puzzle_name.split('/')[-1]
-        expected_answer, solver_answer, outcome, duration = puzzle_result
-        if outcome == "PASS" and elide_correct_answers:
-            expected_answer = ELIDED_STRING
-            solver_answer = ELIDED_STRING
-        colour = "green" if outcome == "PASS" else "red" if outcome == "FAIL" else "yellow"
+        puzzle_expected_answer = puzzle_detail['expected_answer']
+        solver_actual_answer = puzzle_detail['solver_answer']
+        if puzzle_detail['result'] == "PASS" and elide_correct_answers:
+            puzzle_expected_answer = ELIDED_STRING
+            solver_actual_answer = ELIDED_STRING
+        colour = "green" if puzzle_detail['result'] == "PASS" \
+            else "red" if puzzle_detail['result'] == "FAIL" else "yellow"
         results_table.add_row(short_name,
-                              expected_answer,
-                              solver_answer,
-                              "[{}]{}[/{}]".format(colour, outcome, colour),
-                              format_time_delta(duration))
+                              str(puzzle_detail['number_of_clues']),
+                              puzzle_expected_answer,
+                              solver_actual_answer,
+                              "[{}]{}[/{}]".format(colour, puzzle_detail['result'], colour),
+                              format_time_delta(puzzle_detail['duration']))
     console.print(results_table)
     console.print("")
 
@@ -116,7 +121,6 @@ def parse_cli_args():
 
 
 if __name__ == '__main__':
-    app_start_time = datetime.now()
     cli_args = parse_cli_args()
 
     print("Invoking the solver script at {}, with the param list '{}' "
@@ -126,26 +130,35 @@ if __name__ == '__main__':
                   cli_args['puzzle_directory'],
                   cli_args['answers_file']))
 
-    print("Reading in expected answers from {} file...".format(cli_args['answers_file']))
-    print("-----------------------------------------------")
-    answers = read_expected_answers(cli_args['answers_file'])
-
     puzzle_results = {}
+    for puzzle in sorted(os.listdir(cli_args['puzzle_directory'])):
+        puzzle_path = os.path.join(cli_args['puzzle_directory'], puzzle)
+        clues = read_movie_clues_file(puzzle_path)
+        puzzle_results[puzzle] = {"number_of_clues": len(clues)}
+
+    answers = read_expected_answers(cli_args['answers_file'])
+    print("Read in {} expected answers from {} file...".format(len(answers), cli_args['answers_file']))
+    print("-----------------------------------------------")
+
+    solving_start_time = datetime.now()
     for puzzle in sorted(os.listdir(cli_args['puzzle_directory'])):
         puzzle_path = os.path.join(cli_args['puzzle_directory'], puzzle)
         expected_answer = answers.get(puzzle, "Unknown")
         expected_answer_to_show = ELIDED_STRING if cli_args['elide_answers'] else expected_answer
         print("Solving puzzle {} and expecting the answer '{}'".format(puzzle_path, expected_answer_to_show))
-        start_time = datetime.now()
+        puzzle_start_time = datetime.now()
         solver_answer = solve_puzzle(puzzle_path, cli_args['solver_script'], cli_args['param_list'])
         solver_answer_to_show = ELIDED_STRING if cli_args['elide_answers'] else solver_answer
-        duration = datetime.now() - start_time
+        puzzle_duration = datetime.now() - puzzle_start_time
         print("Got answer '{}'".format(solver_answer_to_show))
         result = "N/A"
         if solver_answer == expected_answer:
             result = "PASS"
         elif expected_answer != "Unknown" and solver_answer != expected_answer:
             result = "FAIL"
-        puzzle_results[puzzle] = (expected_answer, solver_answer, result, duration)
+        puzzle_results[puzzle]['expected_answer'] = expected_answer
+        puzzle_results[puzzle]['solver_answer'] = solver_answer
+        puzzle_results[puzzle]['result'] = result
+        puzzle_results[puzzle]['duration'] = puzzle_duration
         print("-----------------------------------------------")
-    print_summary(app_start_time, puzzle_results, cli_args['elide_answers'])
+    print_summary(solving_start_time, puzzle_results, cli_args['elide_answers'])
