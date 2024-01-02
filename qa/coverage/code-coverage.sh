@@ -1,12 +1,12 @@
 #!/bin/bash
 
-pushd "${0%/*}"/.. > /dev/null
+pushd "${0%/*}"/../.. > /dev/null
 
 python3 -m pytest -vv \
 --cov=. \
 --cov-report=html:reports/coverage \
 --cov-report=xml:reports/coverage/coverage.xml \
---cov-config=coverage/.coveragerc \
+--cov-config=qa/coverage/.coveragerc \
 tests/
 return_code=$?
 

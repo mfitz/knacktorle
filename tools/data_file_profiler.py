@@ -22,5 +22,5 @@ if __name__ == '__main__':
     print("Finished writing the HTML report")
 
     end_time = datetime.now()
-    duration=(end_time - start_time).seconds
+    duration = (end_time - start_time).seconds
     print("Finished in {} seconds".format(duration))

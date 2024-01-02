@@ -28,4 +28,3 @@ if __name__ == '__main__':
             new_name = new_name.replace(month, number)
         print("Going to rename '{}' to {}".format(old_name, new_name))
         os.rename(old_name, new_name)
-

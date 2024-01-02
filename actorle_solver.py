@@ -92,8 +92,7 @@ def get_matching_movies_for_actor(movie_clues, actor_id, performances_df, movies
     actor_movies = actor_movies[actor_movies['primaryTitle'].isin(filtered_movie_titles)][['primaryTitle',
                                                                                            'startYear',
                                                                                            'characters']]
-    actor_movies = actor_movies.rename(columns=
-    {
+    actor_movies = actor_movies.rename(columns={
         'primaryTitle': 'Movie',
         'startYear': 'Year',
         'characters': 'Character'

@@ -1,5 +1,6 @@
 beautifulsoup4==4.11.1
 chromedriver-py==119.0.6045.105
+flake8==6.1.0
 pandas==1.5.3
 pytest==7.4.3
 pytest-cov==4.1.0

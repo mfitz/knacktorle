@@ -132,7 +132,7 @@ def filter_performances_file(performances_file_path, movies_dataframe=None):
     print("\tRead in {:,} rows - filtering out non-acting categories...".format(performances_df.shape[0]))
     performances_df = \
         performances_df[(performances_df.category == "actor") |
-                                (performances_df.category == "actress")]
+                        (performances_df.category == "actress")]
     print("\tRemoved non-acting categories - we now have {:,} rows".format(performances_df.shape[0]))
     if movies_dataframe is not None:
         print("\tFiltering out performances in unknown using movies dataframe containing {:,} movies"

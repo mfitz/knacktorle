@@ -21,7 +21,7 @@ from movie_clues import MovieClue
                                 "\\w{1} \\w{4} \\w{5} \\w{2} \\w{3}$"
                              ),
                          ])
-def test_makes_movie_title_regex_for_title_without_special_characters(movie_title_pattern, expected_regex):
+def test_makes_regex_for_movie_title_without_special_characters(movie_title_pattern, expected_regex):
     assert movie_clues.make_movie_title_regex(movie_title_pattern) == expected_regex
 
 
@@ -48,11 +48,13 @@ def test_makes_movie_title_regex_for_title_without_special_characters(movie_titl
                                  "\\w{7} \\w{6} \\w{1}\: \\w{6} \\w{2} \\w{3} \\w{10}$"
                              )
                          ])
-def test_makes_movie_title_regex_for_title_with_special_characters(movie_title_pattern, expected_regex):
+def test_makes_regex_for_movie_title_with_special_characters(movie_title_pattern, expected_regex):
     assert movie_clues.make_movie_title_regex(movie_title_pattern) == expected_regex
 
 
 def test_round_trip_serialisation_preserves_clues_list(tmpdir):
+    clues_file_path = "{}/{}".format(tmpdir, 'clues-file.txt')
+    assert not os.path.exists(clues_file_path)
     clues_list = [
         MovieClue('xxxxx xxxx xxxxxxx',
                   '1996',
@@ -67,7 +69,6 @@ def test_round_trip_serialisation_preserves_clues_list(tmpdir):
                   'Comedy,Romance,Drama',
                   7.1)
     ]
-    clues_file_path = "{}/{}".format(tmpdir, 'clues-file.txt')
 
     movie_clues.write_movie_clues_file(clues_file_path, clues_list)
     assert os.path.exists(clues_file_path)
