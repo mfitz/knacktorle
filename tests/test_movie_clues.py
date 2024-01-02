@@ -1,6 +1,9 @@
+import os
+
 import pytest
 
 import movie_clues
+from movie_clues import MovieClue
 
 
 @pytest.mark.parametrize("movie_title_pattern, expected_regex",
@@ -47,3 +50,28 @@ def test_makes_movie_title_regex_for_title_without_special_characters(movie_titl
                          ])
 def test_makes_movie_title_regex_for_title_with_special_characters(movie_title_pattern, expected_regex):
     assert movie_clues.make_movie_title_regex(movie_title_pattern) == expected_regex
+
+
+def test_round_trip_serialisation_preserves_clues_list(tmpdir):
+    clues_list = [
+        MovieClue('xxxxx xxxx xxxxxxx',
+                  '1996',
+                  'Action,Family,Comedy',
+                  2.6),
+        MovieClue('xxx xxxx xx',
+                  '2001',
+                  'Comedy,Romance',
+                  5.7),
+        MovieClue('xxxxxxxxxx xxxxx xxxxxxxx',
+                  '2008',
+                  'Comedy,Romance,Drama',
+                  7.1)
+    ]
+    clues_file_path = "{}/{}".format(tmpdir, 'clues-file.txt')
+
+    movie_clues.write_movie_clues_file(clues_file_path, clues_list)
+    assert os.path.exists(clues_file_path)
+    assert os.path.isfile(clues_file_path)
+
+    round_tripped_clues = movie_clues.read_movie_clues_file(clues_file_path)
+    assert round_tripped_clues == clues_list
