@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pushd "${0%/*}" > /dev/null
+pushd "${0%/*}/.." > /dev/null
 
 time PYTHONPATH=$PYTHONPATH:. \
 python tests/integration/accuracy-test.py \
