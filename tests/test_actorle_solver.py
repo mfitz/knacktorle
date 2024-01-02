@@ -38,6 +38,7 @@ def change_movie_rating_in_clue(clue_to_modify, rating_change):
     )
 
 
+@pytest.mark.filterwarnings("ignore:invalid escape sequence")
 def test_matches_movie_with_exact_review_score_match(single_movie_dataframe):
     movie_data_frame, movie_data = single_movie_dataframe
     assert movie_data_frame.shape[0] == 1
@@ -54,6 +55,7 @@ def test_matches_movie_with_exact_review_score_match(single_movie_dataframe):
     }
 
 
+@pytest.mark.filterwarnings("ignore:invalid escape sequence")
 def test_matches_movie_with_different_review_score_when_inside_tolerance(single_movie_dataframe):
     movie_data_frame, movie_data = single_movie_dataframe
     assert movie_data_frame.shape[0] == 1
@@ -71,6 +73,7 @@ def test_matches_movie_with_different_review_score_when_inside_tolerance(single_
     }
 
 
+@pytest.mark.filterwarnings("ignore:invalid escape sequence")
 def test_does_not_match_movie_with_review_score_outside_tolerance(single_movie_dataframe):
     movie_data_frame, movie_data = single_movie_dataframe
     # make the rating score in the clue differ from the rating score in the movie data
