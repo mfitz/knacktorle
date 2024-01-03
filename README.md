@@ -1,3 +1,5 @@
+![CI Build](https://github.com/mfitz/knacktorle/actions/workflows/build_pipeline.yml/badge.svg)
+
 # KNACKTORLE
 
 A command line application for solving [Actorle](https://actorle.com/), the daily actor guessing game. The origins and
