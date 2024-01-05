@@ -1,0 +1,19 @@
+xxxxx xxxxxx xxx xxx xxxxxxxxxxx'x xxxxx|2001|Adventure,Fantasy|7.6
+xxxxx xxxxxx xxx xxx xxxxxxx xx xxxxxxx|2002|Adventure,Fantasy|7.4
+xxxxx xxxxxx xxx xxx xxxxxxxx xx xxxxxxx|2004|Adventure,Fantasy|7.9
+xxxxx xxxxxx xxx xxx xxxxxx xx xxxx|2005|Adventure,Fantasy|7.7
+xxxxx xxxxxx xxx xxx xxxxx xx xxx xxxxxxx|2007|Adventure,Fantasy|7.5
+xxx xxxx xx xxxxxxxxxx|2008|Adventure,Animation,Family|6.1
+xxxxx xxxxxx xxx xxx xxxx-xxxxx xxxxxx|2009|Adventure,Fantasy|7.6
+xxxxx xxxxxx xxx xxx xxxxxxx xxxxxxx: xxxx x|2010|Adventure,Fantasy|7.7
+xxxxx xxxxxx xxx xxx xxxxxxx xxxxxxx: xxxx x|2011|Fantasy,Adventure|8.1
+xx xxxx xxxx xxxxxxx|2011|Drama,Romance|6.9
+xxx xxxxx xx xxxxx x xxxxxxxxxx|2012|Drama|7.9
+xxx xxxxx xxxx|2013|Drama,Crime|5.6
+xxxx xx xxx xxx|2013|Action,Comedy|6.6
+xxxx|2014|Drama,Adventure|5.8
+xxxxxxx|2015|Drama,History|7.0
+xxxxxxxxxx|2015|Horror,Mystery,Thriller|5.6
+xxxxxx xxx xxx xxxxx|2017|Family,Fantasy,Romance|7.1
+xxx xxxxxx|2017|Drama,Thriller,Science Fiction|5.3
+xxxxxx xxxxx|2019|Drama,Romance|7.8
