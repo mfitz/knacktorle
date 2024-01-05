@@ -605,7 +605,7 @@ python actorle_solver.py \
 --movies-file data/title.basics.tsv.gz \
 --performances-file data/title.principals.tsv.gz \
 --actors-file data/name.basics.tsv.gz \
---clues-file clues-files/actorle-2022-jun-18.txt
+--clues-file clues-files/actorle-2022-06-18.txt
 ```
 
 ### Clues File Format
@@ -619,7 +619,7 @@ On reflection, a standard format like YAML or JSON would probably have been a be
 can see examples of clues files for previous Actorle puzzles in the `clues-files` directory:
 
 ```bash
-$ cat clues-files/actorle-2022-jun-18.txt
+$ cat clues-files/actorle-2022-06-18.txt
 
 xxx xxxxxxx xxx|2002|Adventure,Action,Thriller|6.1
 xxx xxxxxxxxx|2004|Drama,Romance|6.3
@@ -645,7 +645,7 @@ x xxxx xx xxxxxxx|2018|Thriller,Drama,Crime|5.8
 Formatted for clarity:
 
 ```bash
-$ cat clues-files/actorle-2022-jun-18.txt | column -ts '|'
+$ cat clues-files/actorle-2022-06-18.txt | column -ts '|'
 
 xxx xxxxxxx xxx        2002  Adventure,Action,Thriller               6.1
 xxx xxxxxxxxx          2004  Drama,Romance                           6.3
@@ -697,9 +697,9 @@ You can then transform the HTML fragments in that file into a clues file using t
 script, which takes the path to the file as its single argument and modifies the file in place:
 
 ```bash
-PYTHONPATH=$PYTHONPATH. python tools/actorle_file_transformer.py clues-files/actorle-2022-dec-15.txt
+PYTHONPATH=$PYTHONPATH. python tools/actorle_file_transformer.py clues-files/actorle-2022-12-15.txt
 
-Tranforming the raw actorle file at clues-files/actorle-2022-dec-15.txt
+Tranforming the raw actorle file at clues-files/actorle-2022-12-15.txt
 
 The transformed content looks like:
 'xxx xx xxxx|1989|Crime,Drama,Romance,Mystery,Thriller|6.8
