@@ -17,7 +17,8 @@ def parse_cli_args():
                                          formatter_class=SmartFormatter)
     arg_parser.add_argument('-mf',
                             '--movies-file',
-                            help="R|the full path to an IMDb title.basics.tsv.gz file, as found at "
+                            help="R|the full path to an IMDb title.basics.tsv.gz file, as modified by the\n"
+                                 "data grabber tool imdb_data_grabber.py using raw data downloaded from\n"
                                  "https://datasets.imdbws.com.\n"
                                  "Mandatory.",
                             required=True)
@@ -58,7 +59,10 @@ def parse_cli_args():
                             default=3)
     arg_parser.add_argument('-r',
                             '--rating-tolerance',
-                            help='The tolerance around movie review rating matching. Optional, default is 0.1.',
+                            help='R|The tolerance around movie review rating matching. Optional, default is 0.1,\n'
+                                 'meaning a clue with an IMDb score of 6.4 will match movies with scores from\n'
+                                 '6.3 to 6.5 inclusive. This mechanism exists because IMDb scores can change over\n'
+                                 'time as more people provide review scores.',
                             type=float,
                             default=0.1)
     return vars(arg_parser.parse_args())

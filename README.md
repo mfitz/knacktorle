@@ -177,7 +177,9 @@ Solve an Actorle puzzle. Today's puzzle will be retrieved from https://actorle.c
 options:
   -h, --help            show this help message and exit
   -mf MOVIES_FILE, --movies-file MOVIES_FILE
-                        the full path to an IMDb title.basics.tsv.gz file, as found at https://datasets.imdbws.com.
+                        the full path to an IMDb title.basics.tsv.gz file, as modified by the
+                        data grabber tool imdb_data_grabber.py using raw data downloaded from
+                        https://datasets.imdbws.com.
                         Mandatory.
   -af ACTORS_FILE, --actors-file ACTORS_FILE
                         the full path to an IMDb name.basics.tsv.gz file, as found at https://datasets.imdbws.com.
@@ -208,7 +210,10 @@ options:
   -n NUM_OPTIONS, --num-options NUM_OPTIONS
                         The number of potential answers to display. Optional, default is 3.
   -r RATING_TOLERANCE, --rating-tolerance RATING_TOLERANCE
-                        The tolerance around movie review rating matching. Optional, default is 0.1.
+                        The tolerance around movie review rating matching. Optional, default is 0.1,
+                        meaning a clue with an IMDb score of 6.4 will match movies with scores from
+                        6.3 to 6.5 inclusive. This mechanism exists because IMDb scores can change over
+                        time as more people provide review scores.
 ```
 
 To solve today's puzzle, assuming you downloaded the IMDb data to the `data` directory:
