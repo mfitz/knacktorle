@@ -170,6 +170,7 @@ The solver's CLI is fairly discoverable:
 
 ```shell
 python actorle_solver.py --help
+
 usage: actorle_solver.py [-h] -mf MOVIES_FILE -af ACTORS_FILE -pf PERFORMANCES_FILE [-cf CLUES_FILE] [-w WRITE_CLUES_FILE] [-n NUM_OPTIONS] [-r RATING_TOLERANCE]
 
 Solve an Actorle puzzle. Today's puzzle will be retrieved from https://actorle.com/ and solved, unless a different puzzle is specified using the --clues-file argument.
@@ -595,7 +596,7 @@ Options
 
 It should take around 2 to 6 seconds to solve a daily puzzle, depending on how many clues the puzzle
 contains, how the HTTP conversation with the Actorle web server goes, how powerful your machine is, etc. Solving from
-a local clues file is quicker - generally around 1.5 seconds on my local machine.
+[a local clues file](#offline-solving) is quicker - generally around 1.5 seconds on my local machine.
 
 
 ## Offline Solving
