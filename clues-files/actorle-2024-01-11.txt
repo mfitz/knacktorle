@@ -1,0 +1,72 @@
+xxxxx|1988|Romance,Action,Comedy|5.7
+xxx xxxx xxxxxxx|1989|Comedy,Drama|6.4
+xxxxxxx xxxxx|1989|Comedy|7.5
+xxxxxxxxxxx xx xxxxxxxx|1989|Drama,Comedy,Music,Romance|5.3
+xxxxx xxxx xxx xxxxxxxx: xxx xxxxx|1990|Thriller,Comedy,Fantasy,Horror|6.2
+xxxxxx'x xxxxxxxx|1990|Drama,Thriller,Crime|7.7
+xxxxxx xxxx|1991|Comedy,Drama|7.6
+xxxxx xxxxxxxx|1991|Crime|5.9
+xxxxxxxxxx|1992|Crime,Drama|5.8
+xxxxxxxxx xxxx|1992|Crime,Thriller|8.3
+xx xxx xxxx|1992|Comedy,Drama|7.1
+xxxxxx xxx|1993|Action,Drama,Thriller|6.2
+xxx xxxxxxxxx xxxxx|1994|Comedy,Drama|7.2
+xxxxxxxx|1994|Comedy,Crime,Music|6.2
+xxxx xxxxxxx|1994|Thriller,Crime|8.9
+xxxxxx xx xxxxxxxx|1995|Comedy|7.5
+xxxxxxxxx|1995|Thriller,Action,Crime|7.1
+xxxxxx xx xx xx xxxxxx xxxx xxx'xx xxxx|1995|Drama,Crime|6.7
+xxxx xxx|1995|Drama,Fantasy,Western|7.5
+xxxxx|1996|Crime,Drama,Thriller|8.1
+xxx xxxxxx xxx xxx-xxx xxxxx|1996|Comedy|6.0
+xxxxxx xxxx x.x.|1996|Action,Adventure,Science Fiction,Thriller|5.7
+xxx xxx|1997|Action,Thriller,Crime|6.9
+xxx xxxx xxxxxx|1998|Comedy,Drama,Romance|6.0
+xxx xxx xxxxxxxx|1998|Comedy,Crime|8.1
+xxxxxxxxxx|1998|Action,Thriller,Science Fiction,Adventure|6.7
+xxx xxxxxxxxx|1998|Comedy|6.5
+xxx xxxxx|1999|Comedy,Drama|6.4
+xx xxxx|2000|Comedy,Drama|6.1
+xxxxxx xxxxxxx|2000|Crime,Drama|6.6
+xxxxx xxxxxxx: xxx xxxxxxx xxxxxx|2001|Adventure,Action,Fantasy,Science Fiction,Thriller,Romance,Animation|6.4
+xxxxx xxxxx|2001|Comedy,Drama|7.3
+xxxxxxxx xxxxxxxxxxx|2001|Thriller,Crime,Mystery|5.6
+xxxxxxxx, xxx.|2001|Animation,Comedy,Family|8.1
+xx. xxxxx|2002|Comedy,Romance|5.8
+xxx xxxx x: xxx xxxxxx xx xxxx xxxxxx|2002|Action,Adventure,Family,Comedy,Science Fiction,Drama|5.3
+xxx xxxx x-x: xxxx xxxx|2003|Action,Adventure,Comedy,Family,Science Fiction|4.3
+xxxxxx xxx xxxxxxxxxx|2003|Comedy,Drama|7.0
+xxx xxxx|2003|Adventure,Fantasy,Drama|8.0
+xxxx xx xxx xxxxx|2004|Animation,Family|5.4
+xxx xxxxxx|2005|Action,Thriller,Science Fiction,Adventure|6.8
+xxxxxxx & xxxxxxxxxx|2005|Comedy,Music,Romance|6.2
+xxxxx xx x'xxxx|2006|Drama,Romance|7.2
+xxxxxxx xxxxx|2006|Animation,Comedy,Family,Fantasy|6.6
+xxxxxxxxx|2006|Comedy,Drama,Romance|6.4
+xxxxxxxxx'x xxx|2006|Comedy,Family,Fantasy|6.3
+x xxxxx x xxxx xx xxxx|2007|Comedy,Romance|5.5
+x xxx xxxxxxxxx xxx xxxxx & xxxxx|2007|Comedy,Romance|5.9
+xxxxxxxxx|2007|Drama|6.8
+xxxx|2008|Animation,Comedy,Family,Fantasy,Horror|5.9
+x-xxxxx|2009|Animation,Family,Fantasy,Action,Adventure,Comedy|5.1
+xxx xxxxxxxxx|2009|Drama,Romance|7.1
+xxxxx xxxx xx xxx xxxxx|2010|Comedy|5.6
+xxxxx xxx|2010|Comedy|6.0
+xxxxxxx|2011|Crime,Drama|5.8
+xx xxx xxxx|2012|Adventure,Drama|6.0
+xxxxx xxxxxxxxxxxx|2012|Animation,Comedy,Family,Fantasy|7.0
+xxx xxxxxxxxxx xxxx xxxxxxxxxxx|2013|Comedy|5.9
+xxxxxxxx xxxxxxxxxx|2013|Animation,Family|7.2
+xxxxx xxx x|2013|Comedy|5.4
+xxxxxx|2013|Animation,Adventure,Family|5.6
+xxxx xxx xx xxxx|2014|Drama|5.7
+xxxxx xxxxxxxxxxxx x|2015|Animation,Comedy,Family,Fantasy|6.6
+xxxxxx: xxx xxxxxxxx xxxx xxx xxxxxx xxxx xx x xxx xxxx xxxxx|2016|Comedy,Thriller,Drama|6.1
+xxx xxxx xxxx|2017|Animation,Comedy,Family|6.3
+xxxxxxxxxxxx: xxx xxxx xxxxxx|2017|Action,Adventure,Science Fiction|5.2
+xxx xxxxx xx xxxxxx|2017|Comedy,Drama,History|7.2
+xxxx xx xxxx|2018|Drama,Adventure|7.2
+xxxxx xxxxxxxxxxxx x: xxxxxx xxxxxxxx|2018|Animation,Comedy,Family,Fantasy|6.3
+xxx xxxx xxx'x xxx|2019|Comedy,Horror,Fantasy|5.5
+xxx xxxx xx xxxxxx xxxxxx|2020|Comedy,Drama|7.1
+xxxxx xxxxxxxxxxxx: xxxxxxxxxxxxx|2022|Animation,Comedy,Family,Adventure,Fantasy|6.0
