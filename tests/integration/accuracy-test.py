@@ -41,13 +41,13 @@ def print_summary(start_datetime, puzzle_results_dict, elide_correct_answers):
         puzzle_details['result']
         for puzzle_details
         in puzzle_results_dict.values()
-        if result == "PASS"
+        if puzzle_details['result'] == "PASS"
     ]
     failures = [
         puzzle_details['result']
         for puzzle_details
         in puzzle_results_dict.values()
-        if result == "FAIL"
+        if puzzle_details['result'] == "FAIL"
     ]
     unknown_results = len(puzzle_results_dict) - (len(failures) + len(passes))
     table_caption = "{} failed, {} passed, {} unknown in [yellow bold]{}[/yellow bold]" \
