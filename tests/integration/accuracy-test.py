@@ -13,8 +13,8 @@ from rich.table import Table
 ELIDED_STRING = "********"
 
 
-def read_expected_answers(answers_file_path):
-    with open(answers_file_path) as answers_file:
+def read_expected_answers(answers_csv_file_path):
+    with open(answers_csv_file_path) as answers_file:
         next(answers_file)  # Skip the header
         reader = csv.reader(answers_file, skipinitialspace=True)
         all_answers = dict(reader)
@@ -137,7 +137,7 @@ if __name__ == '__main__':
         puzzle_results[puzzle] = {"number_of_clues": len(clues)}
 
     answers = read_expected_answers(cli_args['answers_file'])
-    print("Read in {} expected answers from {} file...".format(len(answers), cli_args['answers_file']))
+    print("Found {} expected answers in {} file...".format(len(answers), cli_args['answers_file']))
     print("-----------------------------------------------")
 
     solving_start_time = datetime.now()
