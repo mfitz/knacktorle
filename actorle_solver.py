@@ -136,8 +136,8 @@ if __name__ == '__main__':
     print(actor_roles)
     print("\nOptions\n----------------")
     option_num = 1
-    for actor_id, count in most_likely_actors:
+    for actor_id, number_of_clue_matches in most_likely_actors:
         actor_name = get_actor_name(actor_id, actor_names_df)
-        percent_likelihood = (count / total_count) * 100.0
-        print("{}) {} is {:.2f}% likely".format(option_num, actor_name, percent_likelihood))
+        percent_match = (number_of_clue_matches / len(puzzle_clues)) * 100.0
+        print("{}) {} is a {:.2f}% match".format(option_num, actor_name, percent_match))
         option_num += 1
