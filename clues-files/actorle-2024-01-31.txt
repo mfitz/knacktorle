@@ -1,0 +1,44 @@
+xxxxxxxxxxx xxx|1994|Comedy,Drama|6.2
+xxx xxxxxxxxxx xxxxxxx|1995|Drama,Crime|7.3
+xxxxxx xxxxxx|1997|Drama|7.9
+xxx xxx xxx|1998|Action,Adventure,Comedy,Thriller|6.0
+xxx xxxxxxxxx|1999|Action,Crime,Thriller|6.1
+xxxxx xxxxx|1999|Action,Comedy,War|7.1
+xxx xxxxxxx xxxxx|2000|Action,Adventure,Drama,Thriller|6.5
+xxxxxx xx xxx xxxx|2001|Thriller,Science Fiction,Action,Adventure|5.7
+xxxx xxxx|2001|Music,Drama,Comedy|6.3
+xxx xxxxxxx xxx|2003|Action,Crime|7.0
+xxxx xxxxxxxx|2005|Action,Crime|6.8
+xxxxxxxxxx|2006|Drama,History|7.0
+xxx xxxxxxxx|2006|Drama,Thriller,Crime|8.5
+xxxxxxx|2007|Action,Drama,Mystery,Thriller,Crime|7.1
+xx xxx xxx xxxxx|2007|Drama,Crime,Thriller|6.8
+xxx xxxxxxxxx|2008|Thriller,Science Fiction|5.0
+xxx xxxxx|2008|Crime,Action,Drama,Thriller|5.3
+xxx xxxxxx xxxxx|2009|Fantasy,Drama|6.6
+xxxx xxxxx|2010|Comedy,Action,Adventure|6.3
+xxx xxxxx xxxx|2010|Action,Comedy,Crime|6.6
+xxx xxxxxxx|2010|Drama|7.8
+xxxxxxxxxx|2012|Thriller,Action,Drama,Crime|6.4
+xxx|2012|Comedy,Fantasy|6.9
+xxxxxx xxxx|2013|Thriller,Crime,Drama|6.1
+xxxx & xxxx|2013|Action,Crime,Comedy|6.4
+x xxxx|2013|Action,Comedy,Crime|6.7
+xxxx xxxxxxxx|2013|War,Action,Drama|7.5
+xxxxxxxxxxxx: xxx xx xxxxxxxxxx|2014|Science Fiction,Action,Adventure|5.6
+xxx xxxxxxx|2014|Thriller,Crime,Drama|6.0
+xxxxxxxxx|2015|Comedy,Drama|6.5
+xxx x|2015|Comedy,Fantasy|6.3
+xxxxx'x xxxx|2015|Comedy|6.2
+xxxxxxxxx xxxxxxx|2016|Drama,Action|7.1
+xxxxxxxx xxx|2016|Action,Crime,Drama,History,Thriller|7.3
+xxxxxxxxxxxx: xxx xxxx xxxxxx|2017|Action,Adventure,Science Fiction|5.2
+xxxxx'x xxxx x|2017|Comedy|6.0
+xxx xxx xxxxx xx xxx xxxxx|2017|Crime,History,Thriller|6.8
+xxxx xx|2018|Action,Thriller|6.1
+xxxxxxx xxxxxx|2018|Comedy,Drama|7.3
+xxxxx!|2020|Animation,Comedy,Family,Mystery|5.6
+xxx xxxx|2020|Drama,Adventure|6.2
+xxxxxxxxx|2022|Action,Adventure|6.3
+xxxxxx xxx|2022|Drama|6.5
+xxx xxxxxx xxxx|2023|Action,Comedy|6.3
