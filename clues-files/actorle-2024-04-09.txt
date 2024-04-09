@@ -1,0 +1,41 @@
+xxxxxxx xxxxxx|1980|Horror,Science Fiction,Thriller|6.9
+x.x. xxx xxxxx-xxxxxxxxxxx|1982|Science Fiction,Adventure,Family,Fantasy|7.9
+xxxxxxxxxxx|1984|Horror,Thriller,Science Fiction|6.0
+xxxxxxxxxxxxxx xxxxxxxxxxx|1984|Comedy,Drama,Romance|5.8
+xxx'x xxx|1985|Horror,Thriller|6.3
+xxx xxxx xxxx|1989|Thriller|5.5
+xxxxxxxx|1991|Comedy,Adventure|6.2
+xxxxxx xxx|1992|Thriller,Drama|5.4
+xxxxxxxx|1992|Drama,Romance,Thriller,Crime|5.5
+xx xxxxx xx xxxx|1992|Thriller|5.1
+xxxxx'x xxxxx x|1993|Comedy,Music|6.2
+xxx xxxxx|1994|Romance,Western|5.2
+xxxx xx xxx xxxx|1995|Comedy,Drama|6.5
+xxx xxxx|1995|Drama,Romance|5.3
+xxxxxx xxxxxxx|1995|Action,Crime,Fantasy|5.4
+xxxxxxxx xxxx x xxxx xxx|1996|Comedy,Romance|6.7
+xxxxxx|1996|Crime,Horror,Mystery|7.4
+xxx xxxxxxx xxxxxx|1998|Romance,Comedy|6.9
+xxxxxxxxx|1998|Drama,Romance,Comedy|7.1
+xxxx xxxxx|1998|Comedy,Drama,Romance|5.1
+xxxxx xxxx xxxxxx|1999|Romance,Comedy,Drama|6.0
+xxxxx x.x.|2000|Animation,Action,Science Fiction,Family,Adventure|6.6
+xxxxxxx'x xxxxxx|2000|Action,Adventure,Comedy,Crime,Thriller|5.6
+xxxxxx xxxxx|2001|Fantasy,Drama,Mystery|8.0
+xxxxxx xxx xxxxxxxx|2001|Comedy|4.6
+xxxxxx xx xxxx xxxx xxxx|2001|Comedy,Drama,Romance|6.5
+xxxxxxxxxxx xx x xxxxxxxxx xxxx|2002|Comedy,Crime,Drama|7.0
+xxxxxxx'x xxxxxx: xxxx xxxxxxxx|2003|Action,Adventure,Comedy|4.9
+xxxxxx|2003|Comedy,Drama,Horror|5.9
+xx xxxxx xxxxx|2004|Comedy,Romance|6.8
+xxxxx xxxxx|2005|Comedy,Drama,Romance|6.2
+xxxxxxx xxxxxx|2006|Adventure,Animation,Comedy,Family|6.5
+xxxxx xxx xxxxxx|2007|Comedy,Music,Romance|6.5
+xxxxx xxx|2007|Drama,Romance|5.9
+xxxxxxx xxxxx xxxxxxxxx|2008|Comedy,Family,Adventure,Romance|3.9
+xx'x xxxx xxx xxxx xxxx xxx|2009|Comedy,Romance,Drama|6.4
+xxxx xx|2009|Drama|6.9
+xxxxxxxxx'x xxxx|2009|Drama|7.1
+xxxxx xxx xxxxxxxx|2010|Comedy,Drama,Romance|6.3
+xxx xxxxxxx|2012|Adventure,Drama,Romance,Fantasy|6.5
+xxxxxxx|2014|Comedy,Romance|6.5
