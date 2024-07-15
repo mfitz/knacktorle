@@ -1,5 +1,5 @@
 beautifulsoup4==4.11.1
-chromedriver-py==123.0.6312.105
+chromedriver-py==126.0.6478.126
 flake8==6.1.0
 pandas==1.5.3
 pytest==7.4.3
